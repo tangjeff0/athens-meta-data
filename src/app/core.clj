@@ -9,17 +9,16 @@
 
 (defn file-data
   [dir-name]
-  (let [dir      (str base "/" dir-name)
-        files   (-> dir
-                  io/file
-                  .list
-                  seq
-                  sort)
-        filepaths (map #(str dir "/" %) files)
-        data (map #(-> (slurp %)
-                     (cheshire/parse-string true))
-               filepaths)]
-    data))
+  (let [dir (str base "/" dir-name)]
+    (->> dir
+      io/file
+      .list
+      seq
+      sort
+      (map #(str dir "/" %))
+      (map #(-> (slurp %)
+                (cheshire/parse-string true))))))
+
 
 (->> (take 10000 (file-data "issues"))
   (map (fn [{:keys [title body comments html_url] {:keys [login]} :user}]
