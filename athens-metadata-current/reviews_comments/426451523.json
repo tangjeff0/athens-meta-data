@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426451523",
+  "pull_request_review_id":413373566,
+  "id":426451523,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjQ1MTUyMw==",
+  "diff_hunk":"@@ -47,8 +47,8 @@\n        (map #(map edn/read-string %))\n        (map #(cons :db/add %))))\n \n-(defn json-str-to-edn\n-  \"Convert a JSON str to EDN. May receive JSON through an HTTP request or file upload.\"\n+(defn json-str-to-vector\n+  \"Convert a JSON str to a clojure vector. May receive JSON through an HTTP request or file upload.\"",
+  "path":"src/cljs/athens/db.cljs",
+  "position":7,
+  "original_position":7,
+  "commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "original_commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I don't think this is correct? It depends on the input if it's a vector. Can you explain why you changed this? ",
+  "created_at":"2020-05-18 08:25:24 UTC",
+  "updated_at":"2020-05-18 08:31:10 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/72#discussion_r426451523",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/72",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426451523"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/72#discussion_r426451523"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/72"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":51,
+  "original_line":51,
+  "side":"RIGHT"
+}

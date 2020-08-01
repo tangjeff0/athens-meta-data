@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456439724",
+  "pull_request_review_id":450653952,
+  "id":456439724,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjQzOTcyNA==",
+  "diff_hunk":"@@ -244,9 +263,11 @@\n   [ident]\n   (let [{:keys [block/uid node/title] :as node} (db/get-node-document ident)\n         editing-uid @(subscribe [:editing/uid])\n-        timeline-page? (is-timeline-page uid)]\n+        timeline-page? (is-timeline-page uid)\n+        show-page-menu? (r/atom false)\n+        page-menu-position (r/atom {:x 0 :y 0})]",
+  "path":"src/cljs/athens/views/node_page.cljs",
+  "position":56,
+  "original_position":56,
+  "commit_id":"81d89f1e6914ac723eb755589742a724c8ead27d",
+  "original_commit_id":"81d89f1e6914ac723eb755589742a724c8ead27d",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Your `atom` skills have leveled 🆙  I would probably merge the atoms into atom. Clojurians typically like to co-locate all stateful (read: bad) things in one place. This is good from a design perspective.\r\n\r\nAnother reason to keep state together is that it's just one less variable/parameter we have to keep track of. For example, it would not be great if we had an individual atom for each key-value in `block-component`.\r\n\r\nSomething that I haven't explained properly, and I don't think I fully understand it yet either, is why sometimes we create the atom in `x-el` and sometimes in `x-component`.",
+  "created_at":"2020-07-17 13:24:50 UTC",
+  "updated_at":"2020-07-17 13:26:53 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/266#discussion_r456439724",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/266",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456439724"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/266#discussion_r456439724"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/266"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":268,
+  "original_line":268,
+  "side":"RIGHT"
+}

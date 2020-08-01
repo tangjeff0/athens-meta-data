@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/446073433",
+  "pull_request_review_id":438149141,
+  "id":446073433,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjA3MzQzMw==",
+  "diff_hunk":"@@ -301,27 +151,27 @@\n            :style {:cursor :pointer}}\n        (str value)]\n \n-      (attr-unique? attr)\n+      (brws/attr-unique? attr)\n       [:a {:on-click #(update-and-eval-box! (pull-entity-str attr value))",
+  "path":"src/cljs/athens/devcards/db_boxes.cljs",
+  "position":212,
+  "original_position":193,
+  "commit_id":"37d531f9a0117e2a66dfbfed03a047bd0c60d695",
+  "original_commit_id":"6dec04648168cb9e215c3626f7322d24ab6e81ad",
+  "user":{
+    "login":"jelmerderonde",
+    "id":2357145,
+    "node_id":"MDQ6VXNlcjIzNTcxNDU=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/2357145?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jelmerderonde",
+    "html_url":"https://github.com/jelmerderonde",
+    "followers_url":"https://api.github.com/users/jelmerderonde/followers",
+    "following_url":"https://api.github.com/users/jelmerderonde/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jelmerderonde/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jelmerderonde/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jelmerderonde/subscriptions",
+    "organizations_url":"https://api.github.com/users/jelmerderonde/orgs",
+    "repos_url":"https://api.github.com/users/jelmerderonde/repos",
+    "events_url":"https://api.github.com/users/jelmerderonde/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jelmerderonde/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"We could of course, but it won't be easy to implement. Right now the output of the `edn` view is just a `string`. To make it navigable we would have to implement something to convert the data structure into hiccup with the right clickable parts.\r\n\r\nI would suggest postponing this to a later stage if we really want it.",
+  "created_at":"2020-06-26 09:27:30 UTC",
+  "updated_at":"2020-06-27 16:35:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/164#discussion_r446073433",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/164",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/446073433"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/164#discussion_r446073433"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/164"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":147,
+  "original_line":147,
+  "side":"RIGHT",
+  "in_reply_to_id":443584410
+}

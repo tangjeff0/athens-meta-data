@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426465668",
+  "pull_request_review_id":413391004,
+  "id":426465668,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjQ2NTY2OA==",
+  "diff_hunk":"@@ -88,9 +90,8 @@\n       [alert]\n       (if @loading\n         [:div\n-          [style/loading-css]\n-          [:h4 {:id \"loading-text\"} \"Loading... (at least it'll be faster than Roam)\"]\n-        ]\n+         [style/loading-css]\n+         [:h4 {:id \"loading-text\"} \"Loading database... (at least it'll be faster than Roam)\"]]",
+  "path":"src/cljs/athens/views.cljs",
+  "position":null,
+  "original_position":44,
+  "commit_id":"54eacb548795ab5f4bb4f35632b030d26e7fdf55",
+  "original_commit_id":"4e86aa288ebb15dae3a1e922c131dfb21d75af0f",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Now this text is duplicated? Do we need it in index.html?",
+  "created_at":"2020-05-18 08:47:52 UTC",
+  "updated_at":"2020-05-18 12:35:04 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/57#discussion_r426465668",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/57",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426465668"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/57#discussion_r426465668"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/57"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":94,
+  "side":"RIGHT"
+}

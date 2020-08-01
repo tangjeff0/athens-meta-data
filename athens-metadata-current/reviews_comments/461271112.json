@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461271112",
+  "pull_request_review_id":456249714,
+  "id":461271112,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MTI3MTExMg==",
+  "diff_hunk":"@@ -101,10 +104,20 @@\n       (= type :slash) (cond\n                         (= :up direction) (do\n                                             (.. e preventDefault)\n-                                            (swap! state update :search/index dec))\n+                                            (swap! state update :search/index #(dec (if (zero? %) (count slash-options) %)))\n+                                            (let [cur-index (:search/index @state)\n+                                                  container-el (. js/document getElementById \"slash-menu-container\")",
+  "path":"src/cljs/athens/keybindings.cljs",
+  "position":26,
+  "original_position":26,
+  "commit_id":"699442eafb75f3c5be6ada11bdf992dfc01fd90d",
+  "original_commit_id":"d240f3f28e6ad7cbb4212086b009680ccbc5dafc",
+  "user":{
+    "login":"alaq",
+    "id":1746118,
+    "node_id":"MDQ6VXNlcjE3NDYxMTg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/1746118?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/alaq",
+    "html_url":"https://github.com/alaq",
+    "followers_url":"https://api.github.com/users/alaq/followers",
+    "following_url":"https://api.github.com/users/alaq/following{/other_user}",
+    "gists_url":"https://api.github.com/users/alaq/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/alaq/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/alaq/subscriptions",
+    "organizations_url":"https://api.github.com/users/alaq/orgs",
+    "repos_url":"https://api.github.com/users/alaq/repos",
+    "events_url":"https://api.github.com/users/alaq/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/alaq/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"So sorry, I had other unrelated changes in `blocks.cljs` so I forgot to stage the id...\r\nLet me look at what's wrong with the GitHub pages.",
+  "created_at":"2020-07-28 01:56:23 UTC",
+  "updated_at":"2020-07-29 02:28:07 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/304#discussion_r461271112",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/304",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461271112"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/304#discussion_r461271112"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/304"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":109,
+  "original_line":109,
+  "side":"RIGHT",
+  "in_reply_to_id":461239767
+}

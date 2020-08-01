@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439155518",
+  "pull_request_review_id":429399972,
+  "id":439155518,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTE1NTUxOA==",
+  "diff_hunk":"@@ -51,37 +55,82 @@\n     (.toLocaleString  (js/Date. x))))\n \n \n+(def table-cell-background-color-hover\n+  (opacify (:panel-color HSL-COLORS) (first OPACITIES)))\n+\n+\n+(def tables\n+  {:width \"100%\"\n+   :text-align \"left\"\n+   :border-collapse \"collapse\"\n+   ::stylefy/sub-styles {:thead {}\n+                         :tr-item {}\n+                         :th-title {}\n+                         :th-body {}\n+                         :th-date {:text-align \"right\"}\n+                         :td-title {:width \"15vw\"\n+                                    :min-width \"10em\"\n+                                    :word-break \"break-word\"\n+                                    :font-weight \"500\"\n+                                    :font-size \"21px\"\n+                                    :line-height \"27px\"}\n+                         :td-body {}\n+                         :body-preview {:white-space \"wrap\"\n+                                        :word-break \"break-word\"\n+                                        :overflow \"hidden\"\n+                                        :text-overflow \"ellipsis\"\n+                                        :display \"-webkit-box\"\n+                                        :-webkit-line-clamp \"3\"\n+                                        :-webkit-box-orient \"vertical\"}\n+                         :td-date {:text-align \"right\"\n+                                   :opacity \"0.75\"\n+                                   :font-size \"12px\"\n+                                   :min-width \"9em\"}}\n+   ::stylefy/manual [[:tbody {:vertical-align \"top\"}\n+                      [:tr\n+                       [:td {:border-top (str \"1px solid \" (:panel-color COLORS))}]\n+                       [:&:hover {:background-color table-cell-background-color-hover\n+                                  :border-radius \"8px\"}\n+                        ;; [:td {:border-top-color \"transparent\"}]\n+                        [:td [(selectors/& (selectors/first-child)) {:border-radius \"8px 0 0 8px\"\n+                                                                     :box-shadow \"-16px 0 hsla(30, 11.11%, 93%, 0.1)\"}]]\n+                        [:td [(selectors/& (selectors/last-child)) {:border-radius \"0 8px 8px 0\"\n+                                                                    :box-shadow \"16px 0 hsla(30, 11.11%, 93%, 0.1)\"}]]]]]",
+  "path":"src/cljs/athens/devcards/all_pages.cljs",
+  "position":79,
+  "original_position":79,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"@tangjeff0 These add a little bit of extra background to the hovered items. Tables don't allow for this kind of thing without either crazy-bad markup or a little bit of CSS trickery.\r\n\r\nReference (the left edge of the table ends where the border does):\r\n![Screen Shot 2020-06-11 at 9 09 05 PM](https://user-images.githubusercontent.com/98312/84454222-f279ec00-ac27-11ea-9832-901e01fe5ac5.png)",
+  "created_at":"2020-06-12 01:10:27 UTC",
+  "updated_at":"2020-06-12 01:10:27 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439155518",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439155518"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439155518"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":95,
+  "original_start_line":95,
+  "start_side":"RIGHT",
+  "line":98,
+  "original_line":98,
+  "side":"RIGHT",
+  "in_reply_to_id":439077100
+}

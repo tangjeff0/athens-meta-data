@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/425094123",
+  "pull_request_review_id":411746653,
+  "id":425094123,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNTA5NDEyMw==",
+  "diff_hunk":"@@ -0,0 +1,31 @@\n+(ns athens.style (:require  [garden.core :refer [css]]))\n+\n+(defn loading-css\n+  []\n+  (fn []\n+    [:style (css\n+      [:body {\n+        :font-family \"sans-serif\"\n+        :font-size \"1.3rem\"\n+      }]\n+    )]\n+  )\n+)\n+\n+(defn main-css\n+  []\n+  (fn []\n+    [:style\n+      (clojure.string/join \"\" [\n+          (css [:body {:font-family \"sans-serif\"}])\n+          (css :.pages-table [\n+            :th {\n+              :font-weight \"bold\"\n+              :min-width \"11em\"\n+            }\n+          ])\n+        ]\n+      )\n+    ]\n+  )\n+)",
+  "path":"src/cljs/athens/style.cljs",
+  "position":31,
+  "original_position":31,
+  "commit_id":"3ab86049c045405a29231c7cd32d897fef706ed3",
+  "original_commit_id":"3ab86049c045405a29231c7cd32d897fef706ed3",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"We don't do this in clojure 😎 All brackets together. Most of us use an editor that can help us keeping track of the nesting. I'm adding a tool to check the styling so you can check these things beforehand",
+  "created_at":"2020-05-14 12:22:56 UTC",
+  "updated_at":"2020-05-14 12:23:17 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/54#discussion_r425094123",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/54",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/425094123"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/54#discussion_r425094123"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/54"
+    }
+  },
+  "start_line":25,
+  "original_start_line":25,
+  "start_side":"RIGHT",
+  "line":31,
+  "original_line":31,
+  "side":"RIGHT"
+}

@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439089252",
+  "pull_request_review_id":429297285,
+  "id":439089252,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTA4OTI1Mg==",
+  "diff_hunk":"@@ -43,13 +44,18 @@\n   (with-styles +flex-column-align-start\n     {:flex               \"0 0 288px\"\n      :padding            \"32px 32px 16px 32px\"\n-     :box-shadow         \"1px 0 #433f3880\"}))\n+     :box-shadow         (str \"1px 0 \" (:panel-color COLORS))}))\n \n \n (def +left-sidebar-collapsed\n   (with-styles +left-sidebar\n-    {:flex \"0 0 32px\"\n-     :padding \"32px 0px\"\n+    {:flex \"0 0 40px\"\n+     :align-items \"flex-start\"\n+     :justify-content \"flex-start\"\n+     :grid-template-rows \"min-content\"\n+     :padding \"32px 4px\"\n+     :display \"grid\"\n+     :grid-gap \"4px\"",
+  "path":"src/cljs/athens/devcards/left_sidebar.cljs",
+  "position":49,
+  "original_position":49,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I know it looks good in the app, but do we want to define height for collapsed sidebar? We might modify it down the line, in which full height would be nice",
+  "created_at":"2020-06-11 21:49:28 UTC",
+  "updated_at":"2020-06-11 21:51:33 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439089252",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439089252"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439089252"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":52,
+  "original_start_line":52,
+  "start_side":"RIGHT",
+  "line":58,
+  "original_line":58,
+  "side":"RIGHT"
+}

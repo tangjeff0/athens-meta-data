@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/452835696",
+  "pull_request_review_id":446391145,
+  "id":452835696,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MjgzNTY5Ng==",
+  "diff_hunk":"@@ -23,41 +38,49 @@\n    :border           \"none\"\n    :display          \"inline-flex\"\n    :align-items      \"center\"\n-   :color            \"rgba(50, 47, 56, 1)\"\n+   :color            (color :body-text-color)\n    :background-color \"transparent\"\n-   :transition       \"all 0.05s ease\"\n-   ::stylefy/mode [[:hover {:background-color \"#EFEDEB\"}]\n-                   [:active {:color \"rgba(0, 117, 225)\"\n-                             :background-color \"rgba(0, 117, 225, 0.1)\"}]\n-                   [:disabled {:color \"rgba(0, 0, 0, 0.3)\"\n-                               :background-color \"#EFEDEB\"\n-                               :cursor \"default\"}]]\n-   ::stylefy/manual [[:svg {:margin-block-start \"-0.0835em\"\n-                            :margin-block-end \"-0.0835em\"}\n-                      [(selectors/& (selectors/not (selectors/last-child))) {:margin-inline-end \"0.251em\"}]\n-                      [(selectors/& (selectors/not (selectors/first-child))) {:margin-inline-start \"0.251em\"}]\n-                      [(selectors/& ((selectors/first-child (selectors/last-child)))) {:margin-inline-start \"-4px\"\n-                                                                                       :margin-inline-end \"-4px\"}]]\n+   :transition       \"all 0.075s ease\"\n+   ::stylefy/manual [[:&:hover {:background (darken (color :panel-color :opacity-low) 10)}]\n+                     [:&:active\n+                      :&:hover:active\n+                      :&.active {:color (color :body-text-color)\n+                                 :background-color  (darken (color :panel-color :opacity-med) 10)}]\n+                     [:&:disabled {:color (color :body-text-color 0.3)\n+                                   :background-color (color :panel-color :opacity-higher)\n+                                   :cursor \"default\"}]\n                      [:span {:flex \"1 0 auto\"\n                              :text-align \"left\"}]\n-                     [:&.active {:background-color (darken (color :panel-color) 10)}]]})\n+                     [:.MuiSvgIcon-root button-icons-style\n+                      [(selectors/& (selectors/not (selectors/last-child))) button-icons-not-last-child-style]\n+                      [(selectors/& (selectors/not (selectors/first-child))) button-icons-not-first-child-style]\n+                      [(selectors/& ((selectors/first-child (selectors/last-child)))) button-icons-only-child-style]]]})\n \n \n (def buttons-primary-style\n-  (merge buttons-style {:color \"rgba(0, 117, 225)\"\n-                        :background-color \"rgba(0, 117, 225, 0.1)\"\n-                        ::stylefy/mode [[:hover {:background-color \"rgba(0, 117, 225, 0.25)\"}]\n-                                        [:active {:color \"white\"\n-                                                  :background-color \"rgba(0, 117, 225, 1)\"}]\n-                                        [:disabled {:color \"rgba(0, 0, 0, 0.3)\"\n-                                                    :background-color \"#EFEDEB\"\n-                                                    :cursor \"default\"}]]}))\n+  (merge buttons-style {:color (color :link-color)\n+                        :background-color (color :link-color :opacity-lower)\n+                        ::stylefy/manual [[:&:hover {:background (color :link-color :opacity-low)}]\n+                                          [:&:active\n+                                           :&:hover:active\n+                                           :&.active {:color \"white\"\n+                                                      :background-color (color :link-color)}]",
+  "path":"src/cljs/athens/views/buttons.cljs",
+  "position":null,
+  "original_position":79,
+  "commit_id":"f4f1c460ff3467f91519b5f70c36bcdffeb17f33",
+  "original_commit_id":"e514dcb2dc5ad2a1301fde3cde59e13f22c6908d",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"We need to have `&:active` and `&.active` pseudo and class selectors?",
+  "created_at":"2020-07-10 13:15:43 UTC",
+  "updated_at":"2020-07-10 19:26:02 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/237#discussion_r452835696",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/237",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/452835696"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/237#discussion_r452835696"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/237"
+    }
+  },
+  "start_line":null,
+  "original_start_line":64,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":67,
+  "side":"RIGHT"
+}

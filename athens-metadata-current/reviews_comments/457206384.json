@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/457206384",
+  "pull_request_review_id":451431558,
+  "id":457206384,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NzIwNjM4NA==",
+  "diff_hunk":"@@ -11,6 +11,15 @@\n     [reagent.core :as r]\n     [stylefy.core :as stylefy :refer [use-style]]))\n \n+;;; Helper functions\n+(defn file-cb\n+  [e]\n+  (let [fr (js/FileReader.)\n+        file (.. e -target -files (item 0))]\n+    ;; TODO: maybe rename `http-success/get-db` into a more intuitive name like `get-db/parse-triplet-json-and-import` ?",
+  "path":"src/cljs/athens/devcards/app_toolbar.cljs",
+  "position":9,
+  "original_position":9,
+  "commit_id":"8a49b2a50b26c739180c36630f20d0ef515fc7e9",
+  "original_commit_id":"8a49b2a50b26c739180c36630f20d0ef515fc7e9",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Discussion: basically this ^",
+  "created_at":"2020-07-20 09:13:05 UTC",
+  "updated_at":"2020-07-20 09:13:05 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/286#discussion_r457206384",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/286",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/457206384"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/286#discussion_r457206384"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/286"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":19,
+  "original_line":19,
+  "side":"RIGHT"
+}

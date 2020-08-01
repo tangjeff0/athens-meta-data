@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426833682",
+  "pull_request_review_id":413860597,
+  "id":426833682,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjgzMzY4Mg==",
+  "diff_hunk":"@@ -0,0 +1,6 @@\n+; REVIEW Can some of these items be removed (later)?\n+athens.db/help-url\n+athens.db/ego-url\n+athens.views/home-panel\n+athens.core/init\n+user/str-kw-mappings",
+  "path":".carve_ignore",
+  "position":null,
+  "original_position":6,
+  "commit_id":"06323f5200d3b3c125141e6b77cd593067f4c455",
+  "original_commit_id":"9e9eb1a283815ac0b3b2386420da706df9bb4ee8",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"- URLs could still be used if we want to examine other DBs. especially `help-url`\r\n- `home-panel` can be removed\r\n- `str-kw-mappings` will be used for JSON import I believe\r\n- not sure why `init` is not being used",
+  "created_at":"2020-05-18 19:01:29 UTC",
+  "updated_at":"2020-05-18 19:38:38 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/76#discussion_r426833682",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/76",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426833682"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/76#discussion_r426833682"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/76"
+    }
+  },
+  "start_line":null,
+  "original_start_line":2,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":6,
+  "side":"RIGHT"
+}

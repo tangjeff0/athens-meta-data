@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/446070498",
+  "pull_request_review_id":438145514,
+  "id":446070498,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjA3MDQ5OA==",
+  "diff_hunk":"@@ -0,0 +1,427 @@\n+(ns athens.devcards.devtool\n+  (:require\n+    [athens.devcards.buttons :refer [button-primary button]]\n+    [athens.devcards.db :refer [new-conn load-real-db-button]]\n+    [athens.style :refer [base-styles]]\n+    [cljs.pprint :as pp]\n+    [cljsjs.react]\n+    [cljsjs.react.dom]\n+    [clojure.core.protocols :as core-p]\n+    [clojure.datafy :refer [nav datafy]]\n+    [datascript.core :as d]\n+    [datascript.db]\n+    [devcards.core :as devcards :refer [defcard-rg]]\n+    [me.tonsky.persistent-sorted-set]\n+    [reagent.core :as r]\n+    [reagent.ratom]\n+    [sci.core :as sci]\n+    [shadow.remote.runtime.cljs.browser]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n+\n+\n+(defonce conn (new-conn))\n+\n+\n+(def key-code->key\n+  {8   :backspace\n+   9   :tab\n+   13  :return})\n+\n+\n+(def initial-state\n+  {:eval-str\n+   \"(d/q '[:find [(pull ?e [*]) ...]\n+       :where [?e :node/title]]\n+    @athens/db)\"\n+   :tx-reports []\n+   :active-panel :query})\n+\n+\n+(defonce state* (r/atom initial-state))\n+\n+\n+(defn ds-nav-impl\n+  [_ k v]\n+  (condp = k\n+    :db/id (d/pull @conn '[* :block/_children] v) ; TODO add inverse refs here\n+    v)) ; TODO add unique idents here as well\n+\n+\n+(defn tx-report-nav-impl\n+  [_ k v]\n+  (condp = k\n+    :tx-data (mapv vec v)\n+    v))\n+\n+\n+(defn restore-db!\n+  [db]\n+  (d/reset-conn! conn db {:time-travel true}))\n+\n+\n+(extend-protocol core-p/Datafiable\n+  cljs.core/PersistentHashMap\n+  (datafy [this]\n+    (with-meta this {`core-p/nav ds-nav-impl}))\n+  cljs.core/PersistentArrayMap\n+  (datafy [this]\n+    (with-meta this {`core-p/nav ds-nav-impl}))\n+  datascript.db/TxReport\n+  (datafy [this]\n+    (with-meta (into {} this) {`core-p/nav tx-report-nav-impl}))\n+  datascript.db/Datom\n+  (datafy [this]\n+    (into [] this))\n+  datascript.db/DB\n+  (datafy [this]\n+    (into {} this))\n+  me.tonsky.persistent-sorted-set/BTSet\n+  (datafy [this]\n+    (into [] this)))\n+\n+\n+(defn data-table\n+  [_ _ _]\n+  (let [limit (r/atom 20)]\n+    (fn [headers rows add-nav!]\n+      [:div\n+       [:div (use-style {:font-size \"12px\"\n+                         :font-family \"IBM Plex Mono\"",
+  "path":"src/cljs/athens/devcards/devtool.cljs",
+  "position":null,
+  "original_position":89,
+  "commit_id":"37d531f9a0117e2a66dfbfed03a047bd0c60d695",
+  "original_commit_id":"6dec04648168cb9e215c3626f7322d24ab6e81ad",
+  "user":{
+    "login":"jelmerderonde",
+    "id":2357145,
+    "node_id":"MDQ6VXNlcjIzNTcxNDU=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/2357145?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jelmerderonde",
+    "html_url":"https://github.com/jelmerderonde",
+    "followers_url":"https://api.github.com/users/jelmerderonde/followers",
+    "following_url":"https://api.github.com/users/jelmerderonde/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jelmerderonde/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jelmerderonde/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jelmerderonde/subscriptions",
+    "organizations_url":"https://api.github.com/users/jelmerderonde/orgs",
+    "repos_url":"https://api.github.com/users/jelmerderonde/repos",
+    "events_url":"https://api.github.com/users/jelmerderonde/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jelmerderonde/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Ok, I've removed some of the styling. But once it's \"ready\" it would be great if our styling-wizards could take a look. 🧙‍♂️ 🧙‍♀️ ",
+  "created_at":"2020-06-26 09:21:52 UTC",
+  "updated_at":"2020-06-27 16:35:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/164#discussion_r446070498",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/164",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/446070498"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/164#discussion_r446070498"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/164"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":82,
+  "side":"RIGHT",
+  "in_reply_to_id":443576182
+}

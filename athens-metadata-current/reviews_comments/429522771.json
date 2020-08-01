@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429522771",
+  "pull_request_review_id":417258044,
+  "id":429522771,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTUyMjc3MQ==",
+  "diff_hunk":"@@ -0,0 +1,17 @@\n+(ns athens.parse-helper-test\n+  (:require\n+    [athens.parse-helper :as parse-helper]\n+    [clojure.test :refer [deftest is]]))\n+\n+\n+(deftest combine-adjacent-strings-tests\n+  (is (= []\n+         (parse-helper/combine-adjacent-strings [])))\n+  (is (= [\"some text\"]\n+         (parse-helper/combine-adjacent-strings [\"some\" \" \" \"text\"])))\n+  (is (= [\"some text\" [:link] \"around a link\"]\n+         (parse-helper/combine-adjacent-strings [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"])))\n+  (is (= [{:something nil} \"more text\" [:link] \"between elements\" 39]\n+         (parse-helper/combine-adjacent-strings [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39])))\n+  (is (= [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]\n+         (parse-helper/combine-adjacent-strings [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]))))",
+  "path":"test/athens/parse_helper_test.clj",
+  "position":null,
+  "original_position":17,
+  "commit_id":"1e8ac81b98421e83ff2829c4bd1a4f1063ba5684",
+  "original_commit_id":"ba8fbee556734835b2d7a16d864cdf7d05fb407a",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"For a lot of repetition you can use `are`. E.g. something like this: \r\n```clojure\r\n(deftest combine-adjacent-strings-tests\r\n  (are [x y] (= x (parse-helper/combine-adjacent-strings y))\r\n     [] []\r\n     [\"some text\"] [\"some\" \" \" \"text\"]\r\n     [\"some text\" [:link] \"around a link\"] [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n     [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n      [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n     [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]\r\n      [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]))\r\n```",
+  "created_at":"2020-05-23 07:25:05 UTC",
+  "updated_at":"2020-05-25 22:12:44 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/88#discussion_r429522771",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/88",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429522771"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/88#discussion_r429522771"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/88"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":17,
+  "side":"RIGHT"
+}

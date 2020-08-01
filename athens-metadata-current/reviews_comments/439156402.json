@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439156402",
+  "pull_request_review_id":429401054,
+  "id":439156402,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTE1NjQwMg==",
+  "diff_hunk":"@@ -47,21 +50,125 @@\n \n (defcard-rg Create-Page\n   \"Press button and then search \\\"test\\\" \"\n-  [:button.primary {:on-click handler} \"Create Test Pages and Blocks\"])\n+  [button-primary {:on-click-fn handler\n+                   :label \"Create Test Pages and Blocks\"}])\n \n \n (defcard-rg Load-Real-DB\n   [load-real-db-button conn])\n \n \n+;; STYLES\n+\n+\n+\n+(def container-style\n+  {:width         \"784px\"\n+   :border-radius \"4px\"\n+   :box-shadow    [[(:64 DEPTH-SHADOWS) \", 0 0 0 1px \" (opacify (:body-text-color HSL-COLORS) (first OPACITIES))]]\n+   :display       \"flex\"\n+   :flex-direction \"column\"\n+   :background    (:app-bg-color HSL-COLORS)\n+   :position      \"fixed\"\n+   :overflow      \"hidden\"\n+   :max-height    \"60vh\"\n+   :top           \"50%\"\n+   :left          \"50%\"\n+   :transform     \"translate(-50%, -50%)\"\n+   :z-index       2})\n+\n+\n+(def athena-input-style\n+  {:width \"100%\"\n+   :border 0\n+   :font-size      \"38px\"\n+   :font-weight    \"300\"\n+   :line-height    \"49px\"\n+   :letter-spacing \"-0.03em\"\n+   :border-radius \"4px 4px 0 0\"\n+   :color          \"#433F38\"\n+   :caret-color    (:link-color COLORS)\n+   :padding \"24px\"\n+   :cursor \"text\"\n+   ::stylefy/mode {:focus {:outline \"none\"}\n+                   \"::placeholder\" {:opacity (nth OPACITIES 2)}}})\n+\n+\n+(def results-list-style\n+  {:background    (:app-bg-color HSL-COLORS)\n+   :overflow-y \"auto\"\n+   :max-height \"100%\"})\n+\n+\n+(def results-heading-style\n+  {:padding \"4px 18px\"\n+   :background (:app-bg-color HSL-COLORS)\n+   :display \"flex\"\n+   :position \"sticky\"\n+   :top \"0\"\n+   :justify-content \"space-between\"\n+   :box-shadow [[\"0 1px 0 0 \" (opacify (:body-text-color HSL-COLORS) 0.12)]]\n+   :border-top [[\"1px solid\" (opacify (:body-text-color HSL-COLORS) 0.12)]]})\n+\n+\n+(def result-style\n+  {:display \"grid\"\n+   :grid-template \"\\\"title icon\\\" \\\"preview icon\\\"\"\n+   :grid-gap \"0 12px\"\n+   :grid-template-columns \"1fr auto\"\n+   :padding \"8px 32px\"\n+   :background (opacify (:body-text-color HSL-COLORS) 0.02)\n+   :transition \"all .05s ease\"\n+   :border-top [[\"1px solid \" (opacify (:body-text-color HSL-COLORS) 0.12)]]\n+   ::stylefy/sub-styles {:title {:grid-area \"title\"\n+                                 :font-size \"16px\"\n+                                 :margin \"0\"\n+                                 :color (:header-text-color COLORS)\n+                                 :font-weight \"500\"}\n+                         :preview {:grid-area \"preview\"\n+                                   :white-space \"wrap\"\n+                                   :word-break \"break-word\"\n+                                   :overflow \"hidden\"\n+                                   :text-overflow \"ellipsis\"\n+                                   :display \"-webkit-box\"\n+                                   :-webkit-line-clamp \"1\"\n+                                   :-webkit-box-orient \"vertical\"\n+                                   :color (opacify (:body-text-color COLORS) (nth OPACITIES 3))}\n+                         :link-leader {:grid-area \"icon\"\n+                                       :color \"transparent\"\n+                                       :margin \"auto auto\"}}\n+   ::stylefy/mode {:hover {:background (:link-color HSL-COLORS)\n+                           :color (:app-bg-color COLORS)}}\n+   ::stylefy/manual [[:&:hover [:.title :.preview :.link-leader {:color \"inherit !important\"}]]]})",
+  "path":"src/cljs/athens/devcards/athena.cljs",
+  "position":124,
+  "original_position":124,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"@tangjeff0 We don't, that shouldn't have stayed in there. I'll make a cleanup PR for this little stuff.",
+  "created_at":"2020-06-12 01:14:22 UTC",
+  "updated_at":"2020-06-12 01:14:23 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439156402",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439156402"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439156402"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":142,
+  "original_line":142,
+  "side":"RIGHT",
+  "in_reply_to_id":439079089
+}

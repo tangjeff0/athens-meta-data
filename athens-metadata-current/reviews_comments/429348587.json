@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429348587",
+  "pull_request_review_id":417048899,
+  "id":429348587,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTM0ODU4Nw==",
+  "diff_hunk":"@@ -70,14 +70,37 @@\n        [:div {:style {:margin-left 20}}\n         [render-blocks (:block/uid @node)]]])))\n \n+(defn title [title]\n+  (let [s (reagent/atom {:editing false\n+                         :current-title title\n+                         :new-title title})\n+        save! (fn [] (dispatch [:node/rename (:current-title @s) (:new-title @s)])\n+                     (swap! s assoc :editing false))\n+        cancel! (fn [] (swap! s #(-> %\n+                                     (assoc :editing false)\n+                                     (assoc :new-title (:current-title @s)))))]",
+  "path":"src/cljs/athens/page.cljs",
+  "position":null,
+  "original_position":23,
+  "commit_id":"032e2598053a41dfe187155f92d8bf411d6ca80e",
+  "original_commit_id":"5c8d3ca52a96c26eaf09bd665d16b8fd1693fd4f",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"In what scenario would edit's be ignored you think? As a long as you have focus on that field (no escape, no blur), that value is correct, right?\r\n\r\nI might be missing something as well though :) I might try it later and show what I mean if it doesn't make sense (maybe it doesn't)",
+  "created_at":"2020-05-22 16:43:03 UTC",
+  "updated_at":"2020-05-23 08:15:50 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/86#discussion_r429348587",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/86",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429348587"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/86#discussion_r429348587"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/86"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":81,
+  "side":"RIGHT",
+  "in_reply_to_id":429273624
+}

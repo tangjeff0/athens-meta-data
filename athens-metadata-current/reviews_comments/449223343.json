@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449223343",
+  "pull_request_review_id":441964023,
+  "id":449223343,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTIyMzM0Mw==",
+  "diff_hunk":"@@ -263,12 +267,29 @@\n \n (defn results-el\n   []\n-  [:div (use-style results-heading-style)\n-   [:h5 \"Results\"]\n-   [:span (use-style hint-style)\n-    \"Press \"\n-    [:kbd \"shift + enter\"]\n-    \" to open in right sidebar.\"]])\n+  (let [show-recent? @(subscribe [:show-recent?])",
+  "path":"src/cljs/athens/devcards/athena.cljs",
+  "position":null,
+  "original_position":39,
+  "commit_id":"93fdb08d2ea2eaf07a5004bbadcce682dcd15276",
+  "original_commit_id":"8f3de4e561ca55104f3c5aee5f8f89cd36205aff",
+  "user":{
+    "login":"prabhath6",
+    "id":10682370,
+    "node_id":"MDQ6VXNlcjEwNjgyMzcw",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/10682370?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/prabhath6",
+    "html_url":"https://github.com/prabhath6",
+    "followers_url":"https://api.github.com/users/prabhath6/followers",
+    "following_url":"https://api.github.com/users/prabhath6/following{/other_user}",
+    "gists_url":"https://api.github.com/users/prabhath6/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/prabhath6/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/prabhath6/subscriptions",
+    "organizations_url":"https://api.github.com/users/prabhath6/orgs",
+    "repos_url":"https://api.github.com/users/prabhath6/repos",
+    "events_url":"https://api.github.com/users/prabhath6/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/prabhath6/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Is query stored in some atom or in the re-frame db if not then there isn't a way to identify the change?",
+  "created_at":"2020-07-02 19:23:50 UTC",
+  "updated_at":"2020-07-04 18:06:55 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/208#discussion_r449223343",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/208",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449223343"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/208#discussion_r449223343"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/208"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":270,
+  "side":"RIGHT",
+  "in_reply_to_id":449177980
+}

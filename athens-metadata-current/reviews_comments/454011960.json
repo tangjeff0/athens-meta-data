@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454011960",
+  "pull_request_review_id":447688222,
+  "id":454011960,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NDAxMTk2MA==",
+  "diff_hunk":"@@ -341,13 +353,13 @@\n                  :content (if (clojure.string/blank? query)\n                             [:div \"Start Typing!\"]\n                             (doall\n-                              [:<>\n-                               (for [[i {:keys [node/title block/string block/uid]}] (map-indexed list results)]\n-                                 ^{:key (str \"inline-search-item\" uid)}\n-                                 [:div (use-style\n-                                         (merge {} (when (= index i) inline-selected-search-option))\n-                                         {:on-click #(prn \"expand\")})\n-                                  (or title string)])]))}])))\n+                             [:<>\n+                              (for [[i {:keys [node/title block/string block/uid]}] (map-indexed list results)]\n+                                ^{:key (str \"inline-search-item\" uid)}\n+                                [:div (use-style\n+                                       (merge {} (when (= index i) inline-selected-search-option))\n+                                       {:on-click #(prn \"expand\")})\n+                                 (or title string)])]))}])))",
+  "path":"src/cljs/athens/views/blocks.cljs",
+  "position":null,
+  "original_position":80,
+  "commit_id":"98a00d64c913aa39c1938b9ae7445a7757fca737",
+  "original_commit_id":"57afcef730065e2aa5da50e9b824cf5719b6ae05",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Lots of indentation diffs in this PR. Do you know what's going on?",
+  "created_at":"2020-07-13 23:44:12 UTC",
+  "updated_at":"2020-07-14 01:35:57 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/252#discussion_r454011960",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/252",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454011960"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/252#discussion_r454011960"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/252"
+    }
+  },
+  "start_line":null,
+  "original_start_line":356,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":362,
+  "side":"RIGHT"
+}

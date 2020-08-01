@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426514455",
+  "pull_request_review_id":413451670,
+  "id":426514455,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjUxNDQ1NQ==",
+  "diff_hunk":"@@ -88,9 +90,8 @@\n       [alert]\n       (if @loading\n         [:div\n-          [style/loading-css]\n-          [:h4 {:id \"loading-text\"} \"Loading... (at least it'll be faster than Roam)\"]\n-        ]\n+         [style/loading-css]\n+         [:h4 {:id \"loading-text\"} \"Loading database... (at least it'll be faster than Roam)\"]]",
+  "path":"src/cljs/athens/views.cljs",
+  "position":null,
+  "original_position":44,
+  "commit_id":"54eacb548795ab5f4bb4f35632b030d26e7fdf55",
+  "original_commit_id":"4e86aa288ebb15dae3a1e922c131dfb21d75af0f",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Yeah, also can we remove the Roam reference in all cases? I was feeling cheeky that day. 😂 ",
+  "created_at":"2020-05-18 10:06:37 UTC",
+  "updated_at":"2020-05-18 12:35:04 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/57#discussion_r426514455",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/57",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426514455"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/57#discussion_r426514455"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/57"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":94,
+  "side":"RIGHT",
+  "in_reply_to_id":426465668
+}

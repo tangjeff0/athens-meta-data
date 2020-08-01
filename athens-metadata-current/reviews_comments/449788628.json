@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449788628",
+  "pull_request_review_id":442620612,
+  "id":449788628,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTc4ODYyOA==",
+  "diff_hunk":"@@ -262,18 +262,32 @@\n \n \n (defn results-el\n-  []\n-  [:div (use-style results-heading-style)\n-   [:h5 \"Results\"]\n-   [:span (use-style hint-style)\n-    \"Press \"\n-    [:kbd \"shift + enter\"]\n-    \" to open in right sidebar.\"]])\n+  [state]\n+  (let [recent-item-length 40\n+        search-term? (str/blank? (:query @state))]\n+    [:<> [:div (use-style results-heading-style)\n+          [:h5 (if search-term? \"Recent\" \"Results\")]\n+          [:span (use-style hint-style)\n+           \"Press \"\n+           [:kbd \"shift + enter\"]\n+           \" to open in right sidebar.\"]]\n+     (when search-term?\n+       [:div (use-style results-list-style)\n+        (doall\n+          (for [[i x] (map-indexed list (take recent-item-length @(subscribe [:athena/get-recent])))]",
+  "path":"src/cljs/athens/devcards/athena.cljs",
+  "position":null,
+  "original_position":34,
+  "commit_id":"93fdb08d2ea2eaf07a5004bbadcce682dcd15276",
+  "original_commit_id":"3ab063cf85270cb3a1e004272d663116381ca433",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Great use of `list`, can you change the other `map-indexed` to use this?\r\n\r\n`subscribe` should happen in the `let` binding above.\r\n\r\n```\r\n(let [recent-items @(subscribe [:athena/get-recent]\r\n      search-term? (str/blank? (:query @state))]\r\n...\r\n\r\n(for [[i x] (map-indexed list recent-items) \r\n\r\n...\r\n```\r\n\r\nDon't worry about `take`ing `recent-item-length` for now. If we want to only ever show `40`, we can specify that condition in the dispatch so that the data structure doesn't grow needlessly. Just show all recent items for now.",
+  "created_at":"2020-07-04 16:59:59 UTC",
+  "updated_at":"2020-07-04 18:06:55 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/208#discussion_r449788628",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/208",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449788628"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/208#discussion_r449788628"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/208"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":277,
+  "side":"RIGHT"
+}

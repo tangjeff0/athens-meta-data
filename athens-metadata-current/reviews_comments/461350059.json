@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461350059",
+  "pull_request_review_id":456339188,
+  "id":461350059,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MTM1MDA1OQ==",
+  "diff_hunk":"@@ -92,3 +95,71 @@\n       (string/replace x #\"PM\" \"pm\"))))\n \n \n+;; -- Linked & Unlinked References ----------\n+\n+(defn get-ref-ids\n+  [pattern]\n+  @(q '[:find [?e ...]\n+        :in $ ?regex\n+        :where\n+        [?e :block/string ?s]\n+        [(re-find ?regex ?s)]]\n+      db/dsdb\n+      pattern))\n+\n+\n+(defn merge-parents-and-block\n+  [ref-ids]\n+  (let [parents (reduce-kv (fn [m _ v] (assoc m v (db/get-parents-recursively v)))\n+                           {}\n+                           ref-ids)\n+        blocks (map (fn [id] (db/get-block-document id)) ref-ids)]\n+    (mapv\n+      (fn [block]\n+        (merge block {:block/parents (get parents (:db/id block))}))\n+      blocks)))\n+\n+\n+(defn group-by-parent\n+  [blocks]\n+  (group-by (fn [x]\n+              (-> x\n+                  :block/parents\n+                  first\n+                  :node/title))\n+            blocks))\n+\n+\n+(defn get-data\n+  [pattern]\n+  (-> pattern get-ref-ids merge-parents-and-block group-by-parent seq))\n+\n+\n+(defn get-data-by-block\n+  [pattern]\n+  (-> pattern get-ref-ids merge-parents-and-block seq))",
+  "path":"src/cljs/athens/util.cljs",
+  "position":56,
+  "original_position":56,
+  "commit_id":"09813133ad733ab31e820a4f523b7f949dbf964a",
+  "original_commit_id":"641ee3ee6349b2d6e33bc2c92d861e39c47ef51f",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Basically get data by block doesn't group references by their source page. Since this could also be useful later (for various counting, graph, etc), I kept it a separate function.",
+  "created_at":"2020-07-28 06:35:29 UTC",
+  "updated_at":"2020-07-28 18:57:03 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/297#discussion_r461350059",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/297",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461350059"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/297#discussion_r461350059"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/297"
+    }
+  },
+  "start_line":133,
+  "original_start_line":133,
+  "start_side":"RIGHT",
+  "line":140,
+  "original_line":140,
+  "side":"RIGHT",
+  "in_reply_to_id":461227607
+}

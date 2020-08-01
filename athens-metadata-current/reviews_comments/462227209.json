@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/462227209",
+  "pull_request_review_id":457428971,
+  "id":462227209,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MjIyNzIwOQ==",
+  "diff_hunk":"@@ -489,9 +489,6 @@\n \n (defn count-linked-references-excl-uid\n   [title uid]\n-  (reduce (fn [current-count ref]\n-            (if (= (:block/uid ref) uid)\n-              current-count\n-              (inc current-count)))\n-          0\n-          (get-linked-references-by-block title)))\n+  (->> (get-linked-references-by-block title)\n+       (remove #(= (:block/uid %) uid))\n+       count))",
+  "path":"src/cljs/athens/db.cljs",
+  "position":12,
+  "original_position":12,
+  "commit_id":"e60685a1463e159dfeac0a2782e1299cec434398",
+  "original_commit_id":"e60685a1463e159dfeac0a2782e1299cec434398",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Thank you! This definitely is much more readable and intuitive. Just a small styling suggestion: maybe move line 494 up to 493 so that the `remove` function is together?",
+  "created_at":"2020-07-29 11:24:56 UTC",
+  "updated_at":"2020-07-29 11:26:58 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/307#discussion_r462227209",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/307",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/462227209"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/307#discussion_r462227209"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/307"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":494,
+  "original_line":494,
+  "side":"RIGHT"
+}

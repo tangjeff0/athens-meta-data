@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/430104730",
+  "pull_request_review_id":417909054,
+  "id":430104730,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMDEwNDczMA==",
+  "diff_hunk":"@@ -0,0 +1,310 @@\n+(ns athens.devcards.sci-boxes\n+  (:require\n+    [cljsjs.react]\n+    [cljsjs.react.dom]",
+  "path":"src/cljs/athens/devcards/sci_boxes.cljs",
+  "position":4,
+  "original_position":4,
+  "commit_id":"efbed68e3441a6295c419fdabaa271cd2588d4f1",
+  "original_commit_id":"5a0b98420804a21e93823112d84ddce7adb2e962",
+  "user":{
+    "login":"tomisme",
+    "id":7482194,
+    "node_id":"MDQ6VXNlcjc0ODIxOTQ=",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/7482194?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tomisme",
+    "html_url":"https://github.com/tomisme",
+    "followers_url":"https://api.github.com/users/tomisme/followers",
+    "following_url":"https://api.github.com/users/tomisme/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tomisme/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tomisme/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tomisme/subscriptions",
+    "organizations_url":"https://api.github.com/users/tomisme/orgs",
+    "repos_url":"https://api.github.com/users/tomisme/repos",
+    "events_url":"https://api.github.com/users/tomisme/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tomisme/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I'm not sure why these react imports are necessary but I get \"React is not defined\" when they're not there",
+  "created_at":"2020-05-26 00:29:25 UTC",
+  "updated_at":"2020-05-26 16:09:47 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/91#discussion_r430104730",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/91",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/430104730"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/91#discussion_r430104730"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/91"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":4,
+  "original_line":4,
+  "side":"RIGHT"
+}

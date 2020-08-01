@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439085408",
+  "pull_request_review_id":429297285,
+  "id":439085408,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTA4NTQwOA==",
+  "diff_hunk":"@@ -1,23 +1,115 @@\n (ns athens.devcards.buttons\n   (:require\n+    [\"@material-ui/icons\" :as mui-icons]\n     [athens.db]\n-    [athens.style :refer [style-guide-css]]\n+    [athens.style :refer [base-styles]]\n     [cljsjs.react]\n     [cljsjs.react.dom]\n-    [devcards.core :refer-macros [defcard-rg]]))\n+    [devcards.core :refer-macros [defcard-rg]]\n+    [garden.selectors :as selectors]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n \n \n-(defcard-rg Import-Styles\n-  [style-guide-css])\n+;; STYLES\n+\n+(def buttons-style\n+  {:cursor \"pointer\"\n+   :padding          \"6px 10px\"\n+   :margin           \"0\"\n+   :font-family      \"inherit\"\n+   :font-size        \"inherit\"\n+   :border-radius    \"4px\"\n+   :font-weight      \"500\"\n+   :border           \"none\"\n+   :display          \"inline-flex\"\n+   :align-items      \"center\"\n+   :color            \"rgba(50, 47, 56, 1)\"\n+   :background-color \"transparent\"\n+   :transition       \"all 0.05s ease\"\n+   ::stylefy/mode [[:hover {:background-color \"#EFEDEB\"}]\n+                   [:active {:color \"rgba(0, 117, 225)\"\n+                             :background-color \"rgba(0, 117, 225, 0.1)\"}]\n+                   [:disabled {:color \"rgba(0, 0, 0, 0.3)\"\n+                               :background-color \"#EFEDEB\"\n+                               :cursor \"default\"}]]\n+   ::stylefy/manual [[:svg {:margin-block-start \"-0.0835em\"\n+                            :margin-block-end \"-0.0835em\"}\n+                      [(selectors/& (selectors/not (selectors/last-child))) {:margin-inline-end \"0.251em\"}]\n+                      [(selectors/& (selectors/not (selectors/first-child))) {:margin-inline-start \"0.251em\"}]\n+                      [(selectors/& ((selectors/first-child (selectors/last-child)))) {:margin-inline-start \"-4px\"\n+                                                                                       :margin-inline-end \"-4px\"}]]]})\n+\n+\n+(def buttons-primary-style\n+  (merge buttons-style {:color \"rgba(0, 117, 225)\"\n+                        :background-color \"rgba(0, 117, 225, 0.1)\"\n+                        ::stylefy/mode [[:hover {:background-color \"rgba(0, 117, 225, 0.25)\"}]\n+                                        [:active {:color \"white\"\n+                                                  :background-color \"rgba(0, 117, 225, 1)\"}]\n+                                        [:disabled {:color \"rgba(0, 0, 0, 0.3)\"\n+                                                    :background-color \"#EFEDEB\"\n+                                                    :cursor \"default\"}]]}))\n+\n+\n+;; COMPONENTS\n \n+(defn button\n+  [{:keys [disabled label on-click-fn style]}]\n+  [:button (use-style (merge buttons-style style) {:disabled disabled\n+                                                   :on-click on-click-fn})\n+   [:<> label]])\n \n-(defcard-rg Button\n-  [:button \"Press Me\"])\n \n+(defn button-primary\n+  [{:keys [disabled label on-click-fn style]}]\n+  [:button (use-style (merge buttons-primary-style style) {:disabled disabled\n+                                                           :on-click on-click-fn})\n+   [:<> label]])\n \n-(defcard-rg Disabled-Button\n-  [:button {:disabled true} \"Disabled\"])\n+\n+;; DEVCARDS\n+\n+(defcard-rg Import-Styles\n+  [base-styles])\n+\n+\n+(defcard-rg Default-Button\n+  [:div (use-style {:display \"grid\" :grid-auto-flow \"column\" :justify-content \"flex-start\" :grid-gap \"8px\"})\n+   [button {:label \"Button\"}]\n+   [button {:label [:> mui-icons/Face]}]\n+   [button {:label [:<>\n+                    [:> mui-icons/Face]\n+                    [:span \"Button\"]]}]\n+   [button {:label [:<>\n+                    [:span \"Button\"]\n+                    [:> mui-icons/ChevronRight]]}]\n+   [button {:disabled true :label \"Button\"}]\n+   [button {:disabled true :label [:> mui-icons/Face]}]\n+   [button {:disabled true :label [:<>\n+                                   [:> mui-icons/Face]\n+                                   [:span \"Button\"]]}]\n+   [button {:disabled true :label [:<>\n+                                   [:span \"Button\"]\n+                                   [:> mui-icons/ChevronRight]]}]])",
+  "path":"src/cljs/athens/devcards/buttons.cljs",
+  "position":101,
+  "original_position":101,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"THESE BUTTONS!!!!!!!!!!!!!!",
+  "created_at":"2020-06-11 21:41:32 UTC",
+  "updated_at":"2020-06-11 21:51:33 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439085408",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439085408"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439085408"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":76,
+  "original_start_line":76,
+  "start_side":"RIGHT",
+  "line":93,
+  "original_line":93,
+  "side":"RIGHT"
+}

@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449652928",
+  "pull_request_review_id":442494119,
+  "id":449652928,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTY1MjkyOA==",
+  "diff_hunk":"@@ -49,42 +54,88 @@\n \n \n (defn breadcrumbs-list\n-  [& children]\n-  (into [:ol (use-style breadcrumbs-list-style) children]))\n+  [{:keys [style]} & children]\n+  (into [:ol (use-style (merge breadcrumbs-list-style style)) children]))\n \n \n (defn breadcrumb\n-  [{:keys [key]} & label]\n-  [:li (use-style breadcrumb-style {:key key})\n-   [:a {:href \"#\"} label]])\n+  [{:keys [style on-click]} & label]\n+  [:li (use-style (merge breadcrumb-style style) {:title label})\n+   [:a {:on-click on-click} label]])\n \n \n ;;; Devcards\n \n \n (defcard-rg Normal-Breadcrumb\n-  [breadcrumbs-list\n+  [breadcrumbs-list {}",
+  "path":"src/cljs/athens/devcards/breadcrumbs.cljs",
+  "position":61,
+  "original_position":61,
+  "commit_id":"a9f2cbb5ca690caeb2f54ff647498012bd35572d",
+  "original_commit_id":"30d5ce10db9a220b4655617a0c5222738b56d4ec",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I think one way to let developer not have to pass in an empty property map is to give one- and two-arity signatures to the components.\r\n\r\n```\r\n(defn breadcrumbs-list\r\n  ([& children]\r\n   (into [:ol (use-style breadcrumbs-list-style) children]))\r\n  ([{:keys [style]} & children]\r\n   (into [:ol (use-style (merge breadcrumbs-list-style style)) children])))\r\n```\r\n\r\nA pattern I often see with these kinds of simple lists, is to pass in the list data to the main parent component. It might look like:\r\n\r\n```\r\n(def data [\"Lorem\" \"Ipsum\" \"Athens\"])\r\n(defn component\r\n  []\r\n  [breadcrumbs-list (use-style {:color \"blue\"} {:data data})])\r\n```\r\n\r\n`breadcrumbs-list` is then in charge of iterating over the loop, and the API is simplified in a way. I'm not saying we should necessarily do this, just thinking about API design\r\n\r\n",
+  "created_at":"2020-07-03 16:28:15 UTC",
+  "updated_at":"2020-07-04 16:22:54 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/211#discussion_r449652928",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/211",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449652928"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/211#discussion_r449652928"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/211"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":71,
+  "original_line":71,
+  "side":"RIGHT"
+}

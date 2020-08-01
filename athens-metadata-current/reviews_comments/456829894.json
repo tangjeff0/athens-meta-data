@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456829894",
+  "pull_request_review_id":451083382,
+  "id":456829894,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjgyOTg5NA==",
+  "diff_hunk":"@@ -58,6 +58,12 @@\n \n \n (defn breadcrumb\n-  [{:keys [style on-click]} & label]\n-  [:li (use-style (merge breadcrumb-style style) {:title label})\n-   [:a {:on-click on-click} label]])\n+  \"Keep interface as close to vanilla hiccup as possible.\n+  Dissoc :style :active and :class because we don't want to merge them in directly.\n+  Can pass in a :key prop to make react happy, as a :key or ^{:key}. Just works\"\n+  ([children] [breadcrumb {} children])\n+  ([{:keys [style class] :as props} children]\n+   (let [props- (dissoc props :style :class)]\n+     [:li (use-style (merge breadcrumb-style style))\n+      [:a (merge props- {:class class})",
+  "path":"src/cljs/athens/views/breadcrumbs.cljs",
+  "position":null,
+  "original_position":14,
+  "commit_id":"a531d47c9702ca21e993d65007303d34b54b595d",
+  "original_commit_id":"d9395a7a06196e923e841ab770ecf0b17fcb4882",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Don't believe we need to pluck the `class` key. Can just merge in along with all other props.",
+  "created_at":"2020-07-18 21:31:35 UTC",
+  "updated_at":"2020-07-18 21:57:08 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/278#discussion_r456829894",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/278",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456829894"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/278#discussion_r456829894"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/278"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":68,
+  "side":"RIGHT"
+}

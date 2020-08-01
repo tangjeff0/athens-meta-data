@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453346658",
+  "pull_request_review_id":446898223,
+  "id":453346658,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MzM0NjY1OA==",
+  "diff_hunk":"@@ -4,15 +4,63 @@\n     [stylefy.core :as stylefy]))\n \n \n+;; (defn cssv\n+;;   ;; Helper for accessing CSS Custom Properties defined\n+;;   ;; in the application's :root\n+;;   ([variable]\n+;;    ;; When the variable is alone, reformat it and pass it through\n+;;   (str \"var(--\" variable \")\"))\n+\n+;;   ([variable alpha]\n+;;    ;; 1. Create a new color with the requested alpha value\n+;;    ;; 1a. If this is a new color add it to the :root, with a logical name like \"link-color-50\" for blue at 50% opacity\n+;;    ;; 2. Return the custom property name of the new color\n+;;    (str \"var(--\" variable \"-\" alpha \")\")))\n+\n+\n (def COLORS\n+  {:link-color         \"#2399E7\"\n+   :highlight-color    \"#FBBE63\"\n+   :warning-color      \"#DE3C21\"\n+   :confirmation-color \"#189E36\"\n+   :header-text-color  \"#BABABA\"\n+   :body-text-color    \"#AAA\"\n+   :border-color       \"hsla(32, 81%, 90%, 0.08)\"\n+   :background-minus-1 \"#151515\"\n+   :background-minus-2 \"#111\"\n+   :background-color   \"#1A1A1A\"\n+   :background-plus-1  \"#222\"\n+   :background-plus-2  \"#333\"})\n+\n+\n+(def THEME-LIGHT\n   {:link-color         \"#0075E1\"\n    :highlight-color    \"#F9A132\"\n    :warning-color      \"#D20000\"\n    :confirmation-color \"#009E23\"\n    :header-text-color  \"#322F38\"\n    :body-text-color    \"#433F38\"\n-   :panel-color        \"#EFEDEB\"\n-   :app-bg-color       \"#FFFFFF\"})\n+   :border-color       \"hsla(32, 81%, 10%, 0.08)\"\n+   :background-plus-2  \"#FFFFFF\"\n+   :background-plus-1  \"#FFFFFF\"\n+   :background-color   \"#FFFFFF\"\n+   :background-minus-1 \"#FAF8F6\"\n+   :background-minus-2 \"#EFEDEB\"})\n+\n+\n+(def THEME-DARK",
+  "path":"src/cljs/athens/style.cljs",
+  "position":null,
+  "original_position":50,
+  "commit_id":"d169535d3cf159050ad0eb482b0d2898e7ca69d7",
+  "original_commit_id":"3793624245ad3df2098c9627916d1ae9c66bdbd2",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"`(def THEME-DARK COLORS)` for now",
+  "created_at":"2020-07-12 18:11:41 UTC",
+  "updated_at":"2020-07-12 19:55:41 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/242#discussion_r453346658",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/242",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453346658"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/242#discussion_r453346658"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/242"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":51,
+  "side":"RIGHT"
+}

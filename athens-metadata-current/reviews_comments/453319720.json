@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453319720",
+  "pull_request_review_id":446880754,
+  "id":453319720,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MzMxOTcyMA==",
+  "diff_hunk":"@@ -22,10 +23,11 @@\n (def app-wrapper-style\n   {:display \"grid\"\n    :grid-template-areas\n-   \"'left-sidebar main-content secondary-content'\n+   \"'app-header app-header app-header'\n+    'left-sidebar main-content secondary-content'\n    'devtool devtool devtool'\"",
+  "path":"src/cljs/athens/views.cljs",
+  "position":24,
+  "original_position":24,
+  "commit_id":"5be44a2b6a67a9a473b2a8a33529a249318feb89",
+  "original_commit_id":"4e233d4b0278d44ba7c172eb34bb822fb9c425b0",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"```clojure\r\n[[\"'app-header app-header app-header'\"\r\n  \"'left-sidebar main-content secondary-content'\"\r\n  \"'devtool devtool devtool'\"]]\r\n```\r\nvs \r\n\r\n```clojure\r\n\"'app-header app-header app-header'\r\n 'left-sidebar main-content secondary-content'\r\n 'devtool devtool devtool'\"\r\n```\r\n\r\nAssuming I'm doing this correctly, given the formatting of the required CSS output, I think the regular string is simpler.",
+  "created_at":"2020-07-12 13:55:48 UTC",
+  "updated_at":"2020-07-12 13:55:48 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/246#discussion_r453319720",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/246",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453319720"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/246#discussion_r453319720"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/246"
+    }
+  },
+  "start_line":26,
+  "original_start_line":26,
+  "start_side":"RIGHT",
+  "line":28,
+  "original_line":28,
+  "side":"RIGHT",
+  "in_reply_to_id":453255857
+}

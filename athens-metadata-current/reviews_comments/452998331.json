@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/452998331",
+  "pull_request_review_id":446601521,
+  "id":452998331,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Mjk5ODMzMQ==",
+  "diff_hunk":"@@ -23,41 +38,49 @@\n    :border           \"none\"\n    :display          \"inline-flex\"\n    :align-items      \"center\"\n-   :color            \"rgba(50, 47, 56, 1)\"\n+   :color            (color :body-text-color)\n    :background-color \"transparent\"\n-   :transition       \"all 0.05s ease\"\n-   ::stylefy/mode [[:hover {:background-color \"#EFEDEB\"}]\n-                   [:active {:color \"rgba(0, 117, 225)\"\n-                             :background-color \"rgba(0, 117, 225, 0.1)\"}]\n-                   [:disabled {:color \"rgba(0, 0, 0, 0.3)\"\n-                               :background-color \"#EFEDEB\"\n-                               :cursor \"default\"}]]\n-   ::stylefy/manual [[:svg {:margin-block-start \"-0.0835em\"\n-                            :margin-block-end \"-0.0835em\"}\n-                      [(selectors/& (selectors/not (selectors/last-child))) {:margin-inline-end \"0.251em\"}]\n-                      [(selectors/& (selectors/not (selectors/first-child))) {:margin-inline-start \"0.251em\"}]\n-                      [(selectors/& ((selectors/first-child (selectors/last-child)))) {:margin-inline-start \"-4px\"\n-                                                                                       :margin-inline-end \"-4px\"}]]\n+   :transition       \"all 0.075s ease\"\n+   ::stylefy/manual [[:&:hover {:background (darken (color :panel-color :opacity-low) 10)}]\n+                     [:&:active\n+                      :&:hover:active\n+                      :&.active {:color (color :body-text-color)\n+                                 :background-color  (darken (color :panel-color :opacity-med) 10)}]\n+                     [:&:disabled {:color (color :body-text-color 0.3)",
+  "path":"src/cljs/athens/views/buttons.cljs",
+  "position":null,
+  "original_position":52,
+  "commit_id":"f4f1c460ff3467f91519b5f70c36bcdffeb17f33",
+  "original_commit_id":"e514dcb2dc5ad2a1301fde3cde59e13f22c6908d",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I don't usually see special cursors on disabled buttons, usually it’s just the default arrow, rather than the pointing finger.",
+  "created_at":"2020-07-10 18:13:14 UTC",
+  "updated_at":"2020-07-10 19:26:02 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/237#discussion_r452998331",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/237",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/452998331"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/237#discussion_r452998331"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/237"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":49,
+  "side":"RIGHT",
+  "in_reply_to_id":452817200
+}

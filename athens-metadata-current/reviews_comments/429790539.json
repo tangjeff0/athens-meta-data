@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429790539",
+  "pull_request_review_id":417522803,
+  "id":429790539,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTc5MDUzOQ==",
+  "diff_hunk":"@@ -46,9 +46,9 @@ So why take part in the ClojureFam program?\n \n Questions come and go. Libraries and side-projects get abandoned. The flux of people can make us lose track of the individuals.",
+  "path":"doc/ClojureFam.md",
+  "position":null,
+  "original_position":2,
+  "commit_id":"1df38e3865680f980b7d8f99e9938f5cfdef2773",
+  "original_commit_id":"18190c5945c52bf649122ee82284e091c993bad3",
+  "user":{
+    "login":"KasperZutterman",
+    "id":21260838,
+    "node_id":"MDQ6VXNlcjIxMjYwODM4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/21260838?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/KasperZutterman",
+    "html_url":"https://github.com/KasperZutterman",
+    "followers_url":"https://api.github.com/users/KasperZutterman/followers",
+    "following_url":"https://api.github.com/users/KasperZutterman/following{/other_user}",
+    "gists_url":"https://api.github.com/users/KasperZutterman/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/KasperZutterman/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/KasperZutterman/subscriptions",
+    "organizations_url":"https://api.github.com/users/KasperZutterman/orgs",
+    "repos_url":"https://api.github.com/users/KasperZutterman/repos",
+    "events_url":"https://api.github.com/users/KasperZutterman/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/KasperZutterman/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"```suggestion\r\nQuestions come and go. Libraries and side-projects get abandoned. The flux of people can make us lose track of individuals.\r\n```",
+  "created_at":"2020-05-25 08:02:19 UTC",
+  "updated_at":"2020-05-25 20:26:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/82#discussion_r429790539",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/82",
+  "author_association":"NONE",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429790539"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/82#discussion_r429790539"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/82"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":47,
+  "side":"RIGHT"
+}

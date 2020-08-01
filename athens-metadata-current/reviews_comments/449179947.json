@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449179947",
+  "pull_request_review_id":441744763,
+  "id":449179947,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTE3OTk0Nw==",
+  "diff_hunk":"@@ -70,6 +70,19 @@\n     (update-in db [:right-sidebar/items item :open] not)))\n \n \n+(reg-event-db\n+  :update-show-recent?\n+  (fn-traced [db [_ show]]\n+    (assoc db :show-recent? show)))",
+  "path":"src/cljs/athens/events.cljs",
+  "position":null,
+  "original_position":7,
+  "commit_id":"93fdb08d2ea2eaf07a5004bbadcce682dcd15276",
+  "original_commit_id":"8f3de4e561ca55104f3c5aee5f8f89cd36205aff",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Already mentioned that we don't need a separate `:show-recent?` key-value in re-frame. But you can see other examples of this kind of toggle functionality. \r\n\r\nGoing forward, you want to write something more like `(update db :keyword not)` This is a functional approach to mutating, compared to what you did which passes in values unnecessarily: `(dispatch [:update-show-recent? false])`",
+  "created_at":"2020-07-02 17:52:05 UTC",
+  "updated_at":"2020-07-04 18:06:55 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/208#discussion_r449179947",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/208",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449179947"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/208#discussion_r449179947"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/208"
+    }
+  },
+  "start_line":null,
+  "original_start_line":73,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":76,
+  "side":"RIGHT"
+}

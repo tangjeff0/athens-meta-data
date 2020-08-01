@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/442999736",
+  "pull_request_review_id":434285263,
+  "id":442999736,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0Mjk5OTczNg==",
+  "diff_hunk":"@@ -110,6 +110,8 @@\n \n (defcard-doc \"\n   Apply sub-styles with Stylefy's `(use-sub-style)` function.\n+              \n+  Don't create empty sub-styles, as this may silently break Stylefy processing.",
+  "path":"src/cljs/athens/devcards/styling_with_stylefy.cljs",
+  "position":5,
+  "original_position":5,
+  "commit_id":"e0374ee7c2ca7732393bc4ac32cc4483cee25f90",
+  "original_commit_id":"b718468567a80be4705f3ea6ea0c81fff119bbe0",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Not an area I can reasonably expect to make helpful changes, but I'll think about what to do.",
+  "created_at":"2020-06-19 18:58:41 UTC",
+  "updated_at":"2020-06-19 18:58:42 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/157#discussion_r442999736",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/157",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/442999736"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/157#discussion_r442999736"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/157"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":114,
+  "original_line":114,
+  "side":"RIGHT",
+  "in_reply_to_id":442876831
+}

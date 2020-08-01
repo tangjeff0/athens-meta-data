@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456904214",
+  "pull_request_review_id":451128293,
+  "id":456904214,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjkwNDIxNA==",
+  "diff_hunk":"@@ -0,0 +1,25 @@\n+(ns athens.components.components-util",
+  "path":"src/cljs/athens/components/components_util.cljs",
+  "position":null,
+  "original_position":1,
+  "commit_id":"c1c56ff92f119287e1f8b5aa7749de7ef10a0521",
+  "original_commit_id":"ffd33d3c66c439c5ccd5ede9a1549f9e8579688b",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Not only did I mean to use `cljs` instead `cljc`, I meant that all 3 files can be in one components file. I prefer monolithic files rather than fragmenting across several files, until it's absolutely necessary. See how big `events` and `db` are!\r\n\r\nhttps://github.com/athensresearch/athens/pull/274#discussion_r456837520",
+  "created_at":"2020-07-19 12:41:52 UTC",
+  "updated_at":"2020-07-20 01:13:43 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/274#discussion_r456904214",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/274",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456904214"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/274#discussion_r456904214"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/274"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":1,
+  "side":"RIGHT"
+}

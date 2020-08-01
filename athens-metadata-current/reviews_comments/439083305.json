@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439083305",
+  "pull_request_review_id":429297285,
+  "id":439083305,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTA4MzMwNQ==",
+  "diff_hunk":"@@ -178,28 +246,27 @@\n                         (swap! *cache assoc query result)\n                         (reset! *match [query result])))))]\n     (when @athena?\n-      [:div +container\n-       [:div {:style {:box-shadow \"inset 0px -1px 0px rgba(0, 0, 0, 0.1)\"}}\n-        [:input (with-attributes +athena-input\n-                  {:type        \"search\"\n-                   :placeholder \"Find or Create Page\",\n-                   :on-change   handler})]]\n+      [:div (use-style container-style)\n+       [:input (use-style athena-input-style\n+                          {:type        \"search\"\n+                           :auto-focus  true\n+                           :placeholder \"Find or Create Page\"\n+                           :on-change   handler})]\n        [recent]\n        [(fn []\n           (let [[query {:keys [pages blocks] :as result}] @*match]\n             (when result\n-              [:div (with-styles +query)\n+              [:div (use-style results-list-style)\n                (for [[i x] (map-indexed list (take 40 (concat (take 20 pages) blocks)))]\n                  (let [parent (:block/parent x)\n                        page-title (or (:node/title parent) (:node/title x))\n                        block-uid (or (:block/uid parent) (:block/uid x))\n                        block-string (:block/string x)]\n-                   [:div (with-attributes {:class \"athena-result\" :key i :on-click #(navigate-page block-uid)})\n-                    [:div\n-                     [:h4 (highlight-match query page-title)]\n-                     (when block-string\n-                       [:span (highlight-match query block-string)])]\n-                    [:h4 (with-styles {:margin-left \"auto\"}) [:> mui-icons/ChevronRight]]]))])))]])))\n+                   [:div (use-style result-style {:key i :on-click #(navigate-page block-uid)})\n+                    [:h4.title (use-sub-style result-style :title) (highlight-match query page-title)]\n+                    (when block-string\n+                      [:span.preview (use-sub-style result-style :preview) (highlight-match query block-string)])\n+                    [:span.link-leader (use-sub-style result-style :link-leader) \"->\"]]))])))]])))",
+  "path":"src/cljs/athens/devcards/athena.cljs",
+  "position":265,
+  "original_position":265,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"No icon? 😢 ",
+  "created_at":"2020-06-11 21:36:12 UTC",
+  "updated_at":"2020-06-11 21:51:33 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439083305",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439083305"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439083305"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":269,
+  "original_line":269,
+  "side":"RIGHT"
+}

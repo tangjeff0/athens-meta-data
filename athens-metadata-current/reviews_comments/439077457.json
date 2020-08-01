@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439077457",
+  "pull_request_review_id":429297285,
+  "id":439077457,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTA3NzQ1Nw==",
+  "diff_hunk":"@@ -51,37 +55,82 @@\n     (.toLocaleString  (js/Date. x))))\n \n \n+(def table-cell-background-color-hover\n+  (opacify (:panel-color HSL-COLORS) (first OPACITIES)))",
+  "path":"src/cljs/athens/devcards/all_pages.cljs",
+  "position":40,
+  "original_position":40,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I'd like to come up with a cleaner way to do colors and opacities down the line. Ideally, we don't need to import too many constants, and can use more `+style` functions.",
+  "created_at":"2020-06-11 21:22:17 UTC",
+  "updated_at":"2020-06-11 21:51:33 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439077457",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439077457"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439077457"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":58,
+  "original_start_line":58,
+  "start_side":"RIGHT",
+  "line":59,
+  "original_line":59,
+  "side":"RIGHT"
+}

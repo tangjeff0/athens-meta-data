@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432882181",
+  "pull_request_review_id":421438763,
+  "id":432882181,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMjg4MjE4MQ==",
+  "diff_hunk":"@@ -15,28 +15,32 @@\n   \"Transforms Instaparse output to Hiccup.\"\n   [tree]\n   (insta/transform\n-    {:block      (fn [& contents]\n-                   (concat [:span {:class \"block\"}] contents))\n-     :block-link (fn [title]\n-                   (let [id (subscribe [:block/uid [:node/title title]])]\n-                     [:span {:class \"block-link\"}\n-                      [:span {:style {:color \"gray\"}} \"[[\"]\n-                      [:a {:href  (rfee/href :page {:id (:block/uid @id)})\n-                           :style {:text-decoration \"none\" :color \"dodgerblue\"}} title]\n-                      [:span {:style {:color \"gray\"}} \"]]\"]]))\n-     :block-ref  (fn [id]\n-                   (let [string (subscribe [:block/string [:block/uid id]])]\n-                     [:span {:class \"block-ref\"\n-                             :style {:font-size \"0.9em\" :border-bottom \"1px solid gray\"}}\n-                      [:a {:href (rfee/href :page {:id id})} (parse-and-render (:block/string @string))]]))\n-     :hashtag    (fn [tag-name]\n-                   (let [id (subscribe [:block/uid [:node/title tag-name]])]\n-                     [:a {:class \"hashtag\"\n-                          :style {:color \"gray\" :text-decoration \"none\" :font-weight \"bold\"}\n-                          :href  (rfee/href :page {:id (:block/uid @id)})}\n-                      (str \"#\" tag-name)]))\n-     :bold       (fn [text]\n-                   [:strong {:class \"bold\"} text])}\n+    {:block     (fn [& contents]\n+                  (concat [:span {:class \"block\"}] contents))\n+     :page-link (fn [title]\n+                  (let [id (subscribe [:block/uid [:node/title title]])]\n+                    [:span {:class \"page-link\"}\n+                     [:span {:style {:color \"gray\"}} \"[[\"]\n+                     [:a {:href  (rfee/href :page {:id (:block/uid @id)})\n+                          :style {:text-decoration \"none\" :color \"dodgerblue\"}} title]\n+                     [:span {:style {:color \"gray\"}} \"]]\"]]))\n+     :block-ref (fn [id]\n+                  (let [string (subscribe [:block/string [:block/uid id]])]\n+                    [:span {:class \"block-ref\"\n+                            :style {:font-size \"0.9em\" :border-bottom \"1px solid gray\"}}\n+                     [:a {:href (rfee/href :page {:id id})} (parse-and-render (:block/string @string))]]))\n+     :hashtag   (fn [tag-name]\n+                  (let [id (subscribe [:block/uid [:node/title tag-name]])]\n+                    [:a {:class \"hashtag\"\n+                         :style {:color \"gray\" :text-decoration \"none\" :font-weight \"bold\"}\n+                         :href  (rfee/href :page {:id (:block/uid @id)})}\n+                     (str \"#\" tag-name)]))\n+     :url-link  (fn [{url :url} text]\n+                  [:a {:class \"url-link\"\n+                       :href url}\n+                   text])\n+     :bold      (fn [text]\n+                  [:strong {:class \"bold\"} text])}",
+  "path":"src/cljs/athens/parse_renderer.cljs",
+  "position":51,
+  "original_position":51,
+  "commit_id":"3805136306fd0804e08f176e254a2ac9d6733008",
+  "original_commit_id":"3805136306fd0804e08f176e254a2ac9d6733008",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"The only thing I can think of to make this more robust against indenting changes, is extracting the different parts to functions (e.g. `:page-link page-link`) ",
+  "created_at":"2020-05-30 19:52:44 UTC",
+  "updated_at":"2020-05-30 19:53:13 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/105#discussion_r432882181",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/105",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432882181"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/105#discussion_r432882181"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/105"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":43,
+  "original_line":43,
+  "side":"RIGHT"
+}

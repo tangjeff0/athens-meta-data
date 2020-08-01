@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456829693",
+  "pull_request_review_id":451083382,
+  "id":456829693,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjgyOTY5Mw==",
+  "diff_hunk":"@@ -44,54 +44,40 @@\n                      [:&:active\n                       :&:hover:active\n                       :&.is-active {:color (color :body-text-color)\n-                                    :background-color  (color :body-text-color :opacity-low)}]\n+                                    :background (color :body-text-color :opacity-low)}]\n                      [:&:disabled :&:disabled:active {:color (color :body-text-color 0.3)\n-                                                      :background-color (color :body-text-color :opacity-lower)\n+                                                      :background (color :body-text-color :opacity-lower)\n                                                       :cursor \"default\"}]\n                      [:span {:flex \"1 0 auto\"\n                              :text-align \"left\"}]\n-                     [:kbd {:margin-inline-start \"1rem\"}]\n-                     [:.MuiSvgIcon-root button-icons-style\n+                     [:kbd {:margin-inline-start \"1rem\"\n+                            :font-size \"85%\"}]\n+                     [:svg button-icons-style\n                       [(selectors/& (selectors/not (selectors/last-child))) button-icons-not-last-child-style]\n                       [(selectors/& (selectors/not (selectors/first-child))) button-icons-not-first-child-style]\n-                      [(selectors/& ((selectors/first-child (selectors/last-child)))) button-icons-only-child-style]]]})\n-\n-\n-(def buttons-primary-style\n-  (merge buttons-style {:color (color :link-color)\n-                        :background-color (color :link-color :opacity-lower)\n-                        ::stylefy/manual [[:&:hover {:background (color :link-color :opacity-low)}]\n-                                          [:&:active\n-                                           :&:hover:active\n-                                           :&.is-active {:color \"white\"\n-                                                         :background-color (color :link-color)}]\n-                                          [:&:disabled :&:disabled:active {:color (color :body-text-color 0.3)\n-                                                                           :background-color (color :body-text-color :opacity-lower)\n-                                                                           :cursor \"default\"}]\n-                                          [:span {:flex \"1 0 auto\"\n-                                                  :text-align \"left\"}]\n-                                          [:.MuiSvgIcon-root button-icons-style\n-                                           [(selectors/& (selectors/not (selectors/last-child))) button-icons-not-last-child-style]\n-                                           [(selectors/& (selectors/not (selectors/first-child))) button-icons-not-first-child-style]\n-                                           [(selectors/& ((selectors/first-child (selectors/last-child)))) button-icons-only-child-style]]]}))\n+                      [(selectors/& ((selectors/first-child (selectors/last-child)))) button-icons-only-child-style]]\n+                     [:&.is-primary {:color (color :link-color)\n+                                     :background (color :link-color :opacity-lower)}\n+                      [:&:hover {:background (color :link-color :opacity-low)}]\n+                      [:&:active\n+                       :&:hover:active\n+                       :&.is-active {:color \"white\"\n+                                     :background (color :link-color)}]\n+                      [:&:disabled :&:disabled:active {:color (color :body-text-color 0.3)\n+                                                       :background (color :body-text-color :opacity-lower)\n+                                                       :cursor \"default\"}]]]})\n \n \n ;;; Components\n \n \n (defn button\n-  \"Creates a button control\"\n-  [{:keys [disabled label on-click-fn style active class]}]\n-  [:button (use-style (merge buttons-style style) {:disabled disabled\n-                                                   :on-click on-click-fn\n-                                                   :class [class (when active \"is-active\")]})\n-   label])\n-\n-\n-(defn button-primary\n-  \"Creates a button control\"\n-  [{:keys [disabled label on-click-fn style active class]}]\n-  [:button (use-style (merge buttons-primary-style style) {:disabled disabled\n-                                                           :on-click on-click-fn\n-                                                           :class [class (when active \"is-active\")]})",
+  "path":"src/cljs/athens/views/buttons.cljs",
+  "position":69,
+  "original_position":69,
+  "commit_id":"a531d47c9702ca21e993d65007303d34b54b595d",
+  "original_commit_id":"d9395a7a06196e923e841ab770ecf0b17fcb4882",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Great job factoring out `button-primary`. Didn't see that coming!",
+  "created_at":"2020-07-18 21:28:43 UTC",
+  "updated_at":"2020-07-18 21:57:08 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/278#discussion_r456829693",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/278",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456829693"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/278#discussion_r456829693"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/278"
+    }
+  },
+  "start_line":91,
+  "original_start_line":91,
+  "start_side":"LEFT",
+  "line":96,
+  "original_line":96,
+  "side":"LEFT"
+}

@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/442879469",
+  "pull_request_review_id":434126746,
+  "id":442879469,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0Mjg3OTQ2OQ==",
+  "diff_hunk":"@@ -132,3 +134,20 @@\n   ```clojure\n   [:div (use-style cursor-trail-style) {:style {:left x :top y}}]\n   ```\")\n+\n+\n+(defcard-doc \"\n+  Avoid creating styles that will be frequently updated, because this forces Stylefy to create a new class for each update.\n+  \n+  In these cases, pass the style directly to the element to update it inline.\n+  \n+  ```clojure\n+  [:div (use-style cursor-trail-style) {:style {:left x :top y}}]\n+  ```\")",
+  "path":"src/cljs/athens/devcards/styling_with_stylefy.cljs",
+  "position":null,
+  "original_position":22,
+  "commit_id":"e0374ee7c2ca7732393bc4ac32cc4483cee25f90",
+  "original_commit_id":"b718468567a80be4705f3ea6ea0c81fff119bbe0",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Needs `merge`\r\n\r\n```\r\n(defn button-with-dynamic-position [text color x y]\r\n  [:button (merge (use-style (custom-primary-button-style color))\r\n                  {:style {:left x :top y}})\r\n    text])\r\n```\r\n^ \r\nAlso makes more sense to wrap in a function to emphasize parameterization. \r\n\r\nhttps://github.com/Jarzka/stylefy#combine--parametrise-styles",
+  "created_at":"2020-06-19 14:40:33 UTC",
+  "updated_at":"2020-06-19 18:56:47 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/157#discussion_r442879469",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/157",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/442879469"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/157#discussion_r442879469"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/157"
+    }
+  },
+  "start_line":null,
+  "original_start_line":144,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":146,
+  "side":"RIGHT"
+}

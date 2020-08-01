@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/459762844",
+  "pull_request_review_id":454535589,
+  "id":459762844,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1OTc2Mjg0NA==",
+  "diff_hunk":"@@ -58,18 +57,24 @@\n                                          :cursor \"alias\"}]]})\n \n ;;; Helper functions for recursive link rendering\n+(defn get-block-node-from-string\n+  \"Gets a block's node from the display string name (or partially parsed string tree)\"",
+  "path":"src/cljs/athens/parse_renderer.cljs",
+  "position":15,
+  "original_position":15,
+  "commit_id":"0f11dad3b0cd285a321b695e363759017ca2c473",
+  "original_commit_id":"5633662eb7a34f0d893b6ebc26d5635ce61be0b2",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I don't think a \"block's node\" is the right terminology. A node is a block. I'd call this `get-node-from-string` or `pull-node`.",
+  "created_at":"2020-07-23 22:27:51 UTC",
+  "updated_at":"2020-07-24 00:06:23 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/296#discussion_r459762844",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/296",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/459762844"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/296#discussion_r459762844"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/296"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":61,
+  "original_line":61,
+  "side":"RIGHT"
+}

@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426922478",
+  "pull_request_review_id":413975680,
+  "id":426922478,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjkyMjQ3OA==",
+  "diff_hunk":"@@ -0,0 +1,39 @@\n+(ns athens.db-test\n+  (:require [athens.db :as db]\n+            [cljs.test :as t :include-macros true :refer [deftest is testing]]))\n+\n+(def sample-roam-export-data-tuple \"[ \\\"?e\\\",\n+  \\\"?a\\\",\n+  \\\"?v\\\",\n+  \\\"5276\\\",\n+  \\\":block/order\\\",\n+  \\\"0\\\",\n+  \\\"4992\\\",\n+  \\\":edit/email\\\",\n+  \\\"\\\\\\\"tangj1122@gmail.com\\\\\\\"\\\",\n+  \\\"3173\\\",\n+  \\\":block/string\\\",\n+  \\\"\\\\\\\"**Reitit** is great for a high-performance, industrial-strength, full-control router—the kind of thing you could build a company on.\\\\\\\"\\\",\n+  \\\"93\\\",\n+  \\\":block/string\\\",\n+  \\\"\\\\\\\"Classification\\\\\\\"\\\"\n+ ]\")\n+\n+(deftest json-str-to-vector\n+  (testing \"Using the `sample-roam-export-data-tuple` above, we should be able to get a EDN-formatted representation.\"\n+    (let [-vector (db/json-str-to-vector sample-roam-export-data-tuple)]\n+      (is (vector? -vector))\n+\n+      (testing \"Notice, the first three items are structure indicators for the rest of the vector i.e. [?entity, ?attribute, ?value]\"\n+        (is (= (take 3 -vector) (list \"?e\" \"?a\" \"?v\")))))))\n+\n+(deftest parse-tuples\n+  (testing \"The data format `sample-roam-export-data-tuple` is not a random string vector, it is a vector where every 3 itens should be grouped as (?e,?a,?v).\"\n+    (let [-vector (db/json-str-to-vector sample-roam-export-data-tuple)\n+          ret (db/parse-tuples -vector)]\n+      (testing \"Notice, the first triplet is dropped because it only indicated the described structure.\"\n+        (is (not= (count ret) (/ (count -vector) 3)))\n+        (is (= (count ret) 4)))\n+\n+      (testing \"All tuples must have a `:db/add` first item which will be the used to create the fact inside our database.\"\n+        (is (every? some? (map first ret)))))))",
+  "path":"test/cljs/athens/db_test.cljs",
+  "position":39,
+  "original_position":39,
+  "commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "original_commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "user":{
+    "login":"wandersoncferreira",
+    "id":17708295,
+    "node_id":"MDQ6VXNlcjE3NzA4Mjk1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/17708295?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/wandersoncferreira",
+    "html_url":"https://github.com/wandersoncferreira",
+    "followers_url":"https://api.github.com/users/wandersoncferreira/followers",
+    "following_url":"https://api.github.com/users/wandersoncferreira/following{/other_user}",
+    "gists_url":"https://api.github.com/users/wandersoncferreira/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/wandersoncferreira/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/wandersoncferreira/subscriptions",
+    "organizations_url":"https://api.github.com/users/wandersoncferreira/orgs",
+    "repos_url":"https://api.github.com/users/wandersoncferreira/repos",
+    "events_url":"https://api.github.com/users/wandersoncferreira/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/wandersoncferreira/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Yes, indeed a `malli` spec would be better off here. I will submit a change to verify if each tuple is a valid fact to be transacted",
+  "created_at":"2020-05-18 22:17:36 UTC",
+  "updated_at":"2020-05-18 22:17:36 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/72#discussion_r426922478",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/72",
+  "author_association":"NONE",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426922478"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/72#discussion_r426922478"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/72"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":39,
+  "original_line":39,
+  "side":"RIGHT",
+  "in_reply_to_id":426453963
+}

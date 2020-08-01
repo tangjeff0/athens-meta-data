@@ -1,0 +1,137 @@
+[
+  {
+    "id":2217394639,
+    "node_id":"MDU6TGFiZWwyMjE3Mzk0NjM5",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/dependencies",
+    "name":"dependencies",
+    "color":"0366d6",
+    "default":false,
+    "description":"Pull requests that update a dependency file"
+  },
+  {
+    "id":2092499438,
+    "node_id":"MDU6TGFiZWwyMDkyNDk5NDM4",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/design:%20%E2%9C%85",
+    "name":"design: ✅",
+    "color":"6f6f6f",
+    "default":false,
+    "description":"design complete"
+  },
+  {
+    "id":2092499241,
+    "node_id":"MDU6TGFiZWwyMDkyNDk5MjQx",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/design:%20%E2%9D%87%EF%B8%8F",
+    "name":"design: ❇️",
+    "color":"6f6f6f",
+    "default":false,
+    "description":"design in progress"
+  },
+  {
+    "id":2092498757,
+    "node_id":"MDU6TGFiZWwyMDkyNDk4NzU3",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/design:%20%E2%9D%8E",
+    "name":"design: ❎",
+    "color":"6f6f6f",
+    "default":false,
+    "description":"design not started"
+  },
+  {
+    "id":2092490400,
+    "node_id":"MDU6TGFiZWwyMDkyNDkwNDAw",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/priority:%20%F0%9F%94%A5",
+    "name":"priority: 🔥",
+    "color":"d20000",
+    "default":false,
+    "description":""
+  },
+  {
+    "id":2092490010,
+    "node_id":"MDU6TGFiZWwyMDkyNDkwMDEw",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/priority:%20%F0%9F%94%A5%F0%9F%94%A5",
+    "name":"priority: 🔥🔥",
+    "color":"d20000",
+    "default":false,
+    "description":""
+  },
+  {
+    "id":2065207090,
+    "node_id":"MDU6TGFiZWwyMDY1MjA3MDkw",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/priority:%20%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5",
+    "name":"priority: 🔥🔥🔥",
+    "color":"D20000",
+    "default":false,
+    "description":"Please complete soon!"
+  },
+  {
+    "id":2092533954,
+    "node_id":"MDU6TGFiZWwyMDkyNTMzOTU0",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%20%F0%9F%A7%BC%20%20chore",
+    "name":"type:  🧼  chore",
+    "color":"0075ca",
+    "default":false,
+    "description":""
+  },
+  {
+    "id":1947284714,
+    "node_id":"MDU6TGFiZWwxOTQ3Mjg0NzE0",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%E2%9D%93%20question",
+    "name":"type: ❓ question",
+    "color":"0075ca",
+    "default":false,
+    "description":"Further information is requested"
+  },
+  {
+    "id":1947284692,
+    "node_id":"MDU6TGFiZWwxOTQ3Mjg0Njky",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%F0%9F%90%9E%20bug",
+    "name":"type: 🐞 bug",
+    "color":"0075ca",
+    "default":false,
+    "description":"Something isn't working"
+  },
+  {
+    "id":1947284694,
+    "node_id":"MDU6TGFiZWwxOTQ3Mjg0Njk0",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%F0%9F%93%96%20docs",
+    "name":"type: 📖 docs",
+    "color":"0075ca",
+    "default":false,
+    "description":"Improvements or additions to documentation"
+  },
+  {
+    "id":2092524669,
+    "node_id":"MDU6TGFiZWwyMDkyNTI0NjY5",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%F0%9F%99%83%20later",
+    "name":"type: 🙃 later",
+    "color":"1d76db",
+    "default":false,
+    "description":""
+  },
+  {
+    "id":2092478123,
+    "node_id":"MDU6TGFiZWwyMDkyNDc4MTIz",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%F0%9F%9A%80%20feature",
+    "name":"type: 🚀 feature",
+    "color":"0075ca",
+    "default":false,
+    "description":"Must be on https://github.com/athensresearch/athens/projects/2"
+  },
+  {
+    "id":2211651333,
+    "node_id":"MDU6TGFiZWwyMjExNjUxMzMz",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/type:%20%F0%9F%9A%B4%E2%80%8D%E2%99%80%EF%B8%8F%20%20perf",
+    "name":"type: 🚴‍♀️  perf",
+    "color":"0075ca",
+    "default":false,
+    "description":""
+  },
+  {
+    "id":2098925060,
+    "node_id":"MDU6TGFiZWwyMDk4OTI1MDYw",
+    "url":"https://api.github.com/repos/athensresearch/athens/labels/windows",
+    "name":"windows",
+    "color":"ddff9e",
+    "default":false,
+    "description":""
+  }
+]

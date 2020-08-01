@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/433540837",
+  "pull_request_review_id":422246032,
+  "id":433540837,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzU0MDgzNw==",
+  "diff_hunk":"@@ -5,26 +5,30 @@\n \n \n (deftest block-parser-tests\n-  (is (= [:block] (parse-to-ast \"\")))\n-  (is (= [:block \"OK? Yes.\"] (parse-to-ast \"OK? Yes.\")))\n-  (is (= [:block [:page-link \"link\"]] (parse-to-ast \"[[link]]\")))\n-  (is (= [:block \"A \" [:page-link \"link\"] \".\"] (parse-to-ast \"A [[link]].\")))\n-  (is (= [:block \"[[text\"] (parse-to-ast \"[[text\")))\n-  (is (= [:block [:url-link {:url \"https://example.com/\"} \"an example\"]] (parse-to-ast \"[an example](https://example.com/)\")))\n-  ;; Not including tests for every type of syntax because I expect the trees they are parsed to to change soon.\n-  ;; For now, additional tests would probably be more annoying than useful.\n-  )\n+  (are [x y] (= x (parse-to-ast y))\n+    [:block]\n+    , \"\"\n+    [:block \"OK? Yes.\"]\n+    , \"OK? Yes.\"\n+    [:block [:page-link \"link\"]]\n+    , \"[[link]]\"\n+    [:block \"A \" [:page-link \"link\"] \".\"]\n+    , \"A [[link]].\"\n+    [:block \"[[text\"]\n+    , \"[[text\"\n+    [:block [:url-link {:url \"https://example.com/\"} \"an example\"]]\n+    , \"[an example](https://example.com/)\"))",
+  "path":"test/athens/parser_test.clj",
+  "position":null,
+  "original_position":25,
+  "commit_id":"cb2443b0f9d8af03848946106de71183542c314b",
+  "original_commit_id":"8e82fc8365009e5fa5ae57306d28ecd830b15897",
+  "user":{
+    "login":"roryokane",
+    "id":79168,
+    "node_id":"MDQ6VXNlcjc5MTY4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/79168?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/roryokane",
+    "html_url":"https://github.com/roryokane",
+    "followers_url":"https://api.github.com/users/roryokane/followers",
+    "following_url":"https://api.github.com/users/roryokane/following{/other_user}",
+    "gists_url":"https://api.github.com/users/roryokane/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/roryokane/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/roryokane/subscriptions",
+    "organizations_url":"https://api.github.com/users/roryokane/orgs",
+    "repos_url":"https://api.github.com/users/roryokane/repos",
+    "events_url":"https://api.github.com/users/roryokane/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/roryokane/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"With the help of @jelmerderonde’s comment about tweaking cljstyle’s config, I configured `cljstyle` to automatically indent every second value in `are` forms. Do you find that style acceptable?\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]\r\n      [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n      [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~",
+  "created_at":"2020-06-01 23:27:27 UTC",
+  "updated_at":"2020-06-04 10:33:22 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/108#discussion_r433540837",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/108",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/433540837"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/108#discussion_r433540837"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/108"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":20,
+  "side":"RIGHT",
+  "in_reply_to_id":432920861
+}

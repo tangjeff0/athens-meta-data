@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426559631",
+  "pull_request_review_id":413508200,
+  "id":426559631,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjU1OTYzMQ==",
+  "diff_hunk":"@@ -61,6 +61,37 @@ jobs:\n       - name: Lint \n         run: |\n           script/lint\n+          \n+  style:\n+    # ubuntu 18.04 comes with lein + java8 installed\n+    runs-on: ubuntu-18.04\n+    steps:\n+      - name: Git checkout\n+        uses: actions/checkout@v1\n+        with:\n+          fetch-depth: 1\n+          submodules: 'true'\n+          \n+      - name: Style \n+        run: |\n+          script/style\n+                 \n+  carve:\n+    # ubuntu 18.04 comes with lein + java8 installed",
+  "path":".github/workflows/build.yml",
+  "position":20,
+  "original_position":20,
+  "commit_id":"54ae731ec8afe3a902038555da4d54472355b0a9",
+  "original_commit_id":"54ae731ec8afe3a902038555da4d54472355b0a9",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"It's should not matter for most of Clojure's features (exceptions are things like Java time API's in new jdks'). \r\n\r\nI haven't reinstalled java for a long time. Still running Java8. I'm not sure if I'm unique, but I wouldn't enforce it on the dev part, unless it becomes a problem.\r\n\r\nOn CI we might want to test against multiple version indeed. Or choose a version that we specifically support. I guess java11 makes sense, although I'm still focussed on Java8 myself. I don't see big issues here",
+  "created_at":"2020-05-18 11:33:23 UTC",
+  "updated_at":"2020-05-18 11:34:18 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/55#discussion_r426559631",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/55",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426559631"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/55#discussion_r426559631"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/55"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":80,
+  "original_line":80,
+  "side":"RIGHT",
+  "in_reply_to_id":426511833
+}

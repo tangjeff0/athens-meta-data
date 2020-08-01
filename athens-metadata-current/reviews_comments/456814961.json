@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456814961",
+  "pull_request_review_id":451073866,
+  "id":456814961,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjgxNDk2MQ==",
+  "diff_hunk":"@@ -218,7 +223,11 @@\n              :label [:> mui-icons/ExpandMore]\n              :style page-menu-toggle-style}]\n     (when @show-page-menu?\n-      [page-menu-component {:style {:position \"fixed\" :left (str (:x @page-menu-position) \"px\") :top (str (:y @page-menu-position) \"px\")}}])\n+      [page-menu-component {:style {:position \"fixed\"",
+  "path":"src/cljs/athens/views/node_page.cljs",
+  "position":null,
+  "original_position":19,
+  "commit_id":"9c46f81cf1fa091351af9cd758b0000f08f10a01",
+  "original_commit_id":"44d7c08a2aaf4e6cd7aaea6c90d766d87c667fe0",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Here: #278\r\n\r\nedit: Just realized I didn't address this case",
+  "created_at":"2020-07-18 18:21:38 UTC",
+  "updated_at":"2020-07-20 16:18:12 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/272#discussion_r456814961",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/272",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456814961"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/272#discussion_r456814961"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/272"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":226,
+  "side":"RIGHT",
+  "in_reply_to_id":456791540
+}

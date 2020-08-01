@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/443567922",
+  "pull_request_review_id":434930867,
+  "id":443567922,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MzU2NzkyMg==",
+  "diff_hunk":"@@ -0,0 +1,427 @@\n+(ns athens.devcards.devtool\n+  (:require\n+    [athens.devcards.buttons :refer [button-primary button]]\n+    [athens.devcards.db :refer [new-conn load-real-db-button]]\n+    [athens.style :refer [base-styles]]\n+    [cljs.pprint :as pp]\n+    [cljsjs.react]\n+    [cljsjs.react.dom]\n+    [clojure.core.protocols :as core-p]\n+    [clojure.datafy :refer [nav datafy]]\n+    [datascript.core :as d]\n+    [datascript.db]\n+    [devcards.core :as devcards :refer [defcard-rg]]\n+    [me.tonsky.persistent-sorted-set]\n+    [reagent.core :as r]\n+    [reagent.ratom]\n+    [sci.core :as sci]\n+    [shadow.remote.runtime.cljs.browser]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n+\n+\n+(defonce conn (new-conn))\n+\n+\n+(def key-code->key\n+  {8   :backspace\n+   9   :tab\n+   13  :return})",
+  "path":"src/cljs/athens/devcards/devtool.cljs",
+  "position":null,
+  "original_position":28,
+  "commit_id":"37d531f9a0117e2a66dfbfed03a047bd0c60d695",
+  "original_commit_id":"6dec04648168cb9e215c3626f7322d24ab6e81ad",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Let's start using Google Closure for keycodes.\r\n\r\nhttps://github.com/athensresearch/athens/blob/master/src/cljs/athens/devcards/athena.cljs#L191-L205\r\n\r\nhttps://github.com/google/closure-library/blob/master/closure/goog/events/keycodes.js#L27",
+  "created_at":"2020-06-22 13:44:21 UTC",
+  "updated_at":"2020-06-27 16:35:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/164#discussion_r443567922",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/164",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/443567922"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/164#discussion_r443567922"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/164"
+    }
+  },
+  "start_line":null,
+  "original_start_line":25,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":28,
+  "side":"RIGHT"
+}

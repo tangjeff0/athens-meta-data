@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/459830136",
+  "pull_request_review_id":454611217,
+  "id":459830136,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1OTgzMDEzNg==",
+  "diff_hunk":"@@ -249,6 +254,13 @@\n           (recur (get ch (dec n))))))))\n \n \n+(defn get-children-recursively\n+  \"Get list of children UIDs for given block ID (including the root block's UID)\"\n+  [uid]\n+  (let [document (->> @(pull dsdb '[:block/order :block/uid {:block/children ...}] (e-by-av :block/uid uid)))]\n+    (map :block/uid (tree-seq :block/children :block/children document))))",
+  "path":"src/cljs/athens/db.cljs",
+  "position":null,
+  "original_position":20,
+  "commit_id":"0c904be36675b54ab6a98acdd45a2a599b7edf58",
+  "original_commit_id":"67caf509679a03d4c1fd7abcc7ad29121ab5d0b4",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I think what you want is\r\n\r\n```\r\n(defn get-children-recursively\r\n  \"Get list of children UIDs for given block ID (including the root block's UID)\"\r\n  [uid]\r\n  (->> @(pull dsdb '[:block/order :block/uid {:block/children ...}] (e-by-av :block/uid uid))\r\n    (tree-seq :block/children :block/children)\r\n    (map :block/uid)))\r\n```",
+  "created_at":"2020-07-24 02:57:59 UTC",
+  "updated_at":"2020-07-24 13:12:20 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/295#discussion_r459830136",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/295",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/459830136"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/295#discussion_r459830136"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/295"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":261,
+  "side":"RIGHT"
+}

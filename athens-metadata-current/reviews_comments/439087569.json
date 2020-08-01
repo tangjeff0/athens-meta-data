@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439087569",
+  "pull_request_review_id":429297285,
+  "id":439087569,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTA4NzU2OQ==",
+  "diff_hunk":"@@ -105,9 +122,11 @@\n              [:a {:href \"https://github.com/athensresearch/athens\" :target \"_blank\"}\n               [:h3 (with-styles {:font-family \"'IBM Plex Serif', Sans-Serif\"}) \"Athens\"]]]\n             [:div (with-styles {:display \"flex\"})\n-             [:button (with-attributes (with-styles {:margin-right \"16px\"})\n-                        {:disabled true}) [:> mui-icons/TextFormat]]\n-             [:button {:disabled true} [:> mui-icons/Settings]]]]])))))\n+             [button {:disabled true\n+                      :label [:> mui-icons/TextFormat (with-styles {:font-size \"16px\"})]\n+                      :style {:margin-right \"8px\"}}]\n+             [button {:disabled true\n+                      :label [:> mui-icons/Settings (with-styles {:font-size \"16px\"})]}]]]])))))\n \n \n (defcard-rg Comments",
+  "path":"src/cljs/athens/devcards/left_sidebar.cljs",
+  "position":110,
+  "original_position":110,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"- Can get rid of these `Comments`.\r\n- extraneous `div` on line 141?",
+  "created_at":"2020-06-11 21:46:56 UTC",
+  "updated_at":"2020-06-11 21:51:33 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439087569",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439087569"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439087569"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":132,
+  "original_line":132,
+  "side":"RIGHT"
+}

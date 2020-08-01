@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454040088",
+  "pull_request_review_id":447718550,
+  "id":454040088,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NDA0MDA4OA==",
+  "diff_hunk":"@@ -63,35 +74,30 @@\n   \"Transforms Instaparse output to Hiccup.\"\n   [tree]\n   (insta/transform\n-    {:block     (fn [& contents]\n-                  (concat [:span {:class \"block\" :style {:white-space \"pre-line\"}}] contents))\n-     :page-link (fn [title]\n-                  (let [node (pull db/dsdb '[*] [:node/title title])]\n-                    [:span (use-style page-link {:class \"page-link\"})\n-                     [:span {:class \"formatting\"} \"[[\"]\n-                     [:span {:on-click (fn [e] (navigate-uid (:block/uid @node) e))} title]\n-                     [:span {:class \"formatting\"} \"]]\"]]))\n-     :block-ref (fn [uid]\n-                  (let [block (pull db/dsdb '[*] [:block/uid uid])]\n-                    [:span (use-style block-ref {:class \"block-ref\"})\n-                     [:span {:class \"contents\" :on-click #(navigate-uid uid)} (parse-and-render (:block/string @block))]]))\n-     :hashtag   (fn [tag-name]\n-                  (let [node (pull db/dsdb '[*] [:node/title tag-name])]\n-                    [:span (use-style hashtag) {:class    \"hashtag\"\n-                                                :on-click #(navigate-uid (:block/uid @node))}\n-                     [:span {:class \"formatting\"} \"#\"]\n-                     [:span {:class \"contents\"} tag-name]]))\n-     :url-image (fn [{url :url alt :alt}]\n-                  [:img (use-style image {:class \"url-image\"\n-                                          :alt   alt\n-                                          :src   url})])\n-     :url-link  (fn [{url :url} text]\n-                  [:a (use-style url-link {:class \"url-link\"\n-                                           :href  url})\n-                   text])\n-     :bold      (fn [text]\n-                  [:strong {:class \"contents bold\"} text])}\n-    tree))\n+   {:block     (fn [& contents]\n+                 (concat [:span {:class \"block\" :style {:white-space \"pre-line\"}}] contents))\n+    :page-link (fn [title] (render-page-link title))\n+    :block-ref (fn [uid]\n+                 (let [block (pull db/dsdb '[*] [:block/uid uid])]\n+                   [:span (use-style block-ref {:class \"block-ref\"})\n+                    [:span {:class \"contents\" :on-click #(navigate-uid uid)} (parse-and-render (:block/string @block))]]))\n+    :hashtag   (fn [tag-name]\n+                 (let [node (pull db/dsdb '[*] [:node/title tag-name])]\n+                   [:span (use-style hashtag) {:class    \"hashtag\"\n+                                               :on-click #(navigate-uid (:block/uid @node))}\n+                    [:span {:class \"formatting\"} \"#\"]\n+                    [:span {:class \"contents\"} tag-name]]))\n+    :url-image (fn [{url :url alt :alt}]\n+                 [:img (use-style image {:class \"url-image\"\n+                                         :alt   alt\n+                                         :src   url})])\n+    :url-link  (fn [{url :url} text]\n+                 [:a (use-style url-link {:class \"url-link\"\n+                                          :href  url})\n+                  text])\n+    :bold      (fn [text]\n+                 [:strong {:class \"contents bold\"} text])}\n+   tree))",
+  "path":"src/cljs/athens/parse_renderer.cljs",
+  "position":null,
+  "original_position":74,
+  "commit_id":"98a00d64c913aa39c1938b9ae7445a7757fca737",
+  "original_commit_id":"2001ba6afb21d7025c5ea1b86c4dffe744f672b5",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Fixed!",
+  "created_at":"2020-07-14 01:17:32 UTC",
+  "updated_at":"2020-07-14 01:35:57 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/252#discussion_r454040088",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/252",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454040088"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/252#discussion_r454040088"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/252"
+    }
+  },
+  "start_line":null,
+  "original_start_line":77,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":100,
+  "side":"RIGHT",
+  "in_reply_to_id":454036996
+}

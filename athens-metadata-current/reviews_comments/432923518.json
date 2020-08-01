@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432923518",
+  "pull_request_review_id":421473127,
+  "id":432923518,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMjkyMzUxOA==",
+  "diff_hunk":"@@ -5,26 +5,30 @@\n \n \n (deftest block-parser-tests\n-  (is (= [:block] (parse-to-ast \"\")))\n-  (is (= [:block \"OK? Yes.\"] (parse-to-ast \"OK? Yes.\")))\n-  (is (= [:block [:page-link \"link\"]] (parse-to-ast \"[[link]]\")))\n-  (is (= [:block \"A \" [:page-link \"link\"] \".\"] (parse-to-ast \"A [[link]].\")))\n-  (is (= [:block \"[[text\"] (parse-to-ast \"[[text\")))\n-  (is (= [:block [:url-link {:url \"https://example.com/\"} \"an example\"]] (parse-to-ast \"[an example](https://example.com/)\")))\n-  ;; Not including tests for every type of syntax because I expect the trees they are parsed to to change soon.\n-  ;; For now, additional tests would probably be more annoying than useful.\n-  )\n+  (are [x y] (= x (parse-to-ast y))\n+    [:block]\n+    , \"\"\n+    [:block \"OK? Yes.\"]\n+    , \"OK? Yes.\"\n+    [:block [:page-link \"link\"]]\n+    , \"[[link]]\"\n+    [:block \"A \" [:page-link \"link\"] \".\"]\n+    , \"A [[link]].\"\n+    [:block \"[[text\"]\n+    , \"[[text\"\n+    [:block [:url-link {:url \"https://example.com/\"} \"an example\"]]\n+    , \"[an example](https://example.com/)\"))",
+  "path":"test/athens/parser_test.clj",
+  "position":null,
+  "original_position":25,
+  "commit_id":"cb2443b0f9d8af03848946106de71183542c314b",
+  "original_commit_id":"8e82fc8365009e5fa5ae57306d28ecd830b15897",
+  "user":{
+    "login":"roryokane",
+    "id":79168,
+    "node_id":"MDQ6VXNlcjc5MTY4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/79168?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/roryokane",
+    "html_url":"https://github.com/roryokane",
+    "followers_url":"https://api.github.com/users/roryokane/followers",
+    "following_url":"https://api.github.com/users/roryokane/following{/other_user}",
+    "gists_url":"https://api.github.com/users/roryokane/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/roryokane/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/roryokane/subscriptions",
+    "organizations_url":"https://api.github.com/users/roryokane/orgs",
+    "repos_url":"https://api.github.com/users/roryokane/repos",
+    "events_url":"https://api.github.com/users/roryokane/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/roryokane/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I agree the commas look kind of ugly, but I thought they were the best of four bad options. Let me show you the options I considered so you can compare and choose the one you like most:\r\n\r\nThe following style was confusing because among the 10 similar lines, I found it hard to tell which line was the expected value and which was the input. I felt like I had to manually count from the top and remember which was even and which was odd.\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]\r\n    [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n    [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nIf I put each expected value and input on the same line like the following code, I find it hard to see where one vector ends and the next begins, even with rainbow parens:\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"] [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39] [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \r\n~~~\r\n\r\nThe following looks nice to me, but `cljstyle` doesn’t accept it. I can understand that it complains because it doesn’t reflect the structure of the forms, even though I know it reflects their semantics. One option would be using this and [ignoring this file](https://github.com/greglook/cljstyle/blob/master/doc/configuration.md), but that could ignore other style problems in this file that should be caught, so I don’t like that option.\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]\r\n      [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n      [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nSince I liked the above but `cljstyle` didn’t, I added the commas to make it pass, resulting in the formatting in this PR:\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]\r\n    , [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n    , [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nThose are the options I thought of before, but now I’ve thought of a few more:\r\n\r\nIt seems `cljstyle` doesn’t mind if I put extra spaces between the expected value and input, as follows. It’s better than the single space version, at least. But I like putting the expected value and input on separate lines because it makes it easier to see what differences, if any, they have. Doing a visual diff when they are vertically close is easy for all the tests in this file because they all transform the input from left to right, so the corresponding parts of each value stay visually close.\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]   [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]   [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nI could also put a blank line between every expected-actual pair, as follows. This makes every line unambiguous but requires more scrolling when viewing the file in the editor.\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"]\r\n    [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    \r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39]\r\n    [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n    \r\n~~~\r\n\r\nOr I could try marking the lines with comments somehow, like as follows. I think it’s not that readable though, as the comments are at the end of each line. It’s hard to notice the comments with my syntax highlighting, so I have to scan to the end of each line to see them.\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"] ;; key\r\n    [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39] ;; key\r\n    [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nAdding commas at the end of key lines, as follows, has the same problem:\r\n\r\n~~~clj\r\n    [\"some text\" [:link] \"around a link\"],\r\n    [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"]\r\n    [{:something nil} \"more text\" [:link] \"between elements\" 39],\r\n    [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39]\r\n~~~\r\n\r\nThose are the options I can think of now. Which of these do you prefer? If you still hate the commas-before-inputs style I think my next favorite one is the blank lines style.\r\n\r\nI just realized that the blank lines style might be what you meant by “using newlines between statements”. Is that what you meant?",
+  "created_at":"2020-05-31 08:33:45 UTC",
+  "updated_at":"2020-06-04 10:33:22 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/108#discussion_r432923518",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/108",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432923518"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/108#discussion_r432923518"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/108"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":20,
+  "side":"RIGHT",
+  "in_reply_to_id":432920861
+}

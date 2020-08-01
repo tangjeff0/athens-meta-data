@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429498039",
+  "pull_request_review_id":417234707,
+  "id":429498039,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTQ5ODAzOQ==",
+  "diff_hunk":"@@ -38,7 +38,10 @@\n      :bref (fn [id]\n              (let [string (subscribe [:block/string [:block/uid id]])]\n                [:span {:style {:font-size \"0.9em\" :border-bottom \"1px solid gray\"}}\n-                [:a {:href (rfee/href :page {:id id})} (parse (:block/string @string))]]))}\n+                [:a {:href (rfee/href :page {:id id})} (parse (:block/string @string))]]))\n+     :bold (fn [text]\n+             [:span\n+              [:strong text]])}",
+  "path":"src/cljs/athens/parser.cljs",
+  "position":23,
+  "original_position":23,
+  "commit_id":"a309a1ddb170ff00073924318a2608f7a8fc80eb",
+  "original_commit_id":"a309a1ddb170ff00073924318a2608f7a8fc80eb",
+  "user":{
+    "login":"roryokane",
+    "id":79168,
+    "node_id":"MDQ6VXNlcjc5MTY4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/79168?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/roryokane",
+    "html_url":"https://github.com/roryokane",
+    "followers_url":"https://api.github.com/users/roryokane/followers",
+    "following_url":"https://api.github.com/users/roryokane/following{/other_user}",
+    "gists_url":"https://api.github.com/users/roryokane/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/roryokane/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/roryokane/subscriptions",
+    "organizations_url":"https://api.github.com/users/roryokane/orgs",
+    "repos_url":"https://api.github.com/users/roryokane/repos",
+    "events_url":"https://api.github.com/users/roryokane/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/roryokane/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I would return just `[:strong text]` – the extra `span` wrapper doesn't add anything in this case.",
+  "created_at":"2020-05-23 00:44:15 UTC",
+  "updated_at":"2020-05-23 00:44:16 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/87#discussion_r429498039",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/87",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429498039"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/87#discussion_r429498039"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/87"
+    }
+  },
+  "start_line":43,
+  "original_start_line":43,
+  "start_side":"RIGHT",
+  "line":44,
+  "original_line":44,
+  "side":"RIGHT"
+}

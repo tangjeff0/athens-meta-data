@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426296327",
+  "pull_request_review_id":413191782,
+  "id":426296327,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjI5NjMyNw==",
+  "diff_hunk":"@@ -68,33 +82,39 @@\n                             ^{:key uid}\n                             [:span\n                              {:style {:cursor \"pointer\"}\n-                              :on-click #(dispatch [:navigate :page {:id uid}])}\n+                              :on-click #(on-block-click uid)}\n                              (or string title)]))\n                         @parents))]\n-       [:h2 {:style {:margin 0}} (str \"• \" (:block/string @node))]\n-       [:div {:style {:margin-left 20}}\n+       [:div\n+        {:style {:margin 0}\n+         :content-editable true}",
+  "path":"src/cljs/athens/page.cljs",
+  "position":null,
+  "original_position":95,
+  "commit_id":"43052907694ba7fb71373f52e18f1608d4f72a79",
+  "original_commit_id":"ae01076cfb97e45ec318a2e8eb6b6107928c3d9f",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Sounds like content-editable is a much easier/better solution than `textarea`. Why then do you think Roam uses `textarea`?",
+  "created_at":"2020-05-17 19:34:30 UTC",
+  "updated_at":"2020-05-17 20:04:05 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/70#discussion_r426296327",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/70",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426296327"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/70#discussion_r426296327"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/70"
+    }
+  },
+  "start_line":null,
+  "original_start_line":88,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":90,
+  "side":"RIGHT"
+}

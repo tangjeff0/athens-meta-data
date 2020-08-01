@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/448032416",
+  "pull_request_review_id":440448305,
+  "id":448032416,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0ODAzMjQxNg==",
+  "diff_hunk":"@@ -1,89 +1,219 @@\n (ns athens.devcards.right-sidebar\n   (:require\n     [\"@material-ui/icons\" :as mui-icons]\n-    [athens.db :as db]\n-    [athens.devcards.buttons :refer [button-primary]]\n+    [athens.devcards.block-page :refer [block-page-component]]\n+    [athens.devcards.buttons :refer [button button-primary]]\n     [athens.devcards.node-page :refer [node-page-component]]\n-    [athens.style :refer [color #_OPACITIES]]\n+    [athens.style :refer [color OPACITIES]]\n     [cljsjs.react]\n     [cljsjs.react.dom]\n     [devcards.core :refer [defcard-rg]]\n-    [posh.reagent :refer [q]]\n+    [garden.color :refer [lighten]]\n     [re-frame.core :refer [dispatch subscribe]]\n-    [reagent.core :as r]\n-    [stylefy.core :as stylefy :refer [use-style #_use-sub-style]]))\n+    [stylefy.core :as stylefy :refer [use-style]]))\n \n \n ;;; Styles\n \n \n-(def right-sidebar-style\n-  {:grid-area \"secondary-content\"\n-   :width \"600px\"\n-   :height \"100%\"\n-   :border \"1px solid lightgray\"\n-   :background-color (color :panel-color :opacity-low)\n-   :display \"flex\"\n-   :justify-content \"space-between\"\n-   :padding \"30px\"})\n+(def sidebar-width \"32vw\")\n+\n+\n+(stylefy/keyframes \"content-appears\"\n+                   [:from\n+                    {:opacity \"0\"\n+                     :width \"0\"\n+                     :transform \"translateX(10%)\"}]\n+                   [:to\n+                    {:opacity \"1\"\n+                     :width sidebar-width\n+                     :transform \"translateX(0)\"}])\n \n \n-(def content-style\n+(stylefy/keyframes \"content-disappears\"\n+                   [:from\n+                    {:opacity \"1\"\n+                     :width sidebar-width\n+                     :transform \"translateX(0)\"}]\n+                   [:to\n+                    {:opacity \"0\"\n+                     :width \"0\"\n+                     :transform \"translateX(10%)\"}])\n+\n+\n+(def sidebar-style\n+  {:justify-self \"stretch\"\n+   :overflow \"auto\"\n+   :flex \"0 0 auto\"\n+   :display \"flex\"\n+   :justify-content \"space-between\"\n+   :transition \"opacity 0.5s ease\"\n+   ::stylefy/manual [[:svg {:color (color :body-text-color :opacity-high)}]\n+                     [:&.open {:border-left [[\"1px solid \" (color :panel-color :opacity-low)]]\n+                               :background-color (color :panel-color :opacity-low)}\n+                      [:> [:div {:animation \"content-appears 0.15s\"\n+                                 :animation-fill-mode \"both\"}]]]\n+                     [:&.closed [:> [:div {:animation \"content-disappears 0.1s\"\n+                                           :animation-fill-mode \"both\"}]]]]})\n+\n+\n+(def sidebar-toggle-style\n+  {:border-radius \"0\"\n+   :flex-shrink \"0\"\n+   :align-items \"flex-start\"\n+   :padding \"80px 4px 0\"\n+   :position \"relative\"\n+   :z-index \"10\"\n+   :box-shadow [[\"inset 1px 0 0 \" (color :panel-color)]]\n+   ::stylefy/manual [[:& {:transition-duration \"0.15s\"}]\n+                     [:&:hover {:background (lighten (color :panel-color) 5)}]\n+                     [:&:focus :active {:outline \"none\"\n+                                        :color \"inherit\"}]]})\n+\n+\n+(def sidebar-content-style\n   {:display \"flex\"\n+   :width sidebar-width\n+   :opacity \"0\"\n+   :animation-fill-mode \"both\"\n+   :animation-timing-function \"ease-out\"\n    :flex-direction \"column\"\n    :overflow-y \"auto\"})\n \n \n-(def toggle-page-style\n-  {:margin-top \"30px\"\n-   :margin-right \"10px\"\n-   :cursor \"pointer\"})\n+(def sidebar-section-heading-style\n+  {:font-size \"14px\"\n+   :display \"flex\"\n+   :flex-direction \"row\"\n+   :align-items \"center\"\n+   :min-height \"40px\"\n+   :padding \"8px 16px 8px 24px\"\n+   ::stylefy/manual [[:h1 {:font-size \"inherit\"\n+                           :margin \"0 auto 0 0\"\n+                           :line-height \"1\"\n+                           :color (color :body-text-color :opacity-med)}]]})\n \n-;;; Components\n \n-(def uids\n-  [\"OaSVyM_nr\"\n-   \"p1Xv2crs3\"])\n+(def sidebar-item-style\n+  {:display \"flex\"\n+   :flex-direction \"column\"\n+   :border-top [[\"1px solid\" (color :panel-color)]]})\n+\n+\n+(def sidebar-item-toggle-style\n+  {:margin \"auto 8px auto 0\"\n+   :flex \"0 0 auto\"\n+   :width \"28px\"\n+   :height \"28px\"\n+   :padding \"0\"\n+   :border-radius \"1000px\"\n+   :cursor \"pointer\"\n+   :place-content \"center\"\n+   ::stylefy/manual [[:svg {:transition \"all 0.1s ease\"\n+                            :margin \"0\"}]\n+                     [:&.open [:svg {:transform \"rotate(90deg)\"}]]]})\n+\n+\n+(def sidebar-item-container-style\n+  {:padding \"0 32px 20px\"\n+   :line-height \"24px\"\n+   :font-size \"15px\"\n+   :position \"relative\"\n+   :z-index \"1\"\n+   :width sidebar-width})\n+\n+\n+(def sidebar-item-heading-style\n+  {:font-size \"16px\"\n+   :display \"flex\"\n+   :align-items \"center\"\n+   :padding \"4px 16px\"\n+   :position \"sticky\"\n+   :backdrop-filter \"blur(12px)\"\n+   :z-index \"10\"\n+   :background \"#FBFAFA\" ;; FIXME: Replace with weighted-mix color function\n+   :top \"0\"\n+   :bottom \"0\"\n+   ::stylefy/manual [[:h2 {:font-size \"inherit\"\n+                           :flex \"1 1 100%\"\n+                           :line-height \"1\"\n+                           :margin \"0\"\n+                           :white-space \"nowrap\"\n+                           :text-overflow \"ellipsis\"\n+                           :font-weight \"normal\"\n+                           :max-width \"100%\"\n+                           :overflow \"hidden\"\n+                           :align-items \"center\"\n+                           :color (color :body-text-color)}\n+                      [:svg {:opacity (:opacity-med OPACITIES)\n+                             :display \"inline\"\n+                             :vertical-align \"-4px\"\n+                             :margin-right \"0.2em\"}]]\n+                     [:.controls {:display \"flex\"\n+                                  :flex \"0 0 auto\"\n+                                  :align-items \"stretch\"\n+                                  :flex-direction \"row\"\n+                                  :transition \"opacity 0.3s ease\"\n+                                  :opacity \"0.25\"}]\n+                     [:&:hover [:.controls {:opacity \"1\"}]]\n+                     [:svg {:font-size \"18px\"}]\n+                     [:hr {:width \"1px\"\n+                           :background (color :panel-color)\n+                           :border \"0\"\n+                           :margin \"4px\"\n+                           :flex \"0 0 1px\"\n+                           :height \"1em\"\n+                           :justify-self \"stretch\"}]\n+                     [:&.open [:h2 {:font-weight \"500\"}]]]})\n+\n+\n+;;; Components\n \n \n (defn right-sidebar-el\n-  [state]\n-  (let [uids (->> @(q '[:find ?uid ?title\n-                        :in $ [?uid ...]\n-                        :where\n-                        [?e :block/uid ?uid]\n-                        [?e :node/title ?title]]\n-                      db/dsdb uids)\n-                  vec\n-                  (reduce-kv\n-                    (fn [m _ [uid title]]\n-                      (assoc m uid {:open  false\n-                                    :title title}))\n-                    {}))\n-        s (r/atom {:uids uids})]\n-    (when (:open state)\n-      [:div (use-style right-sidebar-style)\n-       [:div (use-style content-style)\n-        (doall\n-          (for [[uid {:keys [open title]}] (:uids @s)]\n-            ^{:key uid}\n-            [:div {:style {:display \"flex\"}}\n-             [:span (use-style toggle-page-style\n-                      {:on-click (fn [_]\n-                                   (swap! s update-in [:uids uid :open] not))})\n-              [:> mui-icons/KeyboardArrowDown]]\n-             (if open\n-               [node-page-component [:block/uid uid]]\n-               [:div [:h1 title]])]))]\n-       [:div {:on-click (fn [_] (dispatch [:toggle-right-sidebar]))}\n-        [:> mui-icons/Close]]])))\n+  [open? items]\n+  [:div (use-style sidebar-style {:class (if open? \"open\" \"closed\")})\n+   [:div (use-style sidebar-content-style)\n+    [:header (use-style sidebar-section-heading-style)\n+     [:h1 \"Pages and Blocks\"]\n+    ;;  [button {:label [:> mui-icons/FilterList]}]\n+     ]\n+    (doall\n+      (for [[uid {:keys [open node/title block/string]}] items\n+            :let [node-page? (boolean title)\n+                  heading (or title string)]]",
+  "path":"src/cljs/athens/devcards/right_sidebar.cljs",
+  "position":null,
+  "original_position":238,
+  "commit_id":"8390833b8a0c5407742688f6f56358f2bf54bdbb",
+  "original_commit_id":"0d823cc5758fab672388f7851796ab2bd78db5b7",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Can remove this `:let` binding entirely. Replace the `if node-page?` with `if title`",
+  "created_at":"2020-06-30 23:23:05 UTC",
+  "updated_at":"2020-07-01 01:15:23 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/197#discussion_r448032416",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/197",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/448032416"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/197#discussion_r448032416"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/197"
+    }
+  },
+  "start_line":null,
+  "original_start_line":183,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":184,
+  "side":"RIGHT"
+}

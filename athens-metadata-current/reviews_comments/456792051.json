@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456792051",
+  "pull_request_review_id":451058194,
+  "id":456792051,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Njc5MjA1MQ==",
+  "diff_hunk":"@@ -28,6 +34,18 @@\n     \"it’s **very** important\"))\n \n \n+(deftest parser-pre-formatted-tests\n+  (are [x y] (= x (parse-to-ast y))\n+    [:block \"Hello \" [:pre-formatted \"world\"]]\n+    \"Hello `world`\"\n+\n+    [:block \"Hello \" [:pre-formatted \"Mars\"]]\n+    \"Hello ```Mars```\"\n+\n+    [:block \"Hello \" [:pre-formatted \"world\"] \" and \" [:pre-formatted \"Mars\"]]\n+    \"Hello `world` and `Mars`\"))",
+  "path":"test/athens/parser_test.clj",
+  "position":26,
+  "original_position":26,
+  "commit_id":"05d4da622cf75401cb785b0ba4ccb4ab65f5910a",
+  "original_commit_id":"4532e136460b286046aff097f7f3e287568eb83d",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Please add one of these and any new markup features to `athens.devcards.parser.cljs`.",
+  "created_at":"2020-07-18 13:50:35 UTC",
+  "updated_at":"2020-07-18 23:15:51 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/273#discussion_r456792051",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/273",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456792051"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/273#discussion_r456792051"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/273"
+    }
+  },
+  "start_line":37,
+  "original_start_line":37,
+  "start_side":"RIGHT",
+  "line":46,
+  "original_line":46,
+  "side":"RIGHT"
+}

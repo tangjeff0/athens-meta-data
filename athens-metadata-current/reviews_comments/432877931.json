@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432877931",
+  "pull_request_review_id":421434944,
+  "id":432877931,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMjg3NzkzMQ==",
+  "diff_hunk":"@@ -1,14 +1,28 @@\n (ns athens.parser-test\n   (:require\n-    [athens.parser :refer [block-parser]]\n-    [clojure.test :refer [deftest is]]))\n+    [athens.parser :refer [parse-to-ast combine-adjacent-strings]]\n+    [clojure.test :refer [deftest is are]]))\n \n \n (deftest block-parser-tests\n-  (is (= [:block] (block-parser \"\")))\n-  (is (= [:block \"O\" \"K\" \"?\" \" \" \"Y\" \"e\" \"s\" \".\"] (block-parser \"OK? Yes.\")))\n-  (is (= [:block [:block-link [:any-chars \"l\" \"i\" \"n\" \"k\"]]] (block-parser \"[[link]]\")))\n-  (is (= [:block \"[\" \"[\" \"t\" \"e\" \"x\" \"t\"] (block-parser \"[[text\")))\n+  (is (= [:block] (parse-to-ast \"\")))\n+  (is (= [:block \"OK? Yes.\"] (parse-to-ast \"OK? Yes.\")))\n+  (is (= [:block [:block-link \"link\"]] (parse-to-ast \"[[link]]\")))\n+  (is (= [:block \"[[text\"] (parse-to-ast \"[[text\")))",
+  "path":"test/athens/parser_test.clj",
+  "position":17,
+  "original_position":17,
+  "commit_id":"b1a9822268ad2bb519aceb422ed323cab7571e57",
+  "original_commit_id":"5b762d40800fdc5e266185ce85f9f590a0c83768",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Looks more readable @roryokane!",
+  "created_at":"2020-05-30 18:46:40 UTC",
+  "updated_at":"2020-05-30 18:47:18 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/102#discussion_r432877931",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/102",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432877931"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/102#discussion_r432877931"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/102"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":11,
+  "original_line":11,
+  "side":"RIGHT"
+}

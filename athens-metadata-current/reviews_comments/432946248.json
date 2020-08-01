@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432946248",
+  "pull_request_review_id":421493839,
+  "id":432946248,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMjk0NjI0OA==",
+  "diff_hunk":"@@ -5,26 +5,30 @@\n \n \n (deftest block-parser-tests\n-  (is (= [:block] (parse-to-ast \"\")))\n-  (is (= [:block \"OK? Yes.\"] (parse-to-ast \"OK? Yes.\")))\n-  (is (= [:block [:page-link \"link\"]] (parse-to-ast \"[[link]]\")))\n-  (is (= [:block \"A \" [:page-link \"link\"] \".\"] (parse-to-ast \"A [[link]].\")))\n-  (is (= [:block \"[[text\"] (parse-to-ast \"[[text\")))\n-  (is (= [:block [:url-link {:url \"https://example.com/\"} \"an example\"]] (parse-to-ast \"[an example](https://example.com/)\")))\n-  ;; Not including tests for every type of syntax because I expect the trees they are parsed to to change soon.\n-  ;; For now, additional tests would probably be more annoying than useful.\n-  )\n+  (are [x y] (= x (parse-to-ast y))\n+    [:block]\n+    , \"\"\n+    [:block \"OK? Yes.\"]\n+    , \"OK? Yes.\"\n+    [:block [:page-link \"link\"]]\n+    , \"[[link]]\"\n+    [:block \"A \" [:page-link \"link\"] \".\"]\n+    , \"A [[link]].\"\n+    [:block \"[[text\"]\n+    , \"[[text\"\n+    [:block [:url-link {:url \"https://example.com/\"} \"an example\"]]\n+    , \"[an example](https://example.com/)\"))",
+  "path":"test/athens/parser_test.clj",
+  "position":null,
+  "original_position":25,
+  "commit_id":"cb2443b0f9d8af03848946106de71183542c314b",
+  "original_commit_id":"8e82fc8365009e5fa5ae57306d28ecd830b15897",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"@roryokane Thanks for putting so much time into explaining it!\r\n\r\nMaybe we can tweak cljstyle where it is biting us (maybe a [specific config](https://github.com/greglook/cljstyle/blob/master/doc/indentation.md#inner-rules) for `are`. I haven't tried this yet).\r\n\r\nFor me, the comma's are not helpful for understanding the code. It mostly noise for me, just like how the clojure reader treats it. At the same time though accepting this style forces me to think about putting the comma's in the right spot and this puts me back into the json world. So I strongly prefer the blank lines to distinguish examples (or categories).\r\n\r\nI just looked up what `clojure.core` does. They do something similar in[ their tests](https://github.com/clojure/clojure/blob/b6835b1341e008cc69b1e6d3fa28e4362ebe16b4/test/clojure/test_clojure/sequences.clj#L105) \r\n\r\n\r\n\r\n",
+  "created_at":"2020-05-31 13:17:16 UTC",
+  "updated_at":"2020-06-04 10:33:22 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/108#discussion_r432946248",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/108",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432946248"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/108#discussion_r432946248"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/108"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":20,
+  "side":"RIGHT",
+  "in_reply_to_id":432920861
+}

@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/451475725",
+  "pull_request_review_id":444654575,
+  "id":451475725,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTQ3NTcyNQ==",
+  "diff_hunk":"@@ -497,23 +499,26 @@\n     (indent uid)))\n \n \n-;; TODO: no-op when user tries to unindent to a child out of current context\n (defn unindent\n-  [uid]\n+  [uid context-root]\n   (let [parent (db/get-parent [:block/uid uid])\n         grandpa (db/get-parent (:db/id parent))\n         new-block {:block/uid uid :block/order (inc (:block/order parent))}\n         reindex-grandpa (->> (inc-after (:db/id grandpa) (:block/order parent))\n                              (concat [new-block]))]\n-    (when (and parent grandpa)\n-      {:transact! [[:db/retract (:db/id parent) :block/children [:block/uid uid]]\n-                   {:db/id (:db/id grandpa) :block/children reindex-grandpa}]})))\n+    (if (= (:block/uid parent) context-root) ; if the parent node is the context-root, prevent unindent\n+      {}\n+      (when (and parent grandpa)\n+        {:transact! [[:db/retract (:db/id parent) :block/children [:block/uid uid]]\n+                     {:db/id (:db/id grandpa) :block/children reindex-grandpa}]}))))\n \n \n (reg-event-fx\n   :unindent\n-  (fn [_ [_ uid]]\n-    (unindent uid)))\n+  ; Pass in the reframe db as a cofx to the :unindent event handler",
+  "path":"src/cljs/athens/events.cljs",
+  "position":null,
+  "original_position":42,
+  "commit_id":"44c7f9b01c8f0203dc9828452995fefb7b075113",
+  "original_commit_id":"944fddd0414d102f5c58f9881c0158379ece2eb0",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Don't need this comment, this is a very common practice.",
+  "created_at":"2020-07-08 11:36:59 UTC",
+  "updated_at":"2020-07-08 21:40:13 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/228#discussion_r451475725",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/228",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/451475725"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/228#discussion_r451475725"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/228"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":518,
+  "side":"RIGHT"
+}

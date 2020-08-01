@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454019487",
+  "pull_request_review_id":447696612,
+  "id":454019487,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NDAxOTQ4Nw==",
+  "diff_hunk":"@@ -221,7 +224,16 @@\n (defn on-change\n   [value uid]\n   ;; (prn \"ONCHANGE\" value)\n-  (dispatch [:transact [{:db/id [:block/uid uid] :block/string value :edit/time (now-ts)}]]))\n+  (dispatch [:transact [{:db/id [:block/uid uid] :block/string value :edit/time (now-ts)}]])\n+  ;; automatically add non-existent pages\n+  ;; TODO: delete pages that are no longer connected to anything else\n+  (parse/transform {:page-link (fn [& title]\n+                                 (if-not (db/search-exact-node-title (apply + title)) (let [uid (gen-block-uid)]",
+  "path":"src/cljs/athens/views/blocks.cljs",
+  "position":null,
+  "original_position":54,
+  "commit_id":"98a00d64c913aa39c1938b9ae7445a7757fca737",
+  "original_commit_id":"57afcef730065e2aa5da50e9b824cf5719b6ae05",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I agree that we should have some further discussion about where to process the new page creation/deletion logic. But I think it's more of a performance issue so we could just have the functionality now and talk about it later :)",
+  "created_at":"2020-07-14 00:09:13 UTC",
+  "updated_at":"2020-07-14 01:35:57 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/252#discussion_r454019487",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/252",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/454019487"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/252#discussion_r454019487"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/252"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":231,
+  "side":"RIGHT",
+  "in_reply_to_id":454013280
+}

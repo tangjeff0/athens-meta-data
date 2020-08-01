@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453255771",
+  "pull_request_review_id":446840181,
+  "id":453255771,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MzI1NTc3MQ==",
+  "diff_hunk":"@@ -0,0 +1,108 @@\n+(ns athens.devcards.app-toolbar\n+  (:require\n+    [\"@material-ui/icons\" :as mui-icons]\n+    [athens.router :refer [navigate]]\n+    [athens.style :refer [color]]\n+    [athens.subs]\n+    [athens.views.buttons :refer [button]]\n+    [re-frame.core :refer [subscribe dispatch]]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n+\n+\n+;;; Styles\n+\n+\n+(def app-header-style\n+  {:grid-area \"app-header\"\n+   :justify-content \"flex-start\"\n+   :background-clip \"padding-box\"\n+   :align-items \"center\"\n+   :font-size \"16px\"\n+   :display \"grid\"\n+   :position \"absolute\"\n+   :top 0\n+   :right 0\n+   :left 0\n+   :grid-template-columns \"auto 1fr auto\"\n+   :z-index \"1000\"\n+   :grid-auto-flow \"column\"\n+   :padding \"0.25rem 0.75rem 0.25rem 0.25rem\"\n+                      ;;  :padding \"0.25rem 0.75rem 0.25rem 66px\" ;; Electron styling\n+   ::stylefy/manual [[:svg {:font-size \"20px\"}]\n+                     [:button {:justify-self \"flex-start\"}]]})\n+\n+\n+(def app-header-control-section-style\n+  {:display \"grid\"\n+   :grid-auto-flow \"column\"\n+   :backdrop-filter \"blur(6px) contrast(50%) brightness(170%)\"\n+   :padding \"0.25rem\"\n+   :border-radius \"6px\"\n+   :grid-gap \"0.25rem\"})\n+\n+\n+(def app-header-secondary-controls-style\n+  (merge app-header-control-section-style\n+         {:color (color :body-text-color :opacity-med)\n+          :justify-self \"flex-end\"\n+          :backdrop-filter \"blur(6px)\"\n+          :margin-left \"auto\"\n+          ::stylefy/manual [[:button {:color \"inherit\"}]]}))\n+\n+\n+(def separator-style\n+  {:border \"0\"\n+   :background (color :panel-color :opacity-high)\n+   :margin-inline \"20%\"\n+   :margin-block \"0\"\n+   :inline-size \"1px\"\n+   :block-size \"auto\"})\n+\n+\n+;;; Components\n+\n+\n+(defn separator\n+  []\n+  [:hr (use-style separator-style)])\n+\n+\n+(defn app-toolbar\n+  []\n+  (let [left-open? (subscribe [:left-sidebar/open])\n+        right-open? (subscribe [:right-sidebar/open])\n+        current-route (subscribe [:current-route])\n+        route-name (-> @current-route :data :name)]\n+\n+    [:header (use-style app-header-style)\n+     [:div (use-style app-header-control-section-style)\n+      [button {:active (when @left-open? true)",
+  "path":"src/cljs/athens/devcards/app_toolbar.cljs",
+  "position":null,
+  "original_position":79,
+  "commit_id":"5be44a2b6a67a9a473b2a8a33529a249318feb89",
+  "original_commit_id":"4e233d4b0278d44ba7c172eb34bb822fb9c425b0",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"few other spots too",
+  "created_at":"2020-07-12 02:00:28 UTC",
+  "updated_at":"2020-07-12 13:41:56 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/246#discussion_r453255771",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/246",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/453255771"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/246#discussion_r453255771"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/246"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":79,
+  "side":"RIGHT",
+  "in_reply_to_id":453255683
+}

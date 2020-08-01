@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432877403",
+  "pull_request_review_id":421434478,
+  "id":432877403,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMjg3NzQwMw==",
+  "diff_hunk":"@@ -82,14 +92,78 @@\n     [:db/add eid :block/string new-s]))\n \n \n-(reg-event-ds\n-  :node/rename\n-  (fn-traced [ds [_ old-title new-title]]\n-             (let [eid (node-with-title ds old-title)\n-                   blocks (referencing-blocks ds old-title)]\n-               (->> blocks\n-                    (map (partial rename-refs-tx old-title new-title))\n-                    (into [[:db/add eid :node/title new-title]])))))\n+(defn rename-tx\n+  [ds old-title new-title]\n+  (let [eid (node-with-title ds old-title)\n+        blocks (referencing-blocks ds old-title)]\n+    (->> blocks\n+         (map (partial rename-refs-tx old-title new-title))\n+         (into [[:db/add eid :node/title new-title]]))))\n+\n+\n+(reg-event-fx\n+  :node/renamed\n+  [(rp/inject-cofx :ds)]\n+  (fn-traced [{:keys [db ds]} [_ old-title new-title]]\n+             (when (not= old-title new-title)\n+               (if (node-with-title ds new-title)\n+                 {:db (assoc db :merge-prompt {:active true\n+                                               :old-title old-title\n+                                               :new-title new-title})\n+                  :timeout {:action :start\n+                            :id :merge-prompt\n+                            :wait 7000\n+                            :event [:node/merge-canceled]}}\n+                 {:transact (rename-tx ds old-title new-title)}))))\n+\n+\n+(defn count-children\n+  [ds title]\n+  (d/q '[:find (count ?children) .\n+         :in $ ?title\n+         :where [?e :node/title ?title]\n+         [?e :block/children ?children]]\n+       ds title))\n+\n+\n+(defn get-children-eids\n+  [ds title]\n+  (d/q '[:find [?children ...]\n+         :in $ ?title\n+         :where [?e :node/title ?title]\n+         [?e :block/children ?children]]\n+       ds title))\n+\n+\n+(defn move-blocks-tx\n+  [ds from-title to-title]\n+  (let [block-count (count-children ds to-title)\n+        block-eids (get-children-eids ds from-title)]\n+    (mapcat (fn [eid]\n+              (let [order (:block/order (d/pull ds [:block/order] eid))]",
+  "path":"src/cljs/athens/events.cljs",
+  "position":77,
+  "original_position":77,
+  "commit_id":"5f7212ba59d662b3a0c66e45b06296df44a47ad2",
+  "original_commit_id":"5f7212ba59d662b3a0c66e45b06296df44a47ad2",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I think you could also write this as `(:block/order (d/entity ds eid))`",
+  "created_at":"2020-05-30 18:39:34 UTC",
+  "updated_at":"2020-05-30 18:39:35 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/90#discussion_r432877403",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/90",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/432877403"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/90#discussion_r432877403"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/90"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":143,
+  "original_line":143,
+  "side":"RIGHT"
+}

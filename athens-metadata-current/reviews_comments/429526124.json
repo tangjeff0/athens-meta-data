@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429526124",
+  "pull_request_review_id":417260700,
+  "id":429526124,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTUyNjEyNA==",
+  "diff_hunk":"@@ -1,50 +1,75 @@\n (ns athens.parser\n   (:require\n-    [instaparse.core :as insta]\n+    [athens.parse-helper :as parse-helper]\n+    [instaparse.core :as insta :refer-macros [defparser]]",
+  "path":"src/cljs/athens/parser.cljs",
+  "position":null,
+  "original_position":5,
+  "commit_id":"1e8ac81b98421e83ff2829c4bd1a4f1063ba5684",
+  "original_commit_id":"ba8fbee556734835b2d7a16d864cdf7d05fb407a",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Might be good to move `src/cljs/athens/parser.cljs ` to `src/cljs/athens/parser.cljc`. That way you can could also apply clj tests on the parser (also see this remark https://github.com/athensresearch/athens/pull/87#issuecomment-633006961)",
+  "created_at":"2020-05-23 08:14:44 UTC",
+  "updated_at":"2020-05-25 22:12:44 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/88#discussion_r429526124",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/88",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429526124"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/88#discussion_r429526124"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/88"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":4,
+  "side":"RIGHT"
+}

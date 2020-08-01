@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439161335",
+  "pull_request_review_id":429406915,
+  "id":439161335,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTE2MTMzNQ==",
+  "diff_hunk":"@@ -178,28 +246,27 @@\n                         (swap! *cache assoc query result)\n                         (reset! *match [query result])))))]\n     (when @athena?\n-      [:div +container\n-       [:div {:style {:box-shadow \"inset 0px -1px 0px rgba(0, 0, 0, 0.1)\"}}\n-        [:input (with-attributes +athena-input\n-                  {:type        \"search\"\n-                   :placeholder \"Find or Create Page\",\n-                   :on-change   handler})]]\n+      [:div (use-style container-style)\n+       [:input (use-style athena-input-style\n+                          {:type        \"search\"\n+                           :auto-focus  true\n+                           :placeholder \"Find or Create Page\"\n+                           :on-change   handler})]\n        [recent]\n        [(fn []\n           (let [[query {:keys [pages blocks] :as result}] @*match]\n             (when result\n-              [:div (with-styles +query)\n+              [:div (use-style results-list-style)\n                (for [[i x] (map-indexed list (take 40 (concat (take 20 pages) blocks)))]\n                  (let [parent (:block/parent x)\n                        page-title (or (:node/title parent) (:node/title x))\n                        block-uid (or (:block/uid parent) (:block/uid x))\n                        block-string (:block/string x)]\n-                   [:div (with-attributes {:class \"athena-result\" :key i :on-click #(navigate-page block-uid)})\n-                    [:div\n-                     [:h4 (highlight-match query page-title)]\n-                     (when block-string\n-                       [:span (highlight-match query block-string)])]\n-                    [:h4 (with-styles {:margin-left \"auto\"}) [:> mui-icons/ChevronRight]]]))])))]])))\n+                   [:div (use-style result-style {:key i :on-click #(navigate-page block-uid)})\n+                    [:h4.title (use-sub-style result-style :title) (highlight-match query page-title)]\n+                    (when block-string\n+                      [:span.preview (use-sub-style result-style :preview) (highlight-match query block-string)])",
+  "path":"src/cljs/athens/devcards/athena.cljs",
+  "position":264,
+  "original_position":264,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"@tangjeff0 agreed.\r\n- The highlight was supposed to be black according to the mockups, so a little bit darker and clearer, but I wasn't able to get them to change on row hover until just now. That's fixed in the cleanup PR. Open to discussing more contrast.\r\n- Until we're able to trim the string, this is a tradeoff between sometimes clipping out the term and sometimes just seeing enormous block previews. Clipping to 1 line is probably overzealous, so I'll show the whole result until a decision is made or the trimming feature is added.",
+  "created_at":"2020-06-12 01:35:17 UTC",
+  "updated_at":"2020-06-12 01:35:17 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439161335",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439161335"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439161335"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":266,
+  "original_start_line":266,
+  "start_side":"RIGHT",
+  "line":268,
+  "original_line":268,
+  "side":"RIGHT",
+  "in_reply_to_id":439083186
+}

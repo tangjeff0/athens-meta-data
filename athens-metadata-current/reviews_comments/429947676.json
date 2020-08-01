@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429947676",
+  "pull_request_review_id":417726729,
+  "id":429947676,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTk0NzY3Ng==",
+  "diff_hunk":"@@ -13,41 +13,41 @@ This document can be read alongside [Athens Vision Mindmap v2](https://www.notio\n \n # A Self-Hosted Athens\n \n-Roam Research is a \"note-taking tool for networked thought.\" Roam creates value because it allows users to create knowledge associatively, divergently, and then emergently.\n+We've recently seen an explosion in Tools for *Networked* Thought like [Roam Research](http://roamresearch.com/), [Obsidian](https://obsidian.md/), [Semilattice](https://www.semilattice.xyz/), and [so on](https://www.notion.so/Networked-Note-taking-app-a131b468fc6f43218fb8105430304709) and [so forth](https://twitter.com/patrick_oshag/status/1264299702738173954?s=20). These tools create value because they allow users to create knowledge associatively, divergently, and then emergently.\n \n This is more important now than ever before because in the past few decades we've seen exponential growth in data and information. However, our ability to make sense of these inputs, to convert data and information to knowledge and wisdom, is already capped by the mainstream tools today.\n \n-Using a graph database, bi-directional links, and hypertext transclusions, Roam enables users to create and traverse knowledge in a way that mirrors how humans organically create knowledge — associatively and contextually.\n+Using a graph database, bi-directional links, and hypertext transclusions, these tools enable users to create and traverse knowledge in a way that mirrors how humans organically create knowledge — associatively and contextually.\n \n-By breaking out of the \"file-and-cabinet\" hierarchical paradigm that most computer systems use — note-taking apps,  filesystems, HTML documents, etc. — Roam users can more easily create meaningful relationships about the world we live in. Not only that, users can then more easily recontextualize relationships, allowing ideas to compose and refactor in emergent ways. This leads to the creation of more insights, more interdisciplinary insights, and generative insights: insights that create more interdisciplinary insights.\n+These \"knowledge graphs\" break out of the \"file-and-cabinet\" hierarchical paradigm that most computer systems use — note-taking apps of the last few decades,  filesystems, HTML documents, etc. Users using Tools for Networked Thought can more easily create meaningful relationships about the world we live in. Not only that, these users can then more easily recontextualize relationships, allowing ideas to compose and refactor in emergent ways. This leads to the creation of more insights, more interdisciplinary insights, and generative insights: insights that create more interdisciplinary insights.\n \n-In short, we are currently experiencing diminishing and marginal returns on information. Roam promises exponential and compound returns.\n+In short, we are currently experiencing diminishing and marginal returns on information. Tools for Networked Thought promise exponential and compound returns.\n \n-That's Roam. But this is Athens. So why Athens, why open-source? Because Roam always should've been open-source.\n+Those are the other Tools for Networked Thought. But this is Athens. So why Athens, why open-source? Because Tools for Networked Thought should be open-source.\n \n-Many users already report that they are getting massive returns on their Roam databases. They've found perhaps the currently closest approximation to [Vannevar Bush's memex](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/). Users right now are putting their entire personal lives, unencrypted, on Roam and therefore Google Firebase.\n+Many users already report that they are getting massive returns on their knowledge graphs. They've found perhaps the currently closest approximation to [Vannevar Bush's memex](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/). For some of these tools, users right now are putting their entire personal lives, unencrypted, in a public cloud.\n \n-This isn't about Roam's ethics, either. This is about users putting their second brains — their entire lives — on a public cloud. In plain-text. To be summoned at will by the government ([Facebook Transparency](https://transparency.facebook.com/government-data-requests/country/US), [Google Transparency](https://transparencyreport.google.com/user-data/overview?hl=en)).\n+This isn't about any specific company's ethics, either. This is about users putting their second brains — their entire lives — on a public cloud. In plain-text. To be summoned at will by the government ([Facebook Transparency](https://transparency.facebook.com/government-data-requests/country/US), [Google Transparency](https://transparencyreport.google.com/user-data/overview?hl=en)).\n \n-A self-hosted Athens solves this privacy and security problem.\n+A self-hosted, open-source Athens solves this privacy and security problem.\n \n # An Individual Memex\n \n-The closest approximations we have to the brain are Roam and neural networks. Both of these are graphs with bi-directional data flows.\n+The closest approximations we have to the brain are Tools for Networked Thought and neural networks. Both of these are graphs networks with bi-directional data flows.",
+  "path":"VISION.md",
+  "position":null,
+  "original_position":33,
+  "commit_id":"1df38e3865680f980b7d8f99e9938f5cfdef2773",
+  "original_commit_id":"f4bd391cdeabb71e8cd050b7479640a6289fe802",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Really appreciate your hawk eyes @KasperZutterman",
+  "created_at":"2020-05-25 13:54:58 UTC",
+  "updated_at":"2020-05-25 20:26:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/82#discussion_r429947676",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/82",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429947676"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/82#discussion_r429947676"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/82"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":36,
+  "side":"RIGHT",
+  "in_reply_to_id":429946093
+}

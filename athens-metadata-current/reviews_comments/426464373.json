@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426464373",
+  "pull_request_review_id":413389384,
+  "id":426464373,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjQ2NDM3Mw==",
+  "diff_hunk":"@@ -45,12 +45,12 @@\n                 [render-blocks uid]])])))])))\n \n ; match [[title]] or #title or #[[title]]\n+; provides groups useful for replacing\n+; e.g.: $1$3$4new-string$2$5\n (defn linked-pattern [string]\n-  (re-pattern (str \"(\"\n-                   \"\\\\[{2}\" string \"\\\\]{2}\"\n-                   \"|\" \"#\" string\n-                   \"|\" \"#\" \"\\\\[{2}\" string \"\\\\[{2}\"\n-                   \")\")))\n+  (re-pattern (str \"(\\\\[{2})\" string \"(\\\\]{2})\"\n+                   \"|\" \"(#)\" string\n+                   \"|\" \"(#\\\\[{2})\" string \"(\\\\]{2})\")))",
+  "path":"src/cljs/athens/page.cljs",
+  "position":null,
+  "original_position":14,
+  "commit_id":"b387bc7d00c15979322ffe6e475aebbab7410e01",
+  "original_commit_id":"2fafbba7a45ab2e81e9c4c679ef92c0c9e6ed57e",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"This looks pretty complicated and asks for some examples via tests. Maybe you can extract this functionality into a cljc file and test this behaviour with `deftest` in `test/cljc/athens/page_test.cljc`?",
+  "created_at":"2020-05-18 08:45:44 UTC",
+  "updated_at":"2020-05-18 15:22:39 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/71#discussion_r426464373",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/71",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426464373"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/71#discussion_r426464373"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/71"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":53,
+  "side":"RIGHT"
+}

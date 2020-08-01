@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/457437570",
+  "pull_request_review_id":451659598,
+  "id":457437570,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NzQzNzU3MA==",
+  "diff_hunk":"@@ -202,13 +200,37 @@\n       (do (dispatch [:athena/toggle])\n           (navigate-uid (or (:block/uid (:block/parent item)) (:block/uid item))))\n \n-      ;; TODO: change scroll as user reaches top or bottom\n-      ;; TODO: what happens when user goes to -1? or past end of list?\n       (= key KeyCodes.UP)\n-      (swap! state update :index dec)\n+      (do\n+        (.. e preventDefault)\n+        (swap! state update :index #(dec (if (zero? %) (count results) %)))\n+        (let [cur-index (:index @state)\n+\n+              ;; Search input box\n+              input-el (.. e -target)\n+\n+              ;; Get the result list container which is the last element child\n+              ;; of the whole athena component",
+  "path":"src/cljs/athens/views/athena.cljs",
+  "position":36,
+  "original_position":36,
+  "commit_id":"133885e391db80b38e622a6014df425c82fcdf84",
+  "original_commit_id":"c2830ca043e69594163be3165216c83dbc7f2756",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"This makes a lot more sense to me now. I'm pretty sure I wrote `[:div.athena]`, but that should probably be an HTML id. `.athena` also doesn't do anything functionally, so maybe not that useful.\r\n\r\nThis could also be simplified if we just gave an HTML id/class to the results list directly, but not important.",
+  "created_at":"2020-07-20 14:28:03 UTC",
+  "updated_at":"2020-07-20 14:33:25 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/280#discussion_r457437570",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/280",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/457437570"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/280#discussion_r457437570"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/280"
+    }
+  },
+  "start_line":212,
+  "original_start_line":212,
+  "start_side":"RIGHT",
+  "line":213,
+  "original_line":213,
+  "side":"RIGHT"
+}

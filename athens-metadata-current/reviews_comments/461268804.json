@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461268804",
+  "pull_request_review_id":456247212,
+  "id":461268804,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MTI2ODgwNA==",
+  "diff_hunk":"@@ -101,10 +104,20 @@\n       (= type :slash) (cond\n                         (= :up direction) (do\n                                             (.. e preventDefault)\n-                                            (swap! state update :search/index dec))\n+                                            (swap! state update :search/index #(dec (if (zero? %) (count slash-options) %)))\n+                                            (let [cur-index (:search/index @state)\n+                                                  container-el (. js/document getElementById \"slash-menu-container\")",
+  "path":"src/cljs/athens/keybindings.cljs",
+  "position":26,
+  "original_position":26,
+  "commit_id":"699442eafb75f3c5be6ada11bdf992dfc01fd90d",
+  "original_commit_id":"d240f3f28e6ad7cbb4212086b009680ccbc5dafc",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Your screenshot looks good, but I don't see the id in the code. Don't see the update in the diff for this branch, and I don't see it when I go to the git hash at:\r\n\r\nhttps://github.com/alaq/athens/blob/d240f3f28e6ad7cbb4212086b009680ccbc5dafc/src/cljs/athens/views/blocks.cljs#L326-L335\r\n\r\nAlso what is your Github pages? Can't inspect your deploy either, which I thought would be at  http://alaq.github.io/athens/ ",
+  "created_at":"2020-07-28 01:48:14 UTC",
+  "updated_at":"2020-07-29 02:28:07 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/304#discussion_r461268804",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/304",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461268804"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/304#discussion_r461268804"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/304"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":109,
+  "original_line":109,
+  "side":"RIGHT",
+  "in_reply_to_id":461239767
+}

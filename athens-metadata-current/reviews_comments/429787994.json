@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429787994",
+  "pull_request_review_id":417522803,
+  "id":429787994,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTc4Nzk5NA==",
+  "diff_hunk":"@@ -0,0 +1,127 @@\n+- [A Self-Hosted Athens](#a-self-hosted-athens)\n+- [An Invidual Memex](#an-invidual-memex)\n+- [A Collective Memex](#a-collective-memex)\n+  - [A Protocol for Bi-directionality](#a-protocol-for-bi-directionality)\n+  - [A Protocol for Knowledge Markets](#a-protocol-for-knowledge-markets)\n+- [A Community for Collaboration and Learning](#a-community-for-collaboration-and-learning)\n+\n+> There is nothing impossible to him (or her) who will try.\n+\n+— Alexander the Great\n+\n+This document can be read alongside [Athens Vision Mindmap v2](https://www.notion.so/athensresearch/Athens-Roadmap-Mindmap-v2-096427f189b648729ae0acbdcefd4c6f?showMoveTo=true).\n+\n+# A Self-Hosted Athens\n+\n+Roam Research is a \"note-taking tool for networked thought.\" Roam creates value because it allows users to create knowledge associatively, divergently, and then emergently.\n+\n+This is more important now than ever before because in the past few decades we've seen an exponential growth in data and information. However, our ability to make sense of these inputs, to convert data and information to knowledge and wisdom, is already capped by the mainstream tools today.",
+  "path":"VISION.md",
+  "position":null,
+  "original_position":18,
+  "commit_id":"1df38e3865680f980b7d8f99e9938f5cfdef2773",
+  "original_commit_id":"18190c5945c52bf649122ee82284e091c993bad3",
+  "user":{
+    "login":"KasperZutterman",
+    "id":21260838,
+    "node_id":"MDQ6VXNlcjIxMjYwODM4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/21260838?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/KasperZutterman",
+    "html_url":"https://github.com/KasperZutterman",
+    "followers_url":"https://api.github.com/users/KasperZutterman/followers",
+    "following_url":"https://api.github.com/users/KasperZutterman/following{/other_user}",
+    "gists_url":"https://api.github.com/users/KasperZutterman/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/KasperZutterman/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/KasperZutterman/subscriptions",
+    "organizations_url":"https://api.github.com/users/KasperZutterman/orgs",
+    "repos_url":"https://api.github.com/users/KasperZutterman/repos",
+    "events_url":"https://api.github.com/users/KasperZutterman/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/KasperZutterman/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"```suggestion\r\nThis is more important now than ever before because in the past few decades we've seen exponential growth in data and information. However, our ability to make sense of these inputs, to convert data and information to knowledge and wisdom, is already capped by the mainstream tools today.\r\n```",
+  "created_at":"2020-05-25 07:57:02 UTC",
+  "updated_at":"2020-05-25 20:26:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/82#discussion_r429787994",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/82",
+  "author_association":"NONE",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429787994"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/82#discussion_r429787994"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/82"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":18,
+  "side":"RIGHT"
+}

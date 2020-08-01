@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439692609",
+  "pull_request_review_id":430098139,
+  "id":439692609,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTY5MjYwOQ==",
+  "diff_hunk":"@@ -43,13 +44,18 @@\n   (with-styles +flex-column-align-start\n     {:flex               \"0 0 288px\"\n      :padding            \"32px 32px 16px 32px\"\n-     :box-shadow         \"1px 0 #433f3880\"}))\n+     :box-shadow         (str \"1px 0 \" (:panel-color COLORS))}))\n \n \n (def +left-sidebar-collapsed\n   (with-styles +left-sidebar\n-    {:flex \"0 0 32px\"\n-     :padding \"32px 0px\"\n+    {:flex \"0 0 40px\"\n+     :align-items \"flex-start\"\n+     :justify-content \"flex-start\"\n+     :grid-template-rows \"min-content\"\n+     :padding \"32px 4px\"\n+     :display \"grid\"\n+     :grid-gap \"4px\"",
+  "path":"src/cljs/athens/devcards/left_sidebar.cljs",
+  "position":49,
+  "original_position":49,
+  "commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "original_commit_id":"d0cd66fd87ef2f2db42ce25bf2a73af8d8fb83cf",
+  "user":{
+    "login":"shanberg",
+    "id":98312,
+    "node_id":"MDQ6VXNlcjk4MzEy",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/98312?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/shanberg",
+    "html_url":"https://github.com/shanberg",
+    "followers_url":"https://api.github.com/users/shanberg/followers",
+    "following_url":"https://api.github.com/users/shanberg/following{/other_user}",
+    "gists_url":"https://api.github.com/users/shanberg/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/shanberg/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/shanberg/subscriptions",
+    "organizations_url":"https://api.github.com/users/shanberg/orgs",
+    "repos_url":"https://api.github.com/users/shanberg/repos",
+    "events_url":"https://api.github.com/users/shanberg/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/shanberg/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Fixed in #144 ",
+  "created_at":"2020-06-13 00:49:47 UTC",
+  "updated_at":"2020-06-13 00:49:47 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/142#discussion_r439692609",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/142",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/439692609"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/142#discussion_r439692609"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/142"
+    }
+  },
+  "start_line":52,
+  "original_start_line":52,
+  "start_side":"RIGHT",
+  "line":58,
+  "original_line":58,
+  "side":"RIGHT",
+  "in_reply_to_id":439089252
+}

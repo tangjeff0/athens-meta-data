@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/443580546",
+  "pull_request_review_id":434930867,
+  "id":443580546,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MzU4MDU0Ng==",
+  "diff_hunk":"@@ -0,0 +1,427 @@\n+(ns athens.devcards.devtool\n+  (:require\n+    [athens.devcards.buttons :refer [button-primary button]]\n+    [athens.devcards.db :refer [new-conn load-real-db-button]]\n+    [athens.style :refer [base-styles]]\n+    [cljs.pprint :as pp]\n+    [cljsjs.react]\n+    [cljsjs.react.dom]\n+    [clojure.core.protocols :as core-p]\n+    [clojure.datafy :refer [nav datafy]]\n+    [datascript.core :as d]\n+    [datascript.db]\n+    [devcards.core :as devcards :refer [defcard-rg]]\n+    [me.tonsky.persistent-sorted-set]\n+    [reagent.core :as r]\n+    [reagent.ratom]\n+    [sci.core :as sci]\n+    [shadow.remote.runtime.cljs.browser]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n+\n+\n+(defonce conn (new-conn))\n+\n+\n+(def key-code->key\n+  {8   :backspace\n+   9   :tab\n+   13  :return})\n+\n+\n+(def initial-state\n+  {:eval-str\n+   \"(d/q '[:find [(pull ?e [*]) ...]\n+       :where [?e :node/title]]\n+    @athens/db)\"\n+   :tx-reports []\n+   :active-panel :query})\n+\n+\n+(defonce state* (r/atom initial-state))\n+\n+\n+(defn ds-nav-impl\n+  [_ k v]\n+  (condp = k\n+    :db/id (d/pull @conn '[* :block/_children] v) ; TODO add inverse refs here\n+    v)) ; TODO add unique idents here as well\n+\n+\n+(defn tx-report-nav-impl\n+  [_ k v]\n+  (condp = k\n+    :tx-data (mapv vec v)\n+    v))\n+\n+\n+(defn restore-db!\n+  [db]\n+  (d/reset-conn! conn db {:time-travel true}))\n+\n+\n+(extend-protocol core-p/Datafiable\n+  cljs.core/PersistentHashMap\n+  (datafy [this]\n+    (with-meta this {`core-p/nav ds-nav-impl}))\n+  cljs.core/PersistentArrayMap\n+  (datafy [this]\n+    (with-meta this {`core-p/nav ds-nav-impl}))\n+  datascript.db/TxReport\n+  (datafy [this]\n+    (with-meta (into {} this) {`core-p/nav tx-report-nav-impl}))\n+  datascript.db/Datom\n+  (datafy [this]\n+    (into [] this))\n+  datascript.db/DB\n+  (datafy [this]\n+    (into {} this))\n+  me.tonsky.persistent-sorted-set/BTSet\n+  (datafy [this]\n+    (into [] this)))\n+\n+\n+(defn data-table\n+  [_ _ _]\n+  (let [limit (r/atom 20)]\n+    (fn [headers rows add-nav!]\n+      [:div\n+       [:div (use-style {:font-size \"12px\"\n+                         :font-family \"IBM Plex Mono\"\n+                         :overflow-x \"auto\"})\n+        [:table\n+         [:thead\n+          [:tr (for [h headers]\n+                 ^{:key h} [:th h])]]\n+         [:tbody\n+          (doall\n+            (for [row (take @limit rows)]\n+\n+              ^{:key row}\n+              [:tr (use-style {:cursor \"pointer\"\n+                               ::stylefy/mode {:hover {:background-color \"#EFEDEB\"}}}\n+                              {:on-click #(add-nav! [(first row)\n+                                                     (-> row meta :row-value)])})\n+               (for [i (range (count row))]\n+                 (let [cell (get row i)]\n+                   ^{:key (str row i cell)}\n+                   [:td (if (nil? cell)\n+                          \"\"\n+                          (pr-str cell))]))]))]]] ; use the edn-viewer here as well?\n+       (when (< @limit (count rows))\n+         [:a (use-style {:cursor \"pointer\"}\n+                        {:on-click #(swap! limit + 10)})\n+          \"Load more\"])])))\n+\n+\n+; TODO add truncation of long strings here\n+(defn edn-viewer\n+  [data _]\n+  [:pre [:code (with-out-str (cljs.pprint/pprint data))]])\n+\n+\n+(defn coll-viewer\n+  [coll add-nav!]\n+  [data-table [\"idx\" \"value\"]\n+   (->> coll\n+        (map-indexed (fn [idx item]\n+                       (with-meta [idx item] {:row-value item})))\n+        vec)\n+   add-nav!])\n+\n+\n+(defn map-viewer\n+  [m add-nav!]\n+  [data-table [\"key\" \"value\"]\n+   (map (fn [[k v]] (with-meta [k v] {:row-value v})) m)\n+   add-nav!])\n+\n+\n+(defn maps-viewer\n+  [ms add-nav!]\n+  (let [headers (into [\"idx\"] (->> ms (mapcat keys) distinct))\n+        rows (map-indexed (fn [idx m]\n+                            (with-meta (into [idx]\n+                                             (for [h (rest headers)] (get m h)))\n+                              {:row-value m}))\n+                          ms)]\n+    [data-table headers rows add-nav!]))\n+\n+\n+(defn tuples-viewer\n+  [colls add-nav!]\n+  (let [max-count (->> colls\n+                       (map count)\n+                       (apply max))\n+        headers (into [\"idx\"] (range max-count))\n+        rows (map-indexed (fn [idx coll]\n+                            (with-meta (into [idx]\n+                                             (for [i (range max-count)] (get coll i)))\n+                              {:row-value coll})))]\n+    [data-table headers rows add-nav!]))\n+\n+\n+(defn associative-not-sequential?\n+  [x]\n+  (and (associative? x)\n+       (not (sequential? x))))\n+\n+\n+(defn sequence-of-maps?\n+  [x]\n+  (and (sequential? x)\n+       (every? associative? x)\n+       (not (every? sequential? x))))\n+\n+\n+(defn tuples?\n+  [x]\n+  (and (sequential? x)\n+       (every? sequential? x)))\n+\n+\n+(def viewers\n+  [{:athens.viewer/id :athens.browser/edn\n+    :athens.viewer/pred (constantly true)\n+    :athens.viewer/fn edn-viewer}\n+   {:athens.viewer/id :athens.browser/coll\n+    :athens.viewer/pred coll?\n+    :athens.viewer/fn coll-viewer}\n+   {:athens.viewer/id :athens.browser/map\n+    :athens.viewer/pred associative-not-sequential?\n+    :athens.viewer/fn map-viewer}\n+   {:athens.viewer/id :athens.browser/maps\n+    :athens.viewer/pred sequence-of-maps?\n+    :athens.viewer/fn maps-viewer}])\n+   ;{:athens.viewer/id :athens.browser/tuples\n+   ; :athens.viewer/pred tuples?\n+   ; :athens.viewer/fn tuples-viewer}])\n+\n+(def viewer-preference\n+  [:athens.browser/maps\n+   :athens.browser/map\n+   :athens.browser/tuples\n+   :athens.browser/coll\n+   :athens.browser/edn])\n+\n+\n+(defn applicable-viewers\n+  [data]\n+  (->> viewers\n+       (filter (fn [{:keys [athens.viewer/pred]}] (pred data)))\n+       (map :athens.viewer/id)\n+       (sort-by #(.indexOf viewer-preference %))))\n+\n+\n+(def indexed-viewers\n+  (->> viewers\n+       (map (juxt :athens.viewer/id identity))\n+       (into {})))\n+\n+\n+(defn dropdown\n+  [options selected on-change]\n+  [:select {:on-change on-change\n+            :value selected}\n+   (for [opt options]\n+     ^{:key opt}\n+     [:option {:value opt}\n+      opt])])\n+\n+\n+(defn data-browser\n+  [_]\n+  (let [state (r/atom {:navs []})]\n+    (fn [data]\n+      (let [navs (:navs @state)\n+            add-nav! #(swap! state update :navs conj %)\n+            navved-data (reduce (fn [d [k v]] (nav (datafy d) k v))\n+                                data\n+                                navs)\n+            applicable-vs (applicable-viewers navved-data)\n+            viewer-name (or (:viewer @state) (first applicable-vs))\n+            viewer (get-in indexed-viewers [viewer-name :athens.viewer/fn])]\n+        [:div\n+         [:div {:style {:display \"flex\"\n+                        :flex-direction \"row\"\n+                        :flex-wrap \"no-wrap\"\n+                        :justify-content \"space-between\"}}\n+          [:div {:style {:display \"flex\"\n+                         :flex-direction \"column\"\n+                         :flex-wrap \"no-wrap\"}}\n+           (doall\n+             (for [i (-> navs count range)]\n+               (let [nav (get navs i)]\n+                 ^{:key i}\n+                 [:a (use-style {:cursor \"pointer\"\n+                                 ::stylefy/mode {:hover {:background-color \"#EFEDEB\"}}}\n+                                {:on-click #(swap! state (fn [s]\n+                                                           (-> s\n+                                                               (update :navs subvec 0 i)\n+                                                               (dissoc :viewer))))})\n+                  (str \"<< \" (first nav))])))]\n+          [:div \"View as: \"\n+           [dropdown applicable-vs viewer-name #(swap! state assoc :viewer (->> %\n+                                                                                .-target\n+                                                                                .-value\n+                                                                                (keyword \"athens.browser\")))]]]\n+         [:div (pr-str (type navved-data))]\n+         (when (d/db? navved-data)\n+           [button-primary {:on-click-fn #(restore-db! navved-data)\n+                            :label \"Restore this db\"}])\n+         [viewer (datafy navved-data) add-nav!]]))))\n+\n+\n+(defcard-rg Import-Styles\n+  [base-styles])",
+  "path":"src/cljs/athens/devcards/devtool.cljs",
+  "position":null,
+  "original_position":275,
+  "commit_id":"37d531f9a0117e2a66dfbfed03a047bd0c60d695",
+  "original_commit_id":"6dec04648168cb9e215c3626f7322d24ab6e81ad",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"No longer need to import `base-styles`.",
+  "created_at":"2020-06-22 14:02:34 UTC",
+  "updated_at":"2020-06-27 16:35:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/164#discussion_r443580546",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/164",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/443580546"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/164#discussion_r443580546"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/164"
+    }
+  },
+  "start_line":null,
+  "original_start_line":274,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":269,
+  "side":"RIGHT"
+}

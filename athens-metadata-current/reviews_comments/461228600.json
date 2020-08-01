@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461228600",
+  "pull_request_review_id":456202298,
+  "id":461228600,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MTIyODYwMA==",
+  "diff_hunk":"@@ -92,3 +95,71 @@\n       (string/replace x #\"PM\" \"pm\"))))\n \n \n+;; -- Linked & Unlinked References ----------\n+\n+(defn get-ref-ids\n+  [pattern]\n+  @(q '[:find [?e ...]\n+        :in $ ?regex\n+        :where\n+        [?e :block/string ?s]\n+        [(re-find ?regex ?s)]]\n+      db/dsdb\n+      pattern))\n+\n+\n+(defn merge-parents-and-block\n+  [ref-ids]\n+  (let [parents (reduce-kv (fn [m _ v] (assoc m v (db/get-parents-recursively v)))\n+                           {}\n+                           ref-ids)\n+        blocks (map (fn [id] (db/get-block-document id)) ref-ids)]\n+    (mapv\n+      (fn [block]\n+        (merge block {:block/parents (get parents (:db/id block))}))\n+      blocks)))\n+\n+\n+(defn group-by-parent\n+  [blocks]\n+  (group-by (fn [x]\n+              (-> x\n+                  :block/parents\n+                  first\n+                  :node/title))\n+            blocks))\n+\n+\n+(defn get-data\n+  [pattern]\n+  (-> pattern get-ref-ids merge-parents-and-block group-by-parent seq))\n+\n+\n+(defn get-data-by-block\n+  [pattern]\n+  (-> pattern get-ref-ids merge-parents-and-block seq))\n+\n+\n+(defn get-linked-references\n+  [title]\n+  (-> title patterns/linked get-data))\n+\n+\n+(defn get-linked-references-by-block\n+  [title]\n+  (-> title patterns/linked get-data-by-block))\n+\n+\n+(defn get-unlinked-references\n+  [title]\n+  (-> title patterns/unlinked get-data))\n+\n+\n+(defn count-linked-references-excl-uid",
+  "path":"src/cljs/athens/util.cljs",
+  "position":74,
+  "original_position":74,
+  "commit_id":"09813133ad733ab31e820a4f523b7f949dbf964a",
+  "original_commit_id":"641ee3ee6349b2d6e33bc2c92d861e39c47ef51f",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Can we just say that the count is always `(dec (count (get-linked-references-by-block title)))`?",
+  "created_at":"2020-07-27 23:31:20 UTC",
+  "updated_at":"2020-07-28 18:57:03 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/297#discussion_r461228600",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/297",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/461228600"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/297#discussion_r461228600"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/297"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":158,
+  "original_line":158,
+  "side":"RIGHT"
+}

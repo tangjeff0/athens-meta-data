@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456431294",
+  "pull_request_review_id":450642889,
+  "id":456431294,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjQzMTI5NA==",
+  "diff_hunk":"@@ -38,13 +50,24 @@\n    <url-link-url-part> = (backslash-escaped-paren | '(' url-link-url-part* ')') / any-char\n    <backslash-escaped-paren> = <'\\\\\\\\'> ('(' | ')')\n    \n-   bold = <'**'> any-chars <'**'>\n+   (* The following regular expression expresses this: (any character except '*') <- This repeated as many times as possible *)\n+   <non-bold-chars> = #'[^\\\\*]*'\n+   bold = <'**'> non-bold-chars <'**'>\n    \n-   (* It’s useful to extract this rule because its transform joins the individual characters everywhere it’s used. *)\n-   (* However, I think in many cases a more specific rule can be used. So we will migrate away from uses of this rule. *)\n-   any-chars = any-char+\n+   (* -- It’s useful to extract this rule because its transform joins the individual characters everywhere it’s used. *)\n+   (* -- However, I think in many cases a more specific rule can be used. So we will migrate away from uses of this rule. *)\n    \n+   (* Here are a list of 'stop characters' we implemented, to get the LL(1) performance. *)",
+  "path":"src/cljc/athens/parser.cljc",
+  "position":51,
+  "original_position":51,
+  "commit_id":"4ffb7fb6d2ae26a7ed8e62c9d15f2434a2fdfe11",
+  "original_commit_id":"784c6479fd417ba22d851e598fac45988e50de5c",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Can you elaborate a bit on the difference between comments that begin with `--`?",
+  "created_at":"2020-07-17 13:09:49 UTC",
+  "updated_at":"2020-07-17 13:31:49 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/268#discussion_r456431294",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/268",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456431294"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/268#discussion_r456431294"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/268"
+    }
+  },
+  "start_line":57,
+  "original_start_line":57,
+  "start_side":"RIGHT",
+  "line":60,
+  "original_line":60,
+  "side":"RIGHT"
+}

@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/421098263",
+  "pull_request_review_id":406994188,
+  "id":421098263,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMTA5ODI2Mw==",
+  "diff_hunk":"@@ -68,12 +68,15 @@\n      pages-panel)])\n \n (defn main-panel []\n-  (let [current-route (subscribe [:current-route])]\n+  (let [current-route (subscribe [:current-route])\n+        loading (subscribe [:loading])]\n     (fn []\n-      [:div\n-       [alert]\n-       ;;[:h1 (str \"Hello World\")]\n-       [:div\n-        [:a {:href (rfee/href :pages)} \"All /pages\"]\n-        [:span {:style {:margin 0 :margin-left 10}} \"Current Route: \" [:b (-> @current-route :path)]]]\n-       [match-panel (-> @current-route :data :name)]])))\n+      [alert]\n+      (if @loading\n+        [:h4 \"Loading... (at least it'll be faster than Roam)\"]",
+  "path":"src/cljs/athens/views.cljs",
+  "position":17,
+  "original_position":17,
+  "commit_id":"adf068e39bed300519f14ac78eb8f451e0890478",
+  "original_commit_id":"adf068e39bed300519f14ac78eb8f451e0890478",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"🤣 🤣 🤣 🤣 🤣 ",
+  "created_at":"2020-05-06 21:17:47 UTC",
+  "updated_at":"2020-05-06 21:17:48 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/29#discussion_r421098263",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/29",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/421098263"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/29#discussion_r421098263"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/29"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":76,
+  "original_line":76,
+  "side":"RIGHT"
+}

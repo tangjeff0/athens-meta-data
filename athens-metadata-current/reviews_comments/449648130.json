@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449648130",
+  "pull_request_review_id":442494119,
+  "id":449648130,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTY0ODEzMA==",
+  "diff_hunk":"@@ -149,30 +196,28 @@\n \n    ;; References\n    (for [[linked-or-unlinked refs] ref-groups]\n-     [:div {:key linked-or-unlinked}\n-      [:div (use-style {:display         \"flex\"\n-                        :justify-content \"space-between\"\n-                        :align-items \"center\"})\n-       [:h3 linked-or-unlinked]\n-       [:span\n-        [button {:label    [(r/adapt-react-class mui-icons/FilterList)]\n-                 :disabled true}]]]\n-      (doall\n-        (for [[group-title group] refs]\n-          [:<> {:key group-title}\n-           [:h4 group-title]\n-           (for [{:block/keys [uid parents] :as block} group]\n-             [:div {:key uid}\n-              ;; TODO: replace with breadcrumbs?\n+     (when (> (count refs) 0)",
+  "path":"src/cljs/athens/devcards/node_page.cljs",
+  "position":null,
+  "original_position":82,
+  "commit_id":"a9f2cbb5ca690caeb2f54ff647498012bd35572d",
+  "original_commit_id":"30d5ce10db9a220b4655617a0c5222738b56d4ec",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Alternatives\r\n\r\n- `seq`\r\n- `not-empty`\r\n- `(pos? (count refs))`\r\n\r\nI like 2.",
+  "created_at":"2020-07-03 16:10:00 UTC",
+  "updated_at":"2020-07-04 16:22:54 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/211#discussion_r449648130",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/211",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/449648130"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/211#discussion_r449648130"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/211"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":199,
+  "side":"RIGHT"
+}

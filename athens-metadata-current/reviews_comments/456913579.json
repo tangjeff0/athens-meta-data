@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456913579",
+  "pull_request_review_id":451135290,
+  "id":456913579,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NjkxMzU3OQ==",
+  "diff_hunk":"@@ -0,0 +1,25 @@\n+(ns athens.components.components-util",
+  "path":"src/cljs/athens/components/components_util.cljs",
+  "position":null,
+  "original_position":1,
+  "commit_id":"c1c56ff92f119287e1f8b5aa7749de7ef10a0521",
+  "original_commit_id":"ffd33d3c66c439c5ccd5ede9a1549f9e8579688b",
+  "user":{
+    "login":"HaojiXu",
+    "id":29003511,
+    "node_id":"MDQ6VXNlcjI5MDAzNTEx",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/29003511?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/HaojiXu",
+    "html_url":"https://github.com/HaojiXu",
+    "followers_url":"https://api.github.com/users/HaojiXu/followers",
+    "following_url":"https://api.github.com/users/HaojiXu/following{/other_user}",
+    "gists_url":"https://api.github.com/users/HaojiXu/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/HaojiXu/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/HaojiXu/subscriptions",
+    "organizations_url":"https://api.github.com/users/HaojiXu/orgs",
+    "repos_url":"https://api.github.com/users/HaojiXu/repos",
+    "events_url":"https://api.github.com/users/HaojiXu/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/HaojiXu/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I don't mind if the files are together or seperate personally, but putting them all together would make other contributors spend more effort when trying to add their own component (for example, I had to read the entire `blocks` before adding the auto page-link feature), which might discourage collaboration. For now, I can combine them and add separate docs to indicate which part of the file does what, which could hopefully mitigate this issue. `components_util` should remain separate though, because I'm looking into metaprogramming and would soon experiment with ways users could add their own components, and adding them into components declaration would only confuse people.",
+  "created_at":"2020-07-19 14:10:56 UTC",
+  "updated_at":"2020-07-20 01:13:43 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/274#discussion_r456913579",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/274",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/456913579"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/274#discussion_r456913579"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/274"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":1,
+  "side":"RIGHT",
+  "in_reply_to_id":456904214
+}

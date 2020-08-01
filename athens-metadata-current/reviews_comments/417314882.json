@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/417314882",
+  "pull_request_review_id":402666677,
+  "id":417314882,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNzMxNDg4Mg==",
+  "diff_hunk":"@@ -1,23 +1,33 @@\n # Contributing to Athens\n \n+If you're looking for somewhere to start contributing, check out the issues tagged with \"first issue\" found in [issues](https://github.com/athensresearch/athens/issues). If you have a specific feature that you would like to work on (for which there is no open issue yet), please let us know.\n+\n These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.\n \n-Please first read the [Code of Conduct](https://github.com/tangjeff0/athens/blob/master/CODE_OF_CONDUCT.md).\n+Before contributing, please first read the [Code of Conduct](https://github.com/tangjeff0/athens/blob/master/CODE_OF_CONDUCT.md).",
+  "path":"CONTRIBUTING.md",
+  "position":null,
+  "original_position":8,
+  "commit_id":"77581d94fc41434c1be1e61a602d014e3e30ecd2",
+  "original_commit_id":"0b8fa88d7d997f4fbec936d2163a950be036ffcd",
+  "user":{
+    "login":"nthd3gr33",
+    "id":37888959,
+    "node_id":"MDQ6VXNlcjM3ODg4OTU5",
+    "avatar_url":"https://avatars3.githubusercontent.com/u/37888959?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/nthd3gr33",
+    "html_url":"https://github.com/nthd3gr33",
+    "followers_url":"https://api.github.com/users/nthd3gr33/followers",
+    "following_url":"https://api.github.com/users/nthd3gr33/following{/other_user}",
+    "gists_url":"https://api.github.com/users/nthd3gr33/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/nthd3gr33/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/nthd3gr33/subscriptions",
+    "organizations_url":"https://api.github.com/users/nthd3gr33/orgs",
+    "repos_url":"https://api.github.com/users/nthd3gr33/repos",
+    "events_url":"https://api.github.com/users/nthd3gr33/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/nthd3gr33/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Nice catch 😃 ",
+  "created_at":"2020-04-29 13:30:23 UTC",
+  "updated_at":"2020-04-29 13:30:23 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/8#discussion_r417314882",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/8",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/417314882"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/8#discussion_r417314882"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/8"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":7,
+  "side":"RIGHT",
+  "in_reply_to_id":417241810
+}

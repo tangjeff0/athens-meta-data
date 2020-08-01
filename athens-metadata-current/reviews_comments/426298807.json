@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426298807",
+  "pull_request_review_id":413193784,
+  "id":426298807,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjI5ODgwNw==",
+  "diff_hunk":"@@ -68,33 +82,39 @@\n                             ^{:key uid}\n                             [:span\n                              {:style {:cursor \"pointer\"}\n-                              :on-click #(dispatch [:navigate :page {:id uid}])}\n+                              :on-click #(on-block-click uid)}\n                              (or string title)]))\n                         @parents))]\n-       [:h2 {:style {:margin 0}} (str \"• \" (:block/string @node))]\n-       [:div {:style {:margin-left 20}}\n+       [:div\n+        {:style {:margin 0}\n+         :content-editable true}",
+  "path":"src/cljs/athens/page.cljs",
+  "position":null,
+  "original_position":95,
+  "commit_id":"43052907694ba7fb71373f52e18f1608d4f72a79",
+  "original_commit_id":"ae01076cfb97e45ec318a2e8eb6b6107928c3d9f",
+  "user":{
+    "login":"Bardia95",
+    "id":24982590,
+    "node_id":"MDQ6VXNlcjI0OTgyNTkw",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/24982590?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/Bardia95",
+    "html_url":"https://github.com/Bardia95",
+    "followers_url":"https://api.github.com/users/Bardia95/followers",
+    "following_url":"https://api.github.com/users/Bardia95/following{/other_user}",
+    "gists_url":"https://api.github.com/users/Bardia95/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/Bardia95/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/Bardia95/subscriptions",
+    "organizations_url":"https://api.github.com/users/Bardia95/orgs",
+    "repos_url":"https://api.github.com/users/Bardia95/repos",
+    "events_url":"https://api.github.com/users/Bardia95/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/Bardia95/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"There's two potential reasons, one I think is more likely than the other. The first, unlikely, reason is that textarea is a form element so using content-editable means having to manually handle submission (seems trivial using on blur). The second, more likely reason, is that content-editable preserves the styling unlike textarea, so I'm thinking maybe they tried content-editable first but were not able to implement their custom styling syntax with the way content-editable works. Or they just wanted the user to see plain unformatted text when they are editing and it is a design decision rather than a technical one. We won't know until we reach that stage.",
+  "created_at":"2020-05-17 20:00:03 UTC",
+  "updated_at":"2020-05-17 20:04:05 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/70#discussion_r426298807",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/70",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426298807"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/70#discussion_r426298807"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/70"
+    }
+  },
+  "start_line":null,
+  "original_start_line":88,
+  "start_side":"RIGHT",
+  "line":null,
+  "original_line":90,
+  "side":"RIGHT",
+  "in_reply_to_id":426296327
+}

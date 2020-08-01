@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426918431",
+  "pull_request_review_id":413970718,
+  "id":426918431,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjkxODQzMQ==",
+  "diff_hunk":"@@ -47,8 +47,8 @@\n        (map #(map edn/read-string %))\n        (map #(cons :db/add %))))\n \n-(defn json-str-to-edn\n-  \"Convert a JSON str to EDN. May receive JSON through an HTTP request or file upload.\"\n+(defn json-str-to-vector\n+  \"Convert a JSON str to a clojure vector. May receive JSON through an HTTP request or file upload.\"",
+  "path":"src/cljs/athens/db.cljs",
+  "position":7,
+  "original_position":7,
+  "commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "original_commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "user":{
+    "login":"wandersoncferreira",
+    "id":17708295,
+    "node_id":"MDQ6VXNlcjE3NzA4Mjk1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/17708295?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/wandersoncferreira",
+    "html_url":"https://github.com/wandersoncferreira",
+    "followers_url":"https://api.github.com/users/wandersoncferreira/followers",
+    "following_url":"https://api.github.com/users/wandersoncferreira/following{/other_user}",
+    "gists_url":"https://api.github.com/users/wandersoncferreira/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/wandersoncferreira/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/wandersoncferreira/subscriptions",
+    "organizations_url":"https://api.github.com/users/wandersoncferreira/orgs",
+    "repos_url":"https://api.github.com/users/wandersoncferreira/repos",
+    "events_url":"https://api.github.com/users/wandersoncferreira/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/wandersoncferreira/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Yes, I might have changed this back and forth sometimes rsrsrs not clear if was valuable or not have this argument here. Anyway, the function signature for [js->clj](https://cljs.github.io/api/cljs.core/js-GTclj) just states the conversion from js array to clojurescript vector and to be honest I was expecting the output of \":block/order\" to be a keyword instead of a string from this function when I read `json-str-to-edn`. \r\n\r\nI don't mind changing it back again.",
+  "created_at":"2020-05-18 22:06:37 UTC",
+  "updated_at":"2020-05-18 22:06:37 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/72#discussion_r426918431",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/72",
+  "author_association":"NONE",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426918431"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/72#discussion_r426918431"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/72"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":51,
+  "original_line":51,
+  "side":"RIGHT",
+  "in_reply_to_id":426451523
+}

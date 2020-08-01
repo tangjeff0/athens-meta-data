@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429784773",
+  "pull_request_review_id":417522803,
+  "id":429784773,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTc4NDc3Mw==",
+  "diff_hunk":"@@ -1,128 +1,119 @@\n-# Contributor Covenant Code of Conduct\n+# Table of Contents\n \n-## Our Pledge\n+- [Table of Contents](#table-of-contents)\n+- [Values](#values)\n+  - [Collaboration](#collaboration)\n+  - [Learning](#learning)\n+- [Athens Discord](#athens-discord)\n+  - [Inviting](#inviting)\n+  - [Kicking and Banning](#kicking-and-banning)\n+  - [Auto-Moderation](#auto-moderation)\n+  - [Pruning](#pruning)\n+- [Discord Official](#discord-official)\n+  - [Discord Guidelines](#discord-guidelines)\n+  - [Discord Terms of Service](#discord-terms-of-service)\n+  - [Discord Privacy Policy](#discord-privacy-policy)\n \n-We as members, contributors, and leaders pledge to make participation in our\n-community a harassment-free experience for everyone, regardless of age, body\n-size, visible or invisible disability, ethnicity, sex characteristics, gender\n-identity and expression, level of experience, education, socio-economic status,\n-nationality, personal appearance, race, religion, or sexual identity\n-and orientation.\n+If you disagree with Athens's values, Athens's Discord guidelines, or the official Discord policies, you have two options: [Voice or Exit](https://www.youtube.com/watch?v=cOubCHLXT6A).\n \n-We pledge to act and interact in ways that contribute to an open, welcoming,\n-diverse, inclusive, and healthy community.\n+# Values\n+> Don’t explain your philosophy. Embody it.\n \n-## Our Standards\n+— Epictetus\n \n-Examples of behavior that contributes to a positive environment for our\n-community include:\n+Athens is not just a product. Athens is a community for collaboration and learning.\n \n-* Demonstrating empathy and kindness toward other people\n-* Being respectful of differing opinions, viewpoints, and experiences\n-* Giving and gracefully accepting constructive feedback\n-* Accepting responsibility and apologizing to those affected by our mistakes,\n-  and learning from the experience\n-* Focusing on what is best not just for us as individuals, but for the\n-  overall community\n+When participating in the Athens community, you are agreeing to embody Athens's values. But values and communities become real through actions, not words. As Athens matures, we will add epics and hero's journeys that exemplify Athens's values to this page.\n \n-Examples of unacceptable behavior include:\n+## Collaboration\n \n-* The use of sexualized language or imagery, and sexual attention or\n-  advances of any kind\n-* Trolling, insulting or derogatory comments, and personal or political attacks\n-* Public or private harassment\n-* Publishing others' private information, such as a physical or email\n-  address, without their explicit permission\n-* Other conduct which could reasonably be considered inappropriate in a\n-  professional setting\n+> Associate with people who are likely to improve you.\n \n-## Enforcement Responsibilities\n+— Seneca\n \n-Community leaders are responsible for clarifying and enforcing our standards of\n-acceptable behavior and will take appropriate and fair corrective action in\n-response to any behavior that they deem inappropriate, threatening, offensive,\n-or harmful.\n+## Learning\n \n-Community leaders have the right and responsibility to remove, edit, or reject\n-comments, commits, code, wiki edits, issues, and other contributions that are\n-not aligned to this Code of Conduct, and will communicate reasons for moderation\n-decisions when appropriate.\n+> The object of education is to teach us to love what is beautiful.\n \n-## Scope\n+— Plato\n \n-This Code of Conduct applies within all community spaces, and also applies when\n-an individual is officially representing the community in public spaces.\n-Examples of representing our community include using an official e-mail address,\n-posting via an official social media account, or acting as an appointed\n-representative at an online or offline event.\n+# Athens Discord\n \n-## Enforcement\n+## Inviting\n \n-Instances of abusive, harassing, or otherwise unacceptable behavior may be\n-reported to the community leaders responsible for enforcement at\n-[INSERT CONTACT METHOD].\n-All complaints will be reviewed and investigated promptly and fairly.\n+Athenians are free to invite others to the Athens Discord, but the Core Team and Guardians reserve the right to revoke this permission.\n \n-All community leaders are obligated to respect the privacy and security of the\n-reporter of any incident.\n+This would be necessary in case there were growing pains from premature scaling or in the case of bad actors trying to disrupt the Athens Discord with spam bots.\n \n-## Enforcement Guidelines\n+This is also why invites expire after 24 hours by default.\n \n-Community leaders will follow these Community Impact Guidelines in determining\n-the consequences for any action they deem in violation of this Code of Conduct:\n+## Kicking and Banning\n \n-### 1. Correction\n+If there are spam bots or members severely transgressing the Athens values and guidelines, it is the responsibility of Guardians and Core Team members to kick or ban these bad actors.",
+  "path":"CODE_OF_CONDUCT.md",
+  "position":null,
+  "original_position":107,
+  "commit_id":"1df38e3865680f980b7d8f99e9938f5cfdef2773",
+  "original_commit_id":"18190c5945c52bf649122ee82284e091c993bad3",
+  "user":{
+    "login":"KasperZutterman",
+    "id":21260838,
+    "node_id":"MDQ6VXNlcjIxMjYwODM4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/21260838?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/KasperZutterman",
+    "html_url":"https://github.com/KasperZutterman",
+    "followers_url":"https://api.github.com/users/KasperZutterman/followers",
+    "following_url":"https://api.github.com/users/KasperZutterman/following{/other_user}",
+    "gists_url":"https://api.github.com/users/KasperZutterman/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/KasperZutterman/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/KasperZutterman/subscriptions",
+    "organizations_url":"https://api.github.com/users/KasperZutterman/orgs",
+    "repos_url":"https://api.github.com/users/KasperZutterman/repos",
+    "events_url":"https://api.github.com/users/KasperZutterman/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/KasperZutterman/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"```suggestion\r\nIf there are spambots or members severely transgressing the Athens values and guidelines, it is the responsibility of Guardians and Core Team members to kick or ban these bad actors.\r\n```\r\nI think it should be written as \"spambots\" instead of \"spam bots\". See: https://www.dictionary.com/browse/spambot?s=ts",
+  "created_at":"2020-05-25 07:50:40 UTC",
+  "updated_at":"2020-05-25 20:26:15 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/82#discussion_r429784773",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/82",
+  "author_association":"NONE",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429784773"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/82#discussion_r429784773"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/82"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":52,
+  "side":"RIGHT"
+}

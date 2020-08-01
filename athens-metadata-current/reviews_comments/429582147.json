@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429582147",
+  "pull_request_review_id":417312427,
+  "id":429582147,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTU4MjE0Nw==",
+  "diff_hunk":"@@ -0,0 +1,17 @@\n+(ns athens.parse-helper-test\n+  (:require\n+    [athens.parse-helper :as parse-helper]\n+    [clojure.test :refer [deftest is]]))\n+\n+\n+(deftest combine-adjacent-strings-tests\n+  (is (= []\n+         (parse-helper/combine-adjacent-strings [])))\n+  (is (= [\"some text\"]\n+         (parse-helper/combine-adjacent-strings [\"some\" \" \" \"text\"])))\n+  (is (= [\"some text\" [:link] \"around a link\"]\n+         (parse-helper/combine-adjacent-strings [\"some\" \" \" \"text\" [:link] \"around \" \"a link\"])))\n+  (is (= [{:something nil} \"more text\" [:link] \"between elements\" 39]\n+         (parse-helper/combine-adjacent-strings [{:something nil} \"more\" \" \" \"text\" [:link] \"between\" \" \" \"elements\" 39])))\n+  (is (= [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]\n+         (parse-helper/combine-adjacent-strings [{:a 1 :b 2} 3 [\"leave\" \"intact\"]]))))",
+  "path":"test/athens/parse_helper_test.clj",
+  "position":null,
+  "original_position":17,
+  "commit_id":"1e8ac81b98421e83ff2829c4bd1a4f1063ba5684",
+  "original_commit_id":"ba8fbee556734835b2d7a16d864cdf7d05fb407a",
+  "user":{
+    "login":"roryokane",
+    "id":79168,
+    "node_id":"MDQ6VXNlcjc5MTY4",
+    "avatar_url":"https://avatars0.githubusercontent.com/u/79168?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/roryokane",
+    "html_url":"https://github.com/roryokane",
+    "followers_url":"https://api.github.com/users/roryokane/followers",
+    "following_url":"https://api.github.com/users/roryokane/following{/other_user}",
+    "gists_url":"https://api.github.com/users/roryokane/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/roryokane/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/roryokane/subscriptions",
+    "organizations_url":"https://api.github.com/users/roryokane/orgs",
+    "repos_url":"https://api.github.com/users/roryokane/repos",
+    "events_url":"https://api.github.com/users/roryokane/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/roryokane/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Done. That does make it a bit easier to compare the before and after values. I kept all inputs/outputs on their own line to make it easy to see where one ends and the other begins.",
+  "created_at":"2020-05-23 22:12:13 UTC",
+  "updated_at":"2020-05-25 22:12:44 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/88#discussion_r429582147",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/88",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/429582147"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/88#discussion_r429582147"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/88"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":17,
+  "side":"RIGHT",
+  "in_reply_to_id":429522771
+}

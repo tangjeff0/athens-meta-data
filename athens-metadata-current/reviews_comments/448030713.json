@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/448030713",
+  "pull_request_review_id":440448305,
+  "id":448030713,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0ODAzMDcxMw==",
+  "diff_hunk":"@@ -3,12 +3,59 @@\n     [athens.db :as db]\n     [athens.devcards.blocks :refer [block-el]]\n     [athens.router :refer [navigate-uid]]\n+    [athens.style :refer [color]]\n     [cljsjs.react]\n     [cljsjs.react.dom]\n     [devcards.core :refer-macros [defcard-rg]]\n+    [garden.selectors :as selectors]\n     [komponentit.autosize :as autosize]\n     [posh.reagent :refer [transact! pull]]\n-    [re-frame.core :refer [subscribe]]))\n+    [re-frame.core :refer [subscribe]]\n+    [stylefy.core :as stylefy :refer [use-style]]))\n+\n+\n+;;; Styles\n+\n+(def title-style\n+  {:position \"relative\"\n+   :overflow \"visible\"\n+   :flex-grow \"1\"\n+   :margin \"0.2em 0\"\n+   :letter-spacing \"-0.03em\"\n+   :word-break \"break-word\"\n+   ::stylefy/manual [[:textarea {:display \"none\"}]\n+                     [:&:hover [:textarea {:display \"block\"\n+                                           :z-index 1}]]\n+                     [:textarea {:-webkit-appearance \"none\"\n+                                 :cursor \"text\"\n+                                 :resize \"none\"\n+                                 :transform \"translate3d(0,0,0)\"\n+                                 :color \"inherit\"\n+                                 :font-weight \"inherit\"\n+                                 :padding \"0\"\n+                                 :letter-spacing \"inherit\"\n+                                 :position \"absolute\"\n+                                 :top \"0\"\n+                                 :left \"0\"\n+                                 :right \"0\"\n+                                 :width \"100%\"\n+                                 :min-height \"100%\"\n+                                 :caret-color (color :link-color)\n+                                 :background \"transparent\"\n+                                 :margin \"0\"\n+                                 :font-size \"inherit\"\n+                                 :line-height \"inherit\"\n+                                 :border-radius \"4px\"\n+                                 :transition \"opacity 0.15s ease\"\n+                                 :border \"0\"\n+                                 :opacity \"0\"\n+                                 :font-family \"inherit\"}]\n+                     [:textarea:focus\n+                      :.isEditing {:outline \"none\"\n+                                   :z-index \"10\"\n+                                   :display \"block\"\n+                                   :opacity \"1\"}]\n+                     [(selectors/+ :.isEditing :span) {:opacity 0}]]})",
+  "path":"src/cljs/athens/devcards/block_page.cljs",
+  "position":null,
+  "original_position":57,
+  "commit_id":"8390833b8a0c5407742688f6f56358f2bf54bdbb",
+  "original_commit_id":"0d823cc5758fab672388f7851796ab2bd78db5b7",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"More idiomatic to use kebab-case for both CSS and ClojureScript",
+  "created_at":"2020-06-30 23:17:23 UTC",
+  "updated_at":"2020-07-01 01:15:23 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/197#discussion_r448030713",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/197",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/448030713"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/197#discussion_r448030713"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/197"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":null,
+  "original_line":58,
+  "side":"RIGHT"
+}

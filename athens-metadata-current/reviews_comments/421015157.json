@@ -1,0 +1,55 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/421015157",
+  "pull_request_review_id":406893357,
+  "id":421015157,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMTAxNTE1Nw==",
+  "diff_hunk":"@@ -9,7 +9,7 @@\n   (insta/parser\n    \"S = c | link | bref | hash\n     <c> = #'(\\\\w|\\\\s)+'\n-    link = <'[['> c <']]'>\n+    link = <'[['> c <']]'>  | <'[['> S? link S? <']]'>\n     hash = <'#'> c | <'#'> <'[['> c <']]'>\n     bref = <'(('> c <'))'>\n    \"))",
+  "path":"src/cljs/athens/parser.cljs",
+  "position":8,
+  "original_position":8,
+  "commit_id":"534561e65919c6cd9f6dca90814d5599b8834201",
+  "original_commit_id":"534561e65919c6cd9f6dca90814d5599b8834201",
+  "user":{
+    "login":"jeroenvandijk",
+    "id":27645,
+    "node_id":"MDQ6VXNlcjI3NjQ1",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/27645?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/jeroenvandijk",
+    "html_url":"https://github.com/jeroenvandijk",
+    "followers_url":"https://api.github.com/users/jeroenvandijk/followers",
+    "following_url":"https://api.github.com/users/jeroenvandijk/following{/other_user}",
+    "gists_url":"https://api.github.com/users/jeroenvandijk/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/jeroenvandijk/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/jeroenvandijk/subscriptions",
+    "organizations_url":"https://api.github.com/users/jeroenvandijk/orgs",
+    "repos_url":"https://api.github.com/users/jeroenvandijk/repos",
+    "events_url":"https://api.github.com/users/jeroenvandijk/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/jeroenvandijk/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"@anshbansal If my pull request gets merged #27, you could move this file to `src/cljs/athens/parser.cljc` and the test below would succeed via the `script/test/all` (that runs `lein test`)",
+  "created_at":"2020-05-06 18:48:37 UTC",
+  "updated_at":"2020-05-06 18:48:37 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/16#discussion_r421015157",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/16",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/421015157"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/16#discussion_r421015157"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/16"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":15,
+  "original_line":15,
+  "side":"RIGHT"
+}

@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/462252295",
+  "pull_request_review_id":457461019,
+  "id":462252295,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ2MjI1MjI5NQ==",
+  "diff_hunk":"@@ -489,9 +489,6 @@\n \n (defn count-linked-references-excl-uid\n   [title uid]\n-  (reduce (fn [current-count ref]\n-            (if (= (:block/uid ref) uid)\n-              current-count\n-              (inc current-count)))\n-          0\n-          (get-linked-references-by-block title)))\n+  (->> (get-linked-references-by-block title)\n+       (remove #(= (:block/uid %) uid))\n+       count))",
+  "path":"src/cljs/athens/db.cljs",
+  "position":12,
+  "original_position":12,
+  "commit_id":"e60685a1463e159dfeac0a2782e1299cec434398",
+  "original_commit_id":"e60685a1463e159dfeac0a2782e1299cec434398",
+  "user":{
+    "login":"fnumatic",
+    "id":1319530,
+    "node_id":"MDQ6VXNlcjEzMTk1MzA=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/1319530?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/fnumatic",
+    "html_url":"https://github.com/fnumatic",
+    "followers_url":"https://api.github.com/users/fnumatic/followers",
+    "following_url":"https://api.github.com/users/fnumatic/following{/other_user}",
+    "gists_url":"https://api.github.com/users/fnumatic/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/fnumatic/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/fnumatic/subscriptions",
+    "organizations_url":"https://api.github.com/users/fnumatic/orgs",
+    "repos_url":"https://api.github.com/users/fnumatic/repos",
+    "events_url":"https://api.github.com/users/fnumatic/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/fnumatic/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"I don't understand, could you be more specific.\r\nThe form in L494 is independent from the one in L493.\r\nremove -> filtered items\r\ncount -> number of filtered items",
+  "created_at":"2020-07-29 12:14:31 UTC",
+  "updated_at":"2020-07-29 12:14:31 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/307#discussion_r462252295",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/307",
+  "author_association":"CONTRIBUTOR",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/462252295"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/307#discussion_r462252295"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/307"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":494,
+  "original_line":494,
+  "side":"RIGHT",
+  "in_reply_to_id":462227209
+}

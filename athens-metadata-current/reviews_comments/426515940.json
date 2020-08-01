@@ -1,0 +1,56 @@
+{
+  "url":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426515940",
+  "pull_request_review_id":413453524,
+  "id":426515940,
+  "node_id":"MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjUxNTk0MA==",
+  "diff_hunk":"@@ -47,8 +47,8 @@\n        (map #(map edn/read-string %))\n        (map #(cons :db/add %))))\n \n-(defn json-str-to-edn\n-  \"Convert a JSON str to EDN. May receive JSON through an HTTP request or file upload.\"\n+(defn json-str-to-vector\n+  \"Convert a JSON str to a clojure vector. May receive JSON through an HTTP request or file upload.\"",
+  "path":"src/cljs/athens/db.cljs",
+  "position":7,
+  "original_position":7,
+  "commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "original_commit_id":"b45d8f9973813a0592e196fda935f707d0a30ab2",
+  "user":{
+    "login":"tangjeff0",
+    "id":8952138,
+    "node_id":"MDQ6VXNlcjg5NTIxMzg=",
+    "avatar_url":"https://avatars1.githubusercontent.com/u/8952138?v=4",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/tangjeff0",
+    "html_url":"https://github.com/tangjeff0",
+    "followers_url":"https://api.github.com/users/tangjeff0/followers",
+    "following_url":"https://api.github.com/users/tangjeff0/following{/other_user}",
+    "gists_url":"https://api.github.com/users/tangjeff0/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/tangjeff0/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/tangjeff0/subscriptions",
+    "organizations_url":"https://api.github.com/users/tangjeff0/orgs",
+    "repos_url":"https://api.github.com/users/tangjeff0/repos",
+    "events_url":"https://api.github.com/users/tangjeff0/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/tangjeff0/received_events",
+    "type":"User",
+    "site_admin":false
+  },
+  "body":"Agree @jeroenvandijk. I think `edn` is a more descriptive while still generic name than `vector`. Would like to hear reasoning on name change!",
+  "created_at":"2020-05-18 10:09:13 UTC",
+  "updated_at":"2020-05-18 10:09:28 UTC",
+  "html_url":"https://github.com/athensresearch/athens/pull/72#discussion_r426515940",
+  "pull_request_url":"https://api.github.com/repos/athensresearch/athens/pulls/72",
+  "author_association":"MEMBER",
+  "_links":{
+    "self":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/comments/426515940"
+    },
+    "html":{
+      "href":"https://github.com/athensresearch/athens/pull/72#discussion_r426515940"
+    },
+    "pull_request":{
+      "href":"https://api.github.com/repos/athensresearch/athens/pulls/72"
+    }
+  },
+  "start_line":null,
+  "original_start_line":null,
+  "start_side":null,
+  "line":51,
+  "original_line":51,
+  "side":"RIGHT",
+  "in_reply_to_id":426451523
+}
