@@ -20,7 +20,7 @@
                 (cheshire/parse-string true))))))
 
 
-(->> (take 10000 (file-data "issues"))
+(->> (file-data "issues")
   (map (fn [{:keys [title body comments html_url] {:keys [login]} :user}]
          {:title title
           ;;:html_url html_url
